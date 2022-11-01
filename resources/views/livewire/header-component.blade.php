@@ -1,12 +1,12 @@
 <div>
     <header class="header">
         <div class="header-top">
-            <span>30% OFF ON ALL PRODUCTS ENTER CODE: beshop2020</span>
+            <span>ayo kunjungi instagram kami!<a href="https://www.instagram.com/momoacc.bwi/" style="color:yellow; text-decoration-line:underline"> Klik Di Sini!</a></span>
             <i class="header-top-close js-header-top-close icon-close"></i>
         </div>
         <div class="header-content">
             <div class="header-logo">
-                <img src="img/header-logo.svg" alt="">
+                <img src="img/logo.png" style="width: 100px;" alt="">
             </div>
             <div class="header-box">
                 <ul class="header-nav">
