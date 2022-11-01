@@ -12,7 +12,7 @@ class ProductController extends Controller
     }
 
     static function getProductsBasedOnCategoryId($id){
-        return Product::where("cpid_idn", $id)->get();
+        return Product::where("cpid", $id)->get();
     }
 
 }

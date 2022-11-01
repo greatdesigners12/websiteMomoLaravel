@@ -16,12 +16,19 @@
                     <li><a href="/products" class="{{Route::current()->getName() == 'products' ? 'active' : ''}}">Products</a></li>
                     <li><a href="/about" class="{{Route::current()->getName() == 'about' ? 'active' : ''}} ">About Us</a></li>
                 </ul>
-                <!-- <ul class="header-options">
-                    <li><a href="#"><i class="icon-search"></i></a></li>
-                    <li><a href="#"><i class="icon-user"></i></a></li>
-                    <li><a href="wishlist.html"><i class="icon-heart"></i></a></li>
-                    <li><a href="cart.html"><i class="icon-cart"></i><span>0</span></a></li>
-                </ul> -->
+                <ul class="header-options">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" style="background-color: #d05278;" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="img/momo_product/{{}}" alt="">
+                          Dropdown button
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Action</a></li>
+                          <li><a class="dropdown-item" href="#">Another action</a></li>
+                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                      </div>
+                </ul>
             </div>
 
             <div class="btn-menu js-btn-menu"><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span></div>

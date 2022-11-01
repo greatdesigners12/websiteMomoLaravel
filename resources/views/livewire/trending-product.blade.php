@@ -15,7 +15,7 @@
                     @foreach ($allKategori as $kategori)
                     <li class="{{$curKategori == $kategori->id ? 'active' : ''}} ">
                        
-                        <a href="#trending-tab_1" wire:click="setKategori('{{$kategori->id}}')">{{$kategori->category_general}}</a>
+                        <a href="#trending-tab_1" wire:click="setKategori('{{$kategori->id}}')">{{$kategori->category_general_idn}}</a>
                     </li>
                     @endforeach
                     
@@ -34,14 +34,10 @@
                                             src="img/momo_product/{{$product->image_product}}" class="js-img" alt="">
                                         <div class="products-item__hover">
                                             <i class="icon-search"></i>
-                                            <div class="products-item__hover-options">
-                                                <i class="icon-heart"></i>
-                                                <i class="icon-cart"></i>
-                                            </div>
                                         </div>
                                     </div>
                                     <div class="products-item__info">
-                                        <span class="products-item__name">{{$product->name}}</span>
+                                        <span class="products-item__name">{{$product->name_idn}}</span>
                                         <span class="products-item__cost">{{$product->price}}</span>
                                     </div>
                                 </a>
