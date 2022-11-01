@@ -12,9 +12,9 @@
                 <ul class="header-nav">
                     
                     
-                    <li><a href="/" class="{{Route::current()->getName() == 'home' ? 'active' : ''}}">Home</a>  </li>
-                    <li><a href="/products" class="{{Route::current()->getName() == 'products' ? 'active' : ''}}">Products</a></li>
-                    <li><a href="/about" class="{{Route::current()->getName() == 'about' ? 'active' : ''}} ">About Us</a></li>
+                    <li><a href="/" class="{{Route::current()->getName() == 'home' ? 'active' : ''}}">Beranda</a>  </li>
+                    <li><a href="/products" class="{{Route::current()->getName() == 'products' ? 'active' : ''}}">Produk</a></li>
+                    <li><a href="/about" class="{{Route::current()->getName() == 'about' ? 'active' : ''}} ">Tentang Kami</a></li>
                 </ul>
                 <ul class="header-options">
                     <div class="dropdown">
