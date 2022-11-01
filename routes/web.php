@@ -26,3 +26,5 @@ Route::get('/products', function () {
 Route::get('/about', function () {
     return view('AboutUs');
 })->name("about");
+Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LanguageController@switchLang']);
+Route::get('/languageDemo', 'App\Http\Controllers\Controller@languageDemo');

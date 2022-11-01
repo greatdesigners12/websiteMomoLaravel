@@ -19,15 +19,17 @@
                 <ul class="header-options">
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" style="background-color: #d05278;" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="img/momo_product/{{}}" alt="">
-                          Dropdown button
+                            <span class="fi fi-{{Config::get('languages')[App::getLocale()]['flag-icon']}}"></span> {{ Config::get('languages')[App::getLocale()]['display'] }}
                         </button>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#">Action</a></li>
-                          <li><a class="dropdown-item" href="#">Another action</a></li>
-                          <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            @foreach (Config::get('languages') as $lang => $language)
+                                @if ($lang != App::getLocale())
+                                <a class="dropdown-item" href="{{ route('lang.switch', $lang) }}"><span class="fi fi-{{$language['flag-icon']}}"></span> {{$language['display']}}</a>
+                                @endif
+                            @endforeach
+                            </div>
                       </div>
+                     
                 </ul>
             </div>
 

@@ -15,5 +15,6 @@
     <livewire:trending-product :kategori="$allKategori" :curProducts="$curProducts" />
     @livewire("testimonies")
     <livewire:brands :brands="$brands"  />
+    <livewire:lokasi />
     @livewire("footer")         
 @endsection

@@ -3,7 +3,7 @@
         <div class="container">
             <div class="sec-title">
                 <h1>Our Partners</h1>
-                <span class="border"></span>
+                <span class="border" style="opacity: 0%;"></span>
             </div>
             <div class="row">
                 <div class="col-md-12">
