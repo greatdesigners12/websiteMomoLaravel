@@ -38,7 +38,7 @@
                                     </div>
                                     <div class="products-item__info">
                                         <span class="products-item__name">{{__($product->name)}}</span>
-                                        <span class="products-item__cost">{{$product->price}}</span>
+                                        <span class="products-item__cost">Rp {{$product->price}}</span>
                                     </div>
                                 </a>
                            
