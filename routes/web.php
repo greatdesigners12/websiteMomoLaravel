@@ -19,10 +19,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [RouteController::class, "toHomePage"])->name("home");
 
-Route::get('/products', function () {
-    return view('ProductList');
-})->name("products");
+Route::get('/products', [RouteController::class, "toProductsPage"])->name("products");
 
-Route::get('/about', function () {
-    return view('AboutUs');
-})->name("about");
+Route::get('/contact', [RouteController::class, "toContactPage"])->name("contact");
+Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LanguageController@switchLang']);
+Route::get('/languageDemo', 'App\Http\Controllers\Controller@languageDemo');

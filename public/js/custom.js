@@ -1,7 +1,10 @@
 $(function(){
 	testimonialSlider();
 	brandCarousel();
+	
 })
+
+
 
 $(window).on('load', function () {
 	
@@ -151,17 +154,13 @@ $(function(){
 	/* lazy */	
 
 	/* burger */
+	
 	$('.js-btn-menu').on('click', function(){
 		$(this).toggleClass('active');
 		$('.header-box').toggleClass('active');
 		$('html').toggleClass('scroll-off');
 	});
 
-	$('.content').on('click', function(){
-		$('.js-btn-menu').removeClass('active');
-		$('.header-box').removeClass('active');
-		$('html').removeClass('scroll-off');
-	});
 
 	/* burger */
 
@@ -223,7 +222,7 @@ $(function(){
         speed: 300,
         slidesToShow: 4,
         slidesToScroll: 1,
-        infinite: false,
+        infinite: true,
         lazyLoad: 'progressive',
         responsive: [{
             breakpoint: 1200,
@@ -470,25 +469,7 @@ $(function(){
     });
 	/* faq */
 
-	/* shop range */
-	if ($(".js-range-slider-price").length) {
-		var $range = $(".js-range-slider-price");
-		var	instance;
-		var	min = 0;
-		var	max = 160;
-
-		$range.ionRangeSlider({
-			skin: "round",
-			type: 'double',
-			min: min,
-			max: max,
-			from: 0,
-			hide_min_max: 'true',
-			prefix: "$",
-			to: 160
-		});
-		instance = $range.data("ionRangeSlider");
-	}
+	
 	/* shop range */
 
 	/* custom select */
@@ -616,7 +597,7 @@ window.addEventListener('initSlider', event => {
 		speed: 300,
 		slidesToShow: 4,
 		slidesToScroll: 1,
-		infinite: false,
+		infinite: true,
 		lazyLoad: 'progressive',
 		responsive: [{
 			breakpoint: 1200,

@@ -2321,9 +2321,9 @@ header {
 		display: -ms-flexbox;
 		display: flex;
 		-webkit-box-pack: justify;
-		-webkit-justify-content: space-between;
+		-webkit-justify-content: center;
 		-ms-flex-pack: justify;
-		justify-content: space-between;
+		justify-content: center;
 	}
 	.header-content.fixed {
 		padding-top: 20px;
@@ -2886,7 +2886,7 @@ h6,
 }
 
 .btn {
-	height: 33px;
+	height: 60px;
 	line-height: 59px;
 	outline: none;
 	border: none;
@@ -2901,6 +2901,26 @@ h6,
 	-o-transition: all 0.3s linear;
 	transition: all 0.3s linear;
 	font-family: "Lato";
+}
+
+.btn-filter{
+	
+	height: 40px;
+	line-height: 40px;
+	outline: none;
+	border: none;
+	background: #222222;
+	width: 100%;
+	font-weight: bold;
+	font-size: 14px;
+	color: #ffffff;
+	text-transform: uppercase;
+	display: inline-block;
+	-webkit-transition: all 0.3s linear;
+	-o-transition: all 0.3s linear;
+	transition: all 0.3s linear;
+	font-family: "Lato";
+	
 }
 
 .btn:hover {
@@ -4169,10 +4189,11 @@ h6,
 .insta-photo:hover .insta-photo__hover {
 	opacity: 0.5;
 }
-
+/*bg-color = #FFD5E7*/
 .detail-block {
 	padding-top: 218px;
-	background-image: url(http://127.0.0.1:8000/img/makeUp.jpg);
+	background-color: #FFD5E7;
+	
 	background-position: center;
 	background-repeat: no-repeat;
 	-webkit-background-size: cover;
@@ -5531,6 +5552,11 @@ blockquote:after,
 	margin-bottom: 55px;
 }
 
+.shop-aside__item ul li .active{
+	color: #d05278;
+	border-color: #d05278;
+}
+
 .shop-aside__item-title {
 	display: block;
 	font-size: 24px;
@@ -6192,8 +6218,9 @@ blockquote:after,
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
-	display: flex;
+	display: block;
 	margin-bottom: 30px;
+	justify-content: space-between;
 }
 
 .nav-tab-list li {
@@ -8787,6 +8814,7 @@ input[type="search"]::-webkit-search-results-decoration {
 		margin-bottom: 20px;
 	}
 	.trending-tabs .tabs {
+		margin-left:-30px;
 		margin-bottom: 20px;
 	}
 	.main-logos {
@@ -9955,7 +9983,7 @@ input[type="search"]::-webkit-search-results-decoration {
 	}
 }
 
-/*# sourceMappingURL=style.css.map */
+
 
 .heading {
     text-align: center;
@@ -10101,10 +10129,10 @@ input[type="search"]::-webkit-search-results-decoration {
     transition: all 500ms ease;
 }
 .testimonial-area .owl-theme .owl-nav .owl-prev:hover{
-    border-color: #ff5353;
+    border-color: #eb9698;
 }
 .testimonial-area .owl-theme .owl-nav .owl-next:hover{
-    border-color: #ff5353;
+    border-color: #eb9698;
 }
 .testimonial-area .owl-theme .owl-nav div .fa {
     color: #50525a;
@@ -10114,10 +10142,10 @@ input[type="search"]::-webkit-search-results-decoration {
     transition: all 500ms ease;
 }
 .testimonial-area .owl-theme .owl-nav .owl-next:hover .fa{
-    color: #ff5353;  
+    color: #eb9698;  
 }
 .testimonial-area .owl-theme .owl-nav .owl-prev:hover .fa{
-    color: #ff5353;  
+    color: #eb9698;  
 }
 
 .brand-area {
@@ -10180,6 +10208,6 @@ input[type="search"]::-webkit-search-results-decoration {
     margin-left: 10px;
 }
 .brand-area .owl-theme .owl-nav [class*="owl-"]:hover{
-    border-color: #ff2b58;
-    color: #ff2b58;
+    border-color: #f5b7d2;
+    color: #f5b7d2;
 }

@@ -3,17 +3,18 @@
     <div class="main-block load-bg">
         <div class="wrapper">
             <div class="main-block__content">
-                <span class="saint-text">Professional</span>
-                <h1 class="main-text">Beauty & Care</h1>
-                <p>Nourish your skin with toxin-free cosmetic products. With the offers that you can’t refuse.
+                <span class="saint-text">{{__('MOMO Accessories')}}</span>
+                <h1 class="main-text">{{__('Aksesoris Dan Kosmetik')}}</h1>
+                <p>{{__('Terlengkap dengan kualitas terbaik di Banyuwangi')}}
                 </p>
-                <a href="#" class="btn">Shop now</a>
+                <button  class="btn btn-lg btn-dark" style="width: 60%;" ><a href="{{ route('products') }}" class="text-white " style="text-decoration: none;"> {{__('Belanja Sekarang !')}}</a></button>
             </div>
         </div>
     </div>
     
-    <livewire:trending-product :kategori="$allKategori" :curProducts="$curProducts" />
+    <livewire:product-pilihan :kategori="$allKategori" :curProducts="$curProducts" />
     @livewire("testimonies")
     <livewire:brands :brands="$brands"  />
+    <livewire:lokasi />
     @livewire("footer")         
 @endsection
