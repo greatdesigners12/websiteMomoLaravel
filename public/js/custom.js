@@ -223,7 +223,7 @@ $(function(){
         speed: 300,
         slidesToShow: 4,
         slidesToScroll: 1,
-        infinite: false,
+        infinite: true,
         lazyLoad: 'progressive',
         responsive: [{
             breakpoint: 1200,
@@ -616,7 +616,7 @@ window.addEventListener('initSlider', event => {
 		speed: 300,
 		slidesToShow: 4,
 		slidesToScroll: 1,
-		infinite: false,
+		infinite: true,
 		lazyLoad: 'progressive',
 		responsive: [{
 			breakpoint: 1200,
