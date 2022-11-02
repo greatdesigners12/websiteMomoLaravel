@@ -6,7 +6,7 @@ return [
         'flag-icon' => 'us'
     ],
     'cn' => [
-        'display' => 'Chinese',
+        'display' => 'Chinese (中文)',
         'flag-icon' => 'cn'
     ],
     'id' => [
