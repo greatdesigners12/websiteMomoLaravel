@@ -25,8 +25,8 @@
         
         <div class="main-wrapper">
             <main class="content">
-            @livewire('header-component')
-            @yield("content")
+                @livewire('header-component')
+                @yield("content")
 
         </main>
     </div>

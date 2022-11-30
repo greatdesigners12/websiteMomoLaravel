@@ -22,5 +22,7 @@ Route::get('/', [RouteController::class, "toHomePage"])->name("home");
 Route::get('/products', [RouteController::class, "toProductsPage"])->name("products");
 
 Route::get('/contact', [RouteController::class, "toContactPage"])->name("contact");
+Route::get('/sendEmail', [RouteController::class, "toSendEmailPage"])->name("sendEmail");
+Route::post('/sendEmailto', [RouteController::class, "sendEmail"])->name("sendEmailTo");
 Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LanguageController@switchLang']);
 Route::get('/languageDemo', 'App\Http\Controllers\Controller@languageDemo');

@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\StoreEmailSender;
 use App\Models\Brand;
 use Illuminate\Http\Request;
 use App\Models\Kategori;
-
+use Illuminate\Support\Facades\Mail;
 
 class RouteController extends Controller
 {
@@ -18,5 +19,18 @@ class RouteController extends Controller
     }
     public function toContactPage(){
         return view("ContactUs");
+    }
+
+    public function toAddBookPage(){
+        return view("createBook");
+    }
+
+    public function toSendEmailPage(){
+        return view("SendMail");
+    }
+
+    public function sendEmail(){
+        Mail::to("mysteriousx0857@gmail.com")->send(new StoreEmailSender());
+        return redirect()->back();
     }
 }
