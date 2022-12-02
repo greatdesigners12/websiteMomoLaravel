@@ -18,9 +18,13 @@ class StoreEmailSender extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public $url;
+    public $subject;
+
+    public function __construct($subject, $id, $token)
     {
-        //
+        $this->url = "http://" . url("/") . "/emailVerification?" . "id=" . $id . "&" . "token=" .$token ;
+        $this->subject = $subject;
     }
 
     /**
@@ -31,7 +35,7 @@ class StoreEmailSender extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: 'Store Email Sender',
+            subject: $this->subject,
         );
     }
 
@@ -43,7 +47,7 @@ class StoreEmailSender extends Mailable
     public function content()
     {
         return new Content(
-            view: 'email',
+            view: 'email'
         );
     }
 

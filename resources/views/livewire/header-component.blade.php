@@ -15,7 +15,7 @@
                     <li><a href="/" class="{{Route::current()->getName() == 'home' ? 'active' : ''}}">{{__('Beranda')}}</a>  </li>
                     <li><a href="/products" class="{{Route::current()->getName() == 'products' ? 'active' : ''}}">{{__('Produk')}}</a></li>
                     <li><a href="/contact" class="{{Route::current()->getName() == 'contact' ? 'active' : ''}} ">{{__('Kontak Kami')}}</a></li>
-                    <li><a href="/sendEmail" class="{{Route::current()->getName() == 'sendEmail' ? 'active' : ''}} ">Send Email</a></li>
+                    <li><a href="/register" class="{{Route::current()->getName() == 'toRegisterPage' ? 'active' : ''}} ">Register</a></li>
                 </ul>
                 <ul class="header-options">
                     <div class="dropdown">

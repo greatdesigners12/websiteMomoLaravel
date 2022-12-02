@@ -6,6 +6,7 @@ use App\Mail\StoreEmailSender;
 use App\Models\Brand;
 use Illuminate\Http\Request;
 use App\Models\Kategori;
+use App\Models\User;
 use Illuminate\Support\Facades\Mail;
 
 class RouteController extends Controller
@@ -29,8 +30,22 @@ class RouteController extends Controller
         return view("SendMail");
     }
 
-    public function sendEmail(){
-        Mail::to("mysteriousx0857@gmail.com")->send(new StoreEmailSender());
-        return redirect()->back();
+    public function toLoginPage(){
+        return view("login");
+    }
+
+    public function toRegisterPage(){
+        return view("register");
+    }
+
+    public function toVerificationPage(Request $request){
+        $user = User::where("id", $request->query("id"))->where("token", $request->query("token"))->first();
+        $status = "verified";
+        if($user == null){
+            $status = "Not Found";
+        }
+
+        return view('verificationPage', ["status" => $status]);
+        
     }
 }
