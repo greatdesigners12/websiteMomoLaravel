@@ -23,7 +23,7 @@ class StoreEmailSender extends Mailable
 
     public function __construct($subject, $id, $token)
     {
-        $this->url = "http://" . url("/") . "/emailVerification?" . "id=" . $id . "&" . "token=" .$token ;
+        $this->url = $_ENV['SERVER'] . "/emailVerification?" . "id=" . $id . "&" . "token=" .$token ;
         $this->subject = $subject;
     }
 

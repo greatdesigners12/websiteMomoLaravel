@@ -10,7 +10,7 @@
     @if ($status == "verified")
         <form action="{{route('verifyUser')}}" method="POST">
             @csrf
-            <input type="hidden" name="userId" value="{{$_GET['id']}}">
+            <input type="hidden" name="id" value="{{$_GET['id']}}">
             <button type="submit">Verify</button>
         </form>
     @else
