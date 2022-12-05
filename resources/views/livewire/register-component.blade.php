@@ -125,12 +125,9 @@
         });
         
         $("#registerBtn").click(function(){
-            console.log($("input[name=customSwitchSuccess]:checked"));
             if($('#customSwitchSuccess').is(':checked')){
                 
                 $("#registerForm").submit();
-            }else{
-                console.log("idk");
             }
         });
     </script>

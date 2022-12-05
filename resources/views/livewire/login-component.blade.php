@@ -45,7 +45,7 @@
                                     </div>
                                 @endif
                                 
-                                <form class="form-horizontal auth-form my-4" method="POST" action="{{route('processLogin')}}">
+                                <form class="form-horizontal auth-form my-4" id="loginForm" method="POST" action="{{route('processLogin')}}">
         
                                     <div class="form-group">
                                         @csrf
@@ -119,5 +119,4 @@
     </div><!--end container-->
     
      
-      
 </div>

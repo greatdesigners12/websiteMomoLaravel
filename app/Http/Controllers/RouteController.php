@@ -39,16 +39,20 @@ class RouteController extends Controller
     public function toRegisterPage(){
         
         $transaction = Transaction::first();
-        $url = $transaction->snap_token;
-        if (empty($snapToken)) {
-            // Jika snap token masih NULL, buat token snap dan simpan ke database
- 
-            $midtrans = new CreateSnapTokenService($transaction);
-            $url = $midtrans->getSnapToken();
- 
-            // $transaction->snap_token = $snapToken;
-            // $transaction->save();
+        $url = "";
+        if($transaction != null){
+            $url = $transaction->snap_token;
+            if (empty($snapToken)) {
+                // Jika snap token masih NULL, buat token snap dan simpan ke database
+    
+                $midtrans = new CreateSnapTokenService($transaction);
+                $url = $midtrans->getSnapToken();
+    
+                // $transaction->snap_token = $snapToken;
+                // $transaction->save();
+            }
         }
+        
         return view("auth.register", ["url" => $url]);
     }
 
@@ -65,6 +69,10 @@ class RouteController extends Controller
 
     public function toWishListPage(){
         return view('user-page.wishlist');
+    }
+
+    public function toProductManagementPage(){
+        return view('admin-page.product-management');
     }
 
     public function toCartPage(){

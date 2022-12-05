@@ -35,7 +35,8 @@ Route::post('/verifyUser', [AuthController::class, "verifyUser"])->name("verifyU
 Route::get('/wishlist', [RouteController::class, "toWishListPage"])->name("toWishListPage");
 Route::get('/cart', [RouteController::class, "toCartPage"])->name("toCartPage");
 
-
+// Admin
+Route::get('/productManagement', [RouteController::class, "toProductManagementPage"])->name("toProductManagementPage");
 
 // Utility
 Route::post('/sendEmailto', [RouteController::class, "sendEmail"])->name("sendEmailTo");
