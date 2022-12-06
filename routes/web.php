@@ -36,7 +36,12 @@ Route::get('/wishlist', [RouteController::class, "toWishListPage"])->name("toWis
 Route::get('/cart', [RouteController::class, "toCartPage"])->name("toCartPage");
 
 // Admin
+Route::get('/dashboard', [RouteController::class, "toDashboardPage"])->name("toDashboardPage");
+Route::get('/createProduct', [RouteController::class, "toCreateProductPage"])->name("toCreateProductPage");
 Route::get('/productManagement', [RouteController::class, "toProductManagementPage"])->name("toProductManagementPage");
+
+// Product
+Route::post('/processCreateProduct', [ProductController::class, "createProduct"])->name("processCreateProduct");
 
 // Utility
 Route::post('/sendEmailto', [RouteController::class, "sendEmail"])->name("sendEmailTo");

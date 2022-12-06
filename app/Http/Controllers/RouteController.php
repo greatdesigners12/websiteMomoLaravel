@@ -11,6 +11,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Mail;
 use App\Services\Midtrans\CreateSnapTokenService;
 
+
 class RouteController extends Controller
 {
     public function toHomePage(){
@@ -72,7 +73,15 @@ class RouteController extends Controller
     }
 
     public function toProductManagementPage(){
+       
+    
         return view('admin-page.product-management');
+    }
+
+    public function toCreateProductPage(){
+        $categories = Kategori::all();
+        $brands = Brand::all();
+        return view('admin-page.create-product', ["categories" => $categories, "brands" => $brands]);
     }
 
     public function toCartPage(){
@@ -81,5 +90,9 @@ class RouteController extends Controller
 
     public function toProtectedPage(){
         return view('protectedPage');
+    }
+
+    public function toDashboardPage(){
+        return view('admin-page.dashboard');
     }
 }
