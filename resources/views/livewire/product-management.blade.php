@@ -9,71 +9,43 @@
                     the construction function: <code>$().DataTable();</code>.
                 </p>
                 
-                <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                    <thead>
-                    <tr>
-                        <th>NAMA</th>
-                        <th>PRICE</th>
-                        <th>STOCK</th>
-                        <th>CATEGORY</th>
-                       
-                        <th>ACTION</th>
-                    </tr>
-                    </thead>
-
-
-                    <tbody>
-                    
-                    @foreach ($products as $product)
-                  
-                    <tr>
-                        <td>{{$product->name}}</td>
-                        <td>{{$product->price}}</td>
-                        <td>{{$product->stock}}</td>
-                        <td>{{$product->category_general}}</td>
-                        <td>
-                            <button type="button" class="btn btn-primary waves-effect waves-light" wire:click="openModal('{{$product->id}}')">EDIT</button>
-                            <button class="btn btn-danger">DELETE</button>
-                        </td>
-                    </tr>
-                    @endforeach
-                 
-                    </tbody>
-                </table>
-                <div >
-                    <x-modal wire:model.defer="simpleModal" x-on:close="$wire.call('closeModal')" >
-
-                        <x-card title="Update Product">
-                    
-                            <p class="text-gray-600">
-                                <div style='width: 100%; height:600px; overflow:scroll;'>
-                                    @include('admin-page.form.productForm')
-                                </div>
-                            </p>          
-                            <x-slot name="footer">
-                    
-                                <button type="submit" class="btn btn-gradient-primary">Submit</button>
-                    
-                            </x-slot>
-                    
-                        </x-card>
-                    
-                    </x-modal>
-                </div>
-                
-                <script>
-                    document.addEventListener("livewire:load", function(event) {
-                        console.log("brioawdaw");
-                    });
-                </script>
-               
-                
-                
-                
+                <livewire:product-table />
                 
             </div>
         </div>
     </div> <!-- end col -->
  
-   
+    <div class="modal" id="editModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Modal body text goes here.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    <script>
+        window.addEventListener('resetTable', event => {
+            console.log("the bro");
+            comsole.log($('#datatable'));
+            $('#datatable').DataTable();
+            console.log("hi bro");
+        });
+
+        window.addEventListener('showModal', event => {
+            $('#editModal').modal('show');
+        })
+    </script>
 </div>

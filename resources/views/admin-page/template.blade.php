@@ -25,8 +25,8 @@
         
         <link href="plugins/dropify/css/dropify.min.css" rel="stylesheet">
         @wireUiScripts
-
-        <script src="//unpkg.com/alpinejs" defer></script>  
+        <script src="//unpkg.com/alpinejs" defer></script>
+        
 
         @yield("cssImport")
         @livewireStyles

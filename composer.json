@@ -13,6 +13,7 @@
         "livewire/livewire": "^2.10",
         "midtrans/midtrans-php": "^2.5",
         "power-components/livewire-powergrid": "^3.5",
+        "rappasoft/laravel-livewire-tables": "^2.8",
         "sawirricardo/laravel-midtrans": "^1.5",
         "stichoza/google-translate-php": "^4.1",
         "vlucas/phpdotenv": "^5.5",

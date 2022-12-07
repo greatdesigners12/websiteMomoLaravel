@@ -44,11 +44,11 @@ class ProductManagement extends Component
         $this->category_id = $product->category_id;
         $this->stock = $product->stock;
         $this->company_id = $product->company_id;
- 
+        $this->dispatchBrowserEvent("showModal");
     }
 
     public function closeModal(){
-        dd("bro");
+        $this->dispatchBrowserEvent('resetTable');
     }
 
 
