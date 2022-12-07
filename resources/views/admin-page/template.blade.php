@@ -14,7 +14,8 @@
 
         <!-- jvectormap -->
         <link href="plugins/jvectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet">
-
+        @vite('resources/css/app.css')
+        @vite('resources/js/app.js')
         <!-- App css -->
         <link href="css/admin/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="css/admin/jquery-ui.min.css" rel="stylesheet">
@@ -22,10 +23,14 @@
         <link href="css/admin/metisMenu.min.css" rel="stylesheet" type="text/css" />
         <link href="css/admin/app.min.css" rel="stylesheet" type="text/css" />
         
-        <link href="plugins/dropify/css/dropify.min.css" rel="stylesheet">  
+        <link href="plugins/dropify/css/dropify.min.css" rel="stylesheet">
+        @wireUiScripts
+
+        <script src="//unpkg.com/alpinejs" defer></script>  
 
         @yield("cssImport")
         @livewireStyles
+      
 
     </head>
 

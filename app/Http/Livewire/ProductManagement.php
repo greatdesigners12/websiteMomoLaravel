@@ -13,8 +13,16 @@ class ProductManagement extends Component
     public $products;
     
     public $curProduct;
-    public $curId;
-    public $listeners = ["setId"];
+
+    public $simpleModal;
+    public $name;
+    public $description;
+    public $price;
+    public $category_id;
+    public $company_id;
+    public $stock;
+
+    protected $listeners = ['openSo' => 'closeModal'];
 
     public function mount(){
         $this->categories = Kategori::all();
@@ -25,6 +33,22 @@ class ProductManagement extends Component
     public function setId($id){
     //    $this->emit("setValue",  Product::find($id)->toArray());
         
+    }
+
+    public function openModal($id){
+        $this->simpleModal = true;
+        $product = Product::find($id);
+        $this->name = $product->name;
+        $this->price = $product->price;
+        $this->description = $product->description;
+        $this->category_id = $product->category_id;
+        $this->stock = $product->stock;
+        $this->company_id = $product->company_id;
+ 
+    }
+
+    public function closeModal(){
+        dd("bro");
     }
 
 

@@ -20,4 +20,5 @@
     <script src="plugins/datatables/dataTables.responsive.min.js"></script>
     <script src="plugins/datatables/responsive.bootstrap4.min.js"></script>
     <script src="helpers/jquery.datatable.init.js"></script>
+    
 @endsection

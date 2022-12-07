@@ -21,21 +21,19 @@
                 @csrf
                 <div class="form-group mt-3">
                     <label for="exampleInputEmail1">Product Name</label>
-                    @if($curProduct != null)
-                        @php(dd($curProduct->name))
-                    @endif
-                    <input type="text" class="form-control" id="exampleInputEmail1" value="{{$curProduct == null ? '' : $curProduct->name}}"  name="name" placeholder="Enter product name">
+                 
+                    <input type="text" class="form-control" id="exampleInputEmail1" wire:model="name"  name="name" placeholder="Enter product name">
                     {{-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> --}}
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Product Description</label>
-                    <textarea class="form-control" name="description" rows="5" id="message"></textarea>
+                    <textarea class="form-control" wire:model="description" name="description" rows="5" id="message"></textarea>
                     
                     {{-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> --}}
                 </div>
                 <div class="form-group">
                     <label class="mb-3">Category</label>
-                    <select class="select2 form-control mb-2 custom-select" name="category_id"  style="width: 100%; height:36px;">
+                    <select class="select2 form-control mb-2 custom-select" wire:model="category_id" name="category_id"  style="width: 100%; height:36px;">
                         <option>Select</option>
                     
                         @foreach ($categories as $category)
@@ -46,7 +44,7 @@
                 </div>
                 <div class="form-group">
                     <label class="mb-3">Brand</label>
-                    <select class="select2 form-control mb-2 custom-select"  name="company_id" style="width: 100%; height:36px;">
+                    <select class="select2 form-control mb-2 custom-select" wire:model="company_id"  name="company_id" style="width: 100%; height:36px;">
                         <option>Select</option>
                         @foreach ($brands as $brand)
                             <option value="{{$brand['id']}}">{{$brand['company_name']}}</option>
@@ -61,7 +59,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">Rp.</span>
                         </div>
-                        <input type="text"  id="example-input3-group1" name="price" class="form-control" placeholder=".."  >
+                        <input type="text"  id="example-input3-group1" wire:model="price" name="price" class="form-control" placeholder=".."  >
                         <div class="input-group-append">
                             <span class="input-group-text">.00</span>
                         </div>                                                    
@@ -69,7 +67,7 @@
                 </div>
                 <div class="form-group">
                     <label for="example-input3-group1">Stocks</label>
-                    <input type="number" class="form-control" name="stock" placeholder="Enter product stock"  >                                                  
+                    <input type="number" class="form-control" wire:model="stock" name="stock" placeholder="Enter product stock"  >                                                  
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Gambar Produk</label>
@@ -79,7 +77,10 @@
                         <input type="file" id="input-file-now" class="dropify" name="image_product" />                                                   
                                                                         
                 </div>
-                <button type="submit" class="btn btn-gradient-primary">Submit</button>
+                @if ($name == null)
+                    <button type="submit" class="btn btn-gradient-primary">Submit</button>
+                @endif
+                
     
         </form>                                           
     </div><!--end card-body-->
