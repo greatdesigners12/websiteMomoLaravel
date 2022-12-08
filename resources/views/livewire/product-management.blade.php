@@ -37,12 +37,6 @@
 
 
     <script>
-        window.addEventListener('resetTable', event => {
-            console.log("the bro");
-            comsole.log($('#datatable'));
-            $('#datatable').DataTable();
-            console.log("hi bro");
-        });
 
         window.addEventListener('showModal', event => {
             $('#editModal').modal('show');

@@ -85,6 +85,7 @@
         </form>                                           
     </div><!--end card-body-->
     <!--end card-->
+    
         
     <script src="plugins/dropify/js/dropify.min.js"></script>
     <script src="helpers/jquery.form-upload.init.js"></script>

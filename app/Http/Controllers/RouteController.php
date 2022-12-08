@@ -79,6 +79,7 @@ class RouteController extends Controller
     }
 
     public function toCreateProductPage(){
+        
         $categories = Kategori::all();
         $brands = Brand::all();
         return view('admin-page.create-product', ["categories" => $categories, "brands" => $brands]);

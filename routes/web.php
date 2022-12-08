@@ -5,6 +5,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RouteController;
 use App\Http\Controllers\AuthController;
 use App\Models\Kategori;
+use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
 /*

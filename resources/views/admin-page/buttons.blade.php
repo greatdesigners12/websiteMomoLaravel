@@ -1,0 +1,1 @@
+<livewire:basic-form-actions :curId="$value" />

@@ -23,9 +23,9 @@ class ProductTable extends DataTableComponent
                 ->sortable(),
             Column::make("Name", "name")->searchable()
                 ->sortable(),
-            Column::make("Category id", "category_id")
+            Column::make("Category", "Kategori.category_general")
                 ->sortable(),
-            Column::make("Company id", "company_id")
+            Column::make("Brand", "Brand.company_name")
                 ->sortable(),
             Column::make("Price", "price")
                 ->sortable(),
@@ -35,6 +35,9 @@ class ProductTable extends DataTableComponent
                 ->sortable(),
             Column::make("Description", "description")
                 ->sortable(),
+            Column::make("Action", "id")->format(
+                fn($value, $row, Column $column) => view("admin-page.buttons")->withValue($value)
+            ),
           
         ];
     }

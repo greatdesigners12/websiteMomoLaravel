@@ -51,10 +51,6 @@ class ProductManagement extends Component
         $this->dispatchBrowserEvent('resetTable');
     }
 
-
-
-    
-
     public function render()
     { 
         $this->products = DB::table('products')
