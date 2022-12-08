@@ -6,6 +6,7 @@ use App\Mail\StoreEmailSender;
 use App\Models\Brand;
 use Illuminate\Http\Request;
 use App\Models\Kategori;
+use App\Models\Product;
 use App\Models\Transaction;
 use App\Models\User;
 use Illuminate\Support\Facades\Mail;
@@ -70,6 +71,13 @@ class RouteController extends Controller
 
     public function toWishListPage(){
         return view('user-page.wishlist');
+    }
+
+    public function toEditProductPage($id){
+        $product = Product::find($id);
+        $categories = Kategori::all();
+        $brands = Brand::all();
+        return view('admin-page.edit-product', ["product" => $product, "categories" => $categories, "brands" => $brands]);
     }
 
     public function toProductManagementPage(){

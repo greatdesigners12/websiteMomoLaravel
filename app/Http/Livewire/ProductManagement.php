@@ -13,7 +13,8 @@ class ProductManagement extends Component
     public $products;
     
     public $curProduct;
-
+    public $categories;
+    public $brands;
     public $simpleModal;
     public $name;
     public $description;
@@ -22,12 +23,11 @@ class ProductManagement extends Component
     public $company_id;
     public $stock;
 
-    protected $listeners = ['openSo' => 'closeModal'];
-
     public function mount(){
         $this->categories = Kategori::all();
         $this->brands = Brand::all();
         $this->curProduct = null;
+        
     }
 
     public function setId($id){
@@ -45,10 +45,6 @@ class ProductManagement extends Component
         $this->stock = $product->stock;
         $this->company_id = $product->company_id;
         $this->dispatchBrowserEvent("showModal");
-    }
-
-    public function closeModal(){
-        $this->dispatchBrowserEvent('resetTable');
     }
 
     public function render()

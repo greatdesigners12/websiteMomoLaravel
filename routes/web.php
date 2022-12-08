@@ -39,6 +39,7 @@ Route::get('/cart', [RouteController::class, "toCartPage"])->name("toCartPage");
 // Admin
 Route::get('/dashboard', [RouteController::class, "toDashboardPage"])->name("toDashboardPage");
 Route::get('/createProduct', [RouteController::class, "toCreateProductPage"])->name("toCreateProductPage");
+Route::get('/editProduct/{id}', [RouteController::class, "toEditProductPage"])->name("toEditProductPage");
 Route::get('/productManagement', [RouteController::class, "toProductManagementPage"])->name("toProductManagementPage");
 
 // Product
