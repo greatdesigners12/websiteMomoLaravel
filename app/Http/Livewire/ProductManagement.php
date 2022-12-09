@@ -7,6 +7,7 @@ use App\Models\Brand;
 use App\Models\Product;
 use Livewire\Component;
 use Illuminate\Support\Facades\DB;
+use WireUi\Traits\Actions;
 
 class ProductManagement extends Component
 {
@@ -22,6 +23,8 @@ class ProductManagement extends Component
     public $category_id;
     public $company_id;
     public $stock;
+    
+    use Actions;
 
     public function mount(){
         $this->categories = Kategori::all();
@@ -47,6 +50,11 @@ class ProductManagement extends Component
         $this->dispatchBrowserEvent("showModal");
     }
 
+    
+
+    
+
+    
     public function render()
     { 
         $this->products = DB::table('products')

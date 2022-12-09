@@ -8,10 +8,9 @@
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
         <meta content="" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
+        @vite('resources/css/app.css')
         <!-- App favicon -->
         <link rel="shortcut icon" href="imaadmin/ges/favicon.ico">
-
         <!-- jvectormap -->
         <link href="plugins/jvectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet">
 
@@ -25,12 +24,15 @@
         <link href="{{asset('plugins/dropify/css/dropify.min.css')}}" rel="stylesheet">  
         @yield("cssImport") 
         @livewireStyles
+       
 
     </head>
 
     <body>
         @livewireScripts
-        <script src="js/admin/jquery.min.js"></script>
+        @wireUiScripts
+        <script src="//unpkg.com/alpinejs" defer></script>
+        <script src="{{asset('js/admin/jquery.min.js')}}"></script>
         @include('admin-page.topbar')
         @include('admin-page.sidebar')
         <div class="page-wrapper">
@@ -42,8 +44,11 @@
             </div>
         </div>
     <!-- jQuery  -->
-    @wireUiScripts
-    <script src="//unpkg.com/alpinejs" defer></script>
+    
+
+
+    
+    
     <script src="{{asset('js/admin/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('js/admin/metismenu.min.js')}}"></script>
     <script src="{{asset('js/admin/waves.js')}}"></script>
@@ -56,6 +61,8 @@
     <script src="{{asset('plugins/jvectormap/jquery-jvectormap-2.0.2.min.js')}}"></script>
     <script src="{{asset('plugins/jvectormap/jquery-jvectormap-us-aea-en.js')}}"></script>
     <script src="{{asset('helpers/jquery.analytics_dashboard.init.js')}}"></script>
+    <script src="{{asset('plugins/dropify/js/dropify.min.js')}}"></script>
+    <script src="{{asset('helpers/jquery.form-upload.init.js')}}"></script>
 
     <!-- App js -->
     <script src="{{asset('js/admin/jquery.core.js')}}"></script>

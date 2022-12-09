@@ -6,15 +6,50 @@ use Rappasoft\LaravelLivewireTables\DataTableComponent;
 use Rappasoft\LaravelLivewireTables\Views\Column;
 use App\Models\Product;
 
+
+use WireUi\Traits\Actions;
+
 class ProductTable extends DataTableComponent
 {
     protected $model = Product::class;
-
+    use Actions;
     public function configure(): void
     {
         $this->setPrimaryKey('id');
         $this->setSearchEnabled();
     }
+
+    public function delete($id): void
+
+    {
+        
+
+        // use a simple syntax
+
+        $this->dialog()->confirm([
+
+            'title'       => 'Are you Sure?',
+
+            'description' => 'Save the information?',
+
+            'acceptLabel' => 'Yes, save it',
+
+            'method'      => 'save',
+
+            'params'      => $id,
+
+        ]);
+
+
+
+        
+
+    }
+
+    public function save($id){
+        
+    }
+
 
     public function columns(): array
     {

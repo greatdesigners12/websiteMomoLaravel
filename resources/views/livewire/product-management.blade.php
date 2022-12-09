@@ -1,4 +1,18 @@
 <div>
+    @if (session()->has("message"))
+        <div class="alert alert-success">
+            {{session()->get("message")}}
+        </div>
+    @endif
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul style="margin-bottom: 0px;">
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <div class="col-12">
         <div class="card">
             <div class="card-body">
@@ -10,19 +24,19 @@
                 </p>
                 
                 <livewire:product-table />
+                <x-dialog />
                 
             </div>
         </div>
     </div> <!-- end col -->
+    
  
     
 
 
 
     <script>
-
-        window.addEventListener('showModal', event => {
-            $('#editModal').modal('show');
-        })
+      
+       
     </script>
 </div>

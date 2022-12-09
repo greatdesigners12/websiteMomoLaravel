@@ -44,6 +44,7 @@ Route::get('/productManagement', [RouteController::class, "toProductManagementPa
 
 // Product
 Route::post('/processCreateProduct', [ProductController::class, "createProduct"])->name("processCreateProduct");
+Route::post('/processUpdateProduct', [ProductController::class, "updateProduct"])->name("processUpdateProduct");
 
 // Utility
 Route::post('/sendEmailto', [RouteController::class, "sendEmail"])->name("sendEmailTo");
