@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Kategori;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
-class KategoriController extends Controller
+class CategoryController extends Controller
 {
     function getAll(){
-        return Kategori::all();
+        return Category::all();
     }
 }

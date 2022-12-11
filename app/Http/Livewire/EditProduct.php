@@ -4,7 +4,7 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 
-class EditProduct extends Component
+class Editproduct extends Component
 {
     public $categories;
     public $brands;

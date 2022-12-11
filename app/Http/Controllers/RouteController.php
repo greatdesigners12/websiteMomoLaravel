@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use App\Mail\StoreEmailSender;
 use App\Models\Brand;
 use Illuminate\Http\Request;
-use App\Models\Kategori;
-use App\Models\Product;
+use App\Models\Category;
+use App\Models\product;
 use App\Models\Transaction;
 use App\Models\User;
 use Illuminate\Support\Facades\Mail;
@@ -16,11 +16,11 @@ use App\Services\Midtrans\CreateSnapTokenService;
 class RouteController extends Controller
 {
     public function toHomePage(){
-        return view("welcome", ["allKategori" => Kategori::all(), "curProducts" => ProductController::getProductsBasedOnCategoryId("1"), "brands" => Brand::all()]);
+        return view("welcome", ["allCategory" => Category::all(), "curproducts" => ProductController::getproductsBasedOnCategoryId("1"), "brands" => Brand::all()]);
     }
 
-    public function toProductsPage(){
-        return view("productList", ["categories" => Kategori::all()]);
+    public function toproductsPage(){
+        return view("productList", ["categories" => Category::all()]);
     }
     public function toContactPage(){
         return view("ContactUs");
@@ -73,22 +73,22 @@ class RouteController extends Controller
         return view('user-page.wishlist');
     }
 
-    public function toEditProductPage($id){
-        $product = Product::find($id);
-        $categories = Kategori::all();
+    public function toEditproductPage($id){
+        $product = product::find($id);
+        $categories = Category::all();
         $brands = Brand::all();
         return view('admin-page.edit-product', ["product" => $product, "categories" => $categories, "brands" => $brands]);
     }
 
-    public function toProductManagementPage(){
+    public function toproductManagementPage(){
        
     
         return view('admin-page.product-management');
     }
 
-    public function toCreateProductPage(){
+    public function toCreateproductPage(){
         
-        $categories = Kategori::all();
+        $categories = Category::all();
         $brands = Brand::all();
         return view('admin-page.create-product', ["categories" => $categories, "brands" => $brands]);
     }

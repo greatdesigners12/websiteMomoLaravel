@@ -2,7 +2,7 @@
 <div class="col-12 mt-3">
     <div class="card">
         <div class="card-body">
-            <h4 class="mt-0 header-title">Create Product</h4>
+            <h4 class="mt-0 header-title">Create product</h4>
             @if (session()->has("message"))
                 <div class="alert alert-success">
                     {{session()->get("message")}}
@@ -17,16 +17,16 @@
                     </ul>
                 </div>
             @endif
-            <form method="POST" action="{{route('processCreateProduct')}}" enctype="multipart/form-data">
+            <form method="POST" action="{{route('processCreateproduct')}}" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group mt-3">
-                    <label for="exampleInputEmail1">Product Name</label>
+                    <label for="exampleInputEmail1">product Name</label>
                  
                     <input type="text" class="form-control" id="exampleInputEmail1" value="{{$product == null ? '' : $product->name}}" name="name" placeholder="Enter product name">
                     {{-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> --}}
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Product Description</label>
+                    <label for="exampleInputEmail1">product Description</label>
                     <textarea class="form-control" wire:model="description" name="description" rows="5" id="message">{{$product == null ? '' : $product->description}}</textarea>
                     
                     {{-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> --}}
@@ -44,10 +44,13 @@
                 </div>
                 <div class="form-group">
                     <label class="mb-3">Brand</label>
-                    <select class="select2 form-control mb-2 custom-select" value="{{$product == null ? '' : $product->company_id}}"  name="company_id" style="width: 100%; height:36px;">
+                    <select class="select2 form-control mb-2 custom-select" value="{{$product == null ? '' : $product->brand_id}}"  name="id" style="width: 100%; height:36px;">
                         <option>Select</option>
                         @foreach ($brands as $brand)
-                            <option value="{{$brand['id']}}">{{$brand['company_name']}}</option>
+                            @if ($brand['id']!=1)
+                            <option value="{{$brand['id']}}">{{$brand['logo']}}</option>
+                            @endif
+                            
                         @endforeach
                         
                     
@@ -70,7 +73,7 @@
                     <input type="number" class="form-control" name="stock" value="{{$product == null ? '' : $product->stock}}" placeholder="Enter product stock"  >                                                  
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Gambar Produk</label>
+                    <label for="exampleInputPassword1">Gambar Product</label>
                     <div class="col-12 mb-3">
                         
                     

@@ -4,11 +4,11 @@ namespace App\Http\Livewire;
 
 use Rappasoft\LaravelLivewireTables\DataTableComponent;
 use Rappasoft\LaravelLivewireTables\Views\Column;
-use App\Models\Product;
+use App\Models\product;
 
-class ProductTable extends DataTableComponent
+class productTable extends DataTableComponent
 {
-    protected $model = Product::class;
+    protected $model = product::class;
 
     public function configure(): void
     {
@@ -23,9 +23,9 @@ class ProductTable extends DataTableComponent
                 ->sortable(),
             Column::make("Name", "name")->searchable()
                 ->sortable(),
-            Column::make("Category", "Kategori.category_general")
+            Column::make("Category", "Category.name")
                 ->sortable(),
-            Column::make("Brand", "Brand.company_name")
+            Column::make("Brand", "Brand.name")
                 ->sortable(),
             Column::make("Price", "price")
                 ->sortable(),

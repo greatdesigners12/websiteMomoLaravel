@@ -1,10 +1,10 @@
 <?php
 
-use App\Http\Controllers\KategoriController;
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\productController;
 use App\Http\Controllers\RouteController;
 use App\Http\Controllers\AuthController;
-use App\Models\Kategori;
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [RouteController::class, "toHomePage"])->name("home");
-Route::get('/products', [RouteController::class, "toProductsPage"])->name("products");
+Route::get('/products', [RouteController::class, "toproductsPage"])->name("products");
 Route::get('/contact', [RouteController::class, "toContactPage"])->name("contact");
 
 // authentication
@@ -38,12 +38,12 @@ Route::get('/cart', [RouteController::class, "toCartPage"])->name("toCartPage");
 
 // Admin
 Route::get('/dashboard', [RouteController::class, "toDashboardPage"])->name("toDashboardPage");
-Route::get('/createProduct', [RouteController::class, "toCreateProductPage"])->name("toCreateProductPage");
-Route::get('/editProduct/{id}', [RouteController::class, "toEditProductPage"])->name("toEditProductPage");
-Route::get('/productManagement', [RouteController::class, "toProductManagementPage"])->name("toProductManagementPage");
+Route::get('/createproduct', [RouteController::class, "toCreateproductPage"])->name("toCreateproductPage");
+Route::get('/editproduct/{id}', [RouteController::class, "toEditproductPage"])->name("toEditproductPage");
+Route::get('/productManagement', [RouteController::class, "toproductManagementPage"])->name("toproductManagementPage");
 
-// Product
-Route::post('/processCreateProduct', [ProductController::class, "createProduct"])->name("processCreateProduct");
+// product
+Route::post('/processCreateproduct', [productController::class, "createproduct"])->name("processCreateproduct");
 
 // Utility
 Route::post('/sendEmailto', [RouteController::class, "sendEmail"])->name("sendEmailTo");

@@ -27,7 +27,7 @@
                         <!--Start single item-->
                         <div class="single-item text-center">
                             <div class="text-holder">
-                                <p>{{__('Produk yang ditawarkan lumayan lengkap dan harga juga lumayan terjangkau. Tempat parkir juga nyaman, nggk ribet. Untuk ruangannya juga bikin betah dan mbk-mbknya juga ramah-ramah. Jadi pingin kembali terus ke momo accessoris. Apalagi ada promo-promo yang nggk ada habisnya. Tempatnya bersih dan nyaman. Banyak variasinya, jadi berasa nggk perlu cari ke toko lain. Mantep banget lah pokoknya. Overall sudah oke banget.')}}</p>
+                                <p>{{__('Product yang ditawarkan lumayan lengkap dan harga juga lumayan terjangkau. Tempat parkir juga nyaman, nggk ribet. Untuk ruangannya juga bikin betah dan mbk-mbknya juga ramah-ramah. Jadi pingin kembali terus ke momo accessoris. Apalagi ada promo-promo yang nggk ada habisnya. Tempatnya bersih dan nyaman. Banyak variasinya, jadi berasa nggk perlu cari ke toko lain. Mantep banget lah pokoknya. Overall sudah oke banget.')}}</p>
                             </div>
                             <div class="client-info">
                                 <div class="img-holder">
