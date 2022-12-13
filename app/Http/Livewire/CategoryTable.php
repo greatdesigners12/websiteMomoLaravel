@@ -49,9 +49,9 @@ class CategoryTable extends DataTableComponent
     public function columns(): array
     {
         return [
-            Column::make("Id", "id")
+            Column::make("Id", "id")->searchable()
                 ->sortable(),
-            Column::make("Category", "category")
+            Column::make("Category", "category")->searchable()
                 ->sortable(),
             Column::make("Action", "id")->format(
                 fn($value, $row, Column $column) => view("admin-page.category-management.buttons")->withValue($value)

@@ -10,18 +10,31 @@ class BrandTable extends DataTableComponent
 {
     protected $model = Brand::class;
 
+    protected $listeners = ["brandsUpdated"];
+
     public function configure(): void
     {
         $this->setPrimaryKey('id');
+    }
+    public function openEditModal($id){
+       
+        $this->emit("openBrandEditModal", $id);
+    }
+
+    public function brandsUpdated(){
+        
     }
 
     public function columns(): array
     {
         return [
             Column::make("Id", "id")
-                ->sortable(),
+                ->sortable()->searchable(),
             Column::make("Name", "name")
-                ->sortable(),
+                ->sortable()->searchable(),
+            Column::make("Action", "id")->format(
+                fn($value, $row, Column $column) => view("admin-page.brand-management.buttons")->withValue($value)
+            )
             
         ];
     }

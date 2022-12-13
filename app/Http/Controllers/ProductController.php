@@ -42,7 +42,8 @@ class ProductController extends Controller
             $validated = $validator->validated();
             
             $imageName = time().'.'.$request->image_product->extension(); 
-            $request->image_product->move(public_path('img/momo_product/'), $imageName);
+            
+            $this->photo->storeAs('img/momo_product/', $imageName, 'public');
             $validated['image_product'] = $imageName;
             Product::create($validated);
             return redirect()->back()->with("message", "Product has been inserted");
@@ -59,11 +60,13 @@ class ProductController extends Controller
             return redirect()->back()->withErrors($validator);
         }else{
             if($request->image_product != null){
-                if (File::exists(public_path('img/momo_product/' . $firstImg['image_product']))) {
-                    File::delete(public_path('img/momo_product/' . $firstImg['image_product']));
+                
+                if (Storage::disk('public')->exists("img/momo_product/" . $firstImg['image_product'])) {
+                
+                    Storage::disk('public')->delete("img/momo_product/" . $firstImg['image_product']);
                 }
                 $imageName = time().'.'.$request->image_product->extension(); 
-                $request->image_product->move(public_path('img/momo_product/'), $imageName);
+                $request->image_product->storeAs("img/momo_product/", $imageName, "public");
                 $validated['image_product'] = $imageName;
             }else{
                 $validated['image_product'] = $firstImg["image_product"];

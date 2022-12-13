@@ -30,7 +30,7 @@
                             <ul>
                                 <li><a href="#" class="{{$curCategory == 'semua' ? 'active' : ''}}" onclick="return false;" wire:click="setCategory('semua')">{{__('Semua')}} </a></li>
                                 @foreach ($categories as $category)
-                                    <li><a href="#" onclick="return false;" class="{{$curCategory == $category->id ? 'active' : ''}}"  wire:click="setCategory('{{$category->id}}')">{{__($category->name)}} </a></li>
+                                    <li><a href="#" onclick="return false;" class="{{$curCategory == $category->id ? 'active' : ''}}"  wire:click="setCategory('{{$category->id}}')">{{__($category->category)}} </a></li>
                                 @endforeach
                                 
                             </ul>

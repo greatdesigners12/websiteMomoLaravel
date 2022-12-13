@@ -14,7 +14,7 @@
                     @foreach ($allCategory as $Category)
                     <li class="{{$curCategory == $Category->id ? 'active' : ''}} ">
                        
-                        <a href="#trending-tab_1" wire:click="setCategory('{{$Category->id}}')">{{__($Category->name)}}</a>
+                        <a href="#trending-tab_1" wire:click="setCategory('{{$Category->id}}')">{{__($Category->category)}}</a>
                     </li>
                     @endforeach
                     
@@ -30,7 +30,7 @@
                                 
                                     <div class="products-item__img">
                                         <img 
-                                            src="img/momo_product/{{$product->image_product}}" class="js-img" alt="">
+                                            src="{{asset('storage/img/momo_product/').'/' . $product->image_product}}" class="js-img" alt="">
                                         <div class="products-item__hover">
                                            
                                         </div>

@@ -23,6 +23,7 @@ class AuthController extends Controller
     }
 
     public function login(Request $request){ 
+
         $rules = ['email' => 'required|email', 'password' => "required|min:6"];
         $messages = ["required" => "Input :attribute tidak boleh kosong", "password.min" => "Jumlah karakter password harus lebih dari 5 karakter"];
 
@@ -38,7 +39,14 @@ class AuthController extends Controller
             
             if(Auth::attempt($credentials, $request->rememberMe)){
                 $request->session()->regenerate();
-                return redirect()->route("home");
+                
+                $user = User::find(Auth::id())->first();
+                if($user->is_phone_verified == 0){
+                    return redirect()->route("toValidatePhoneNumber");
+                }else{
+                    return redirect()->route("home");
+                }
+                
             }
     
             return redirect()->back()->withErrors([

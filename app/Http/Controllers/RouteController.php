@@ -11,6 +11,7 @@ use App\Models\Transaction;
 use App\Models\User;
 use Illuminate\Support\Facades\Mail;
 use App\Services\Midtrans\CreateSnapTokenService;
+use Illuminate\Support\Facades\Auth;
 
 
 class RouteController extends Controller
@@ -106,7 +107,7 @@ class RouteController extends Controller
     }
 
     public function toBrandsManagementPage(){
-        return view('admin-page.brand-management');
+        return view('admin-page.brand-management.brand-management');
     }
 
     public function toCategoriesManagementPage(){
@@ -119,7 +120,11 @@ class RouteController extends Controller
     }
 
     public function toValidatePhoneNumber(){
-        
-        return view('auth.phoneNumberForm');
+        $hasPhoneNumber = true;
+        if(Auth::check()){
+            $user = User::find(Auth::id());
+            $hasPhoneNumber = $user->is_phone_verified == 1;
+        }
+        return view('auth.phoneNumberForm', ["hasPhoneNumber" => $hasPhoneNumber]);
     }
 }

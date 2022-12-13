@@ -1,5 +1,7 @@
 @extends('auth.template')
 
+
+
 @section('content')
 <div>
     <div class="container">
@@ -12,7 +14,7 @@
                                 <div class="auth-logo-box">
                                     <a href="../dashboard/analytics-index.html" class="logo logo-admin"><img src="../assets/images/logo-sm.png" height="55" alt="logo" class="auth-logo"></a>
                                 </div><!--end auth-logo-box-->
-                                @if (Auth::check())
+                                @if (Auth::check() && !$hasPhoneNumber)
                                 <div class="text-center auth-logo-text">
                                     <h4 class="mt-0 mb-3 mt-5">Let's Get Started Crovex</h4>
                                     <p class="text-muted mb-0">Sign in to continue to Crovex.</p>  

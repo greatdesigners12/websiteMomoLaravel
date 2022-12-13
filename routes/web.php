@@ -32,7 +32,7 @@ Route::post('/processLogin', [AuthController::class, "login"])->name("processLog
 Route::get('/emailVerification', [RouteController::class, "toVerificationPage"])->name("toVerificationPage");
 Route::post('/verifyUser', [AuthController::class, "verifyUser"])->name("verifyUser");
 Route::post('/processPhoneNumber', [AuthController::class, "processPhoneNumber"])->name("processPhoneNumber");
-Route::get('/validatePhoneNumber', [RouteController::class, "toValidatePhoneNumber"])->name("toValidatePhoneNumber");
+Route::get('/validatePhoneNumber', [RouteController::class, "toValidatePhoneNumber"])->middleware('hasPhoneNumber')->name("toValidatePhoneNumber");
 Route::get('/otpVerification/{token}', [RouteController::class, "toOtpVerificationPage"])->name("toOtpVerificationPage");
 
 // User 
