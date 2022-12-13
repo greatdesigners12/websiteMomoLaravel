@@ -59,6 +59,15 @@
                                             <input type="email" name="email" class="form-control" id="useremail" placeholder="Enter Email">
                                         </div>                                    
                                     </div><!--end form-group-->
+                                    <div class="form-group">
+                                        <label for="useremail">No telp</label>
+                                        <div class="input-group mb-3">
+                                            <span class="auth-form-icon">
+                                                <i class="dripicons-mail"></i> 
+                                            </span>                                                                                                              
+                                            <input type="text" name="noTelp" class="form-control" placeholder="Enter No Telp">
+                                        </div>                                    
+                                    </div><!--end form-group-->
         
                                     <div class="form-group">
                                         <label for="userpassword">Password</label>                                            

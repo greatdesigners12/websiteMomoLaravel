@@ -11,10 +11,10 @@
             
             <div class="tab-wrap trending-tabs">
                 <ul class="nav-tab-list tabs">
-                    @foreach ($allKategori as $kategori)
-                    <li class="{{$curKategori == $kategori->id ? 'active' : ''}} ">
+                    @foreach ($allCategory as $Category)
+                    <li class="{{$curCategory == $Category->id ? 'active' : ''}} ">
                        
-                        <a href="#trending-tab_1" wire:click="setKategori('{{$kategori->id}}')">{{__($kategori->category_general)}}</a>
+                        <a href="#trending-tab_1" wire:click="setCategory('{{$Category->id}}')">{{__($Category->name)}}</a>
                     </li>
                     @endforeach
                     

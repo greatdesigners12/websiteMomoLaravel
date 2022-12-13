@@ -26,6 +26,8 @@ class User extends Authenticatable
         'token'
     ];
 
+    
+
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -46,4 +48,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function user_information(){
+        return $this->hasOne(UserInformation::class);
+    }
 }

@@ -3,7 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Brand;
-use App\Models\Kategori;
+use App\Models\Category;
 use App\Models\Product;
 use Livewire\Component;
 
@@ -23,7 +23,7 @@ class BasicFormActions extends Component
     protected $listeners = ['setId'];
 
     public function mount(){
-        $this->categories = Kategori::all();
+        $this->categories = Category::all();
         $this->brands = Brand::all();
         
     }

@@ -3,7 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Http\Controllers\ProductController;
-use App\Models\Kategori;
+use App\Models\Category;
 use App\Models\Product;
 use Livewire\Component;
 use Stichoza\GoogleTranslate\GoogleTranslate;
@@ -11,12 +11,12 @@ use Stichoza\GoogleTranslate\GoogleTranslate;
 class ProductPilihan extends Component
 {
 
-    public $kategori;
-    public $curKategori;
+    public $allCategories;
+    public $curCategory;
     public $curProducts;
 
     public function mount(){
-        $this->curKategori = $this->kategori[0]->id;
+        $this->curCategory = $this->allCategories[0]->id;
     }
 
     public function translateKeInggris($str){
@@ -29,8 +29,8 @@ class ProductPilihan extends Component
         return $tr->translate($str);
     }
 
-    public function setKategori($kategori){
-        $this->curKategori = $kategori;
+    public function setCategory($Category){
+        $this->curCategory = $Category;
         
         $this->setProducts();
         $this->reInitSlider();
@@ -43,12 +43,12 @@ class ProductPilihan extends Component
         }
 
     public function setProducts(){
-        $this->curProducts = Product::where("category_id", $this->curKategori)->limit(5)->get();
+        $this->curProducts = Product::where("category_id", $this->curCategory)->limit(5)->get();
     }
 
     public function render()
     {
         
-        return view('livewire.product-pilihan', ["allKategori" => $this->kategori, "curProducts" => $this->curProducts]);
+        return view('livewire.product-pilihan', ["allCategory" => $this->allCategories, "curProducts" => $this->curProducts]);
     }
 }

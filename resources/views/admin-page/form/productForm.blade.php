@@ -39,7 +39,7 @@
                     
                         @foreach ($categories as $category)
                             
-                            <option value="{{$category['id']}}" {{$category->id == $product->category_id ? 'selected' : ''}} >{{$category['category_general']}}</option>
+                            <option value="{{$category['id']}}" {{$category->id == $product->category_id ? 'selected' : ''}} >{{$category['category']}}</option>
                         @endforeach
                     </select>
                 </div>
@@ -48,7 +48,7 @@
                     <select class="select2 form-control mb-2 custom-select" wire:model.defer='company_id' name="company_id"  style="width: 100%; height:36px;">
                         <option>Select</option>
                         @foreach ($brands as $brand)
-                            <option value="{{$brand['id']}}" {{$brand->id == $product->company_id ? 'selected' : ''}}>{{$brand['company_name']}}</option>
+                            <option value="{{$brand['id']}}" {{$brand->id == $product->company_id ? 'selected' : ''}}>{{$brand['name']}}</option>
                         @endforeach
                         
                     

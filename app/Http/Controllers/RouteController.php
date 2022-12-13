@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Mail\StoreEmailSender;
 use App\Models\Brand;
 use Illuminate\Http\Request;
-use App\Models\Kategori;
+use App\Models\Category;
 use App\Models\Product;
 use App\Models\Transaction;
 use App\Models\User;
@@ -16,11 +16,11 @@ use App\Services\Midtrans\CreateSnapTokenService;
 class RouteController extends Controller
 {
     public function toHomePage(){
-        return view("welcome", ["allKategori" => Kategori::all(), "curProducts" => ProductController::getProductsBasedOnCategoryId("1"), "brands" => Brand::all()]);
+        return view("welcome", ["allCategory" => Category::all(), "curProducts" => ProductController::getProductsBasedOnCategoryId("1"), "brands" => Brand::all()]);
     }
 
     public function toProductsPage(){
-        return view("productList", ["categories" => Kategori::all()]);
+        return view("productList", ["categories" => Category::all()]);
     }
     public function toContactPage(){
         return view("ContactUs");
@@ -75,20 +75,20 @@ class RouteController extends Controller
 
     public function toEditProductPage($id){
         $product = Product::find($id);
-        $categories = Kategori::all();
+        $categories = Category::all();
         $brands = Brand::all();
         return view('admin-page.edit-product', ["product" => $product, "categories" => $categories, "brands" => $brands]);
     }
 
-    public function toProductManagementPage(){
+    public function toProductsManagementPage(){
        
     
-        return view('admin-page.product-management');
+        return view('admin-page.product-management.product-management');
     }
 
     public function toCreateProductPage(){
         
-        $categories = Kategori::all();
+        $categories = Category::all();
         $brands = Brand::all();
         return view('admin-page.create-product', ["categories" => $categories, "brands" => $brands]);
     }
@@ -103,5 +103,23 @@ class RouteController extends Controller
 
     public function toDashboardPage(){
         return view('admin-page.dashboard');
+    }
+
+    public function toBrandsManagementPage(){
+        return view('admin-page.brand-management');
+    }
+
+    public function toCategoriesManagementPage(){
+        return view('admin-page.category-management.category-management');
+    }
+
+    public function toOtpVerificationPage($token){
+        
+        return view('auth.otpVerificationPage', ["token" => $token]);
+    }
+
+    public function toValidatePhoneNumber(){
+        
+        return view('auth.phoneNumberForm');
     }
 }

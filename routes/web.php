@@ -1,10 +1,10 @@
 <?php
 
-use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RouteController;
 use App\Http\Controllers\AuthController;
-use App\Models\Kategori;
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
@@ -31,6 +31,9 @@ Route::get('/login', [RouteController::class, "toLoginPage"])->name("toLoginPage
 Route::post('/processLogin', [AuthController::class, "login"])->name("processLogin");
 Route::get('/emailVerification', [RouteController::class, "toVerificationPage"])->name("toVerificationPage");
 Route::post('/verifyUser', [AuthController::class, "verifyUser"])->name("verifyUser");
+Route::post('/processPhoneNumber', [AuthController::class, "processPhoneNumber"])->name("processPhoneNumber");
+Route::get('/validatePhoneNumber', [RouteController::class, "toValidatePhoneNumber"])->name("toValidatePhoneNumber");
+Route::get('/otpVerification/{token}', [RouteController::class, "toOtpVerificationPage"])->name("toOtpVerificationPage");
 
 // User 
 Route::get('/wishlist', [RouteController::class, "toWishListPage"])->name("toWishListPage");
@@ -40,11 +43,17 @@ Route::get('/cart', [RouteController::class, "toCartPage"])->name("toCartPage");
 Route::get('/dashboard', [RouteController::class, "toDashboardPage"])->name("toDashboardPage");
 Route::get('/createProduct', [RouteController::class, "toCreateProductPage"])->name("toCreateProductPage");
 Route::get('/editProduct/{id}', [RouteController::class, "toEditProductPage"])->name("toEditProductPage");
-Route::get('/productManagement', [RouteController::class, "toProductManagementPage"])->name("toProductManagementPage");
+Route::get('/productsManagement', [RouteController::class, "toProductsManagementPage"])->name("toProductsManagementPage");
+Route::get('/brandsManagement', [RouteController::class, "toBrandsManagementPage"])->name("toBrandsManagementPage");
+Route::get('/categoriesManagement', [RouteController::class, "toCategoriesManagementPage"])->name("toategoriesManagementPage");
 
 // Product
 Route::post('/processCreateProduct', [ProductController::class, "createProduct"])->name("processCreateProduct");
 Route::post('/processUpdateProduct', [ProductController::class, "updateProduct"])->name("processUpdateProduct");
+
+// Brand
+
+
 
 // Utility
 Route::post('/sendEmailto', [RouteController::class, "sendEmail"])->name("sendEmailTo");

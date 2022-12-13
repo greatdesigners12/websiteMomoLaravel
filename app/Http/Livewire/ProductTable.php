@@ -5,8 +5,7 @@ namespace App\Http\Livewire;
 use Rappasoft\LaravelLivewireTables\DataTableComponent;
 use Rappasoft\LaravelLivewireTables\Views\Column;
 use App\Models\Product;
-
-
+use Illuminate\Support\Facades\File; 
 use WireUi\Traits\Actions;
 
 class ProductTable extends DataTableComponent
@@ -19,7 +18,7 @@ class ProductTable extends DataTableComponent
         $this->setSearchEnabled();
     }
 
-    public function delete($id): void
+    public function deletePdct($id): void
 
     {
         
@@ -30,11 +29,13 @@ class ProductTable extends DataTableComponent
 
             'title'       => 'Are you Sure?',
 
-            'description' => 'Save the information?',
+            'description' => 'Do you really want to delete this product ?',
+            
+            'icon'        => 'question',
 
-            'acceptLabel' => 'Yes, save it',
+            'acceptLabel' => 'Delete',
 
-            'method'      => 'save',
+            'method'      => 'processDelete',
 
             'params'      => $id,
 
@@ -46,7 +47,16 @@ class ProductTable extends DataTableComponent
 
     }
 
-    public function save($id){
+    public function processDelete($id){
+        $product = Product::where("id", $id);
+        $productData = $product->select("image_product")->first();
+      
+        if (File::exists(public_path('img/momo_product/' . $productData->image_product))) {
+            File::delete(public_path('img/momo_product/' . $productData->image_product));
+        }
+        $product->delete();
+        $this->emit('deleteMessage');
+        
         
     }
 
@@ -58,9 +68,9 @@ class ProductTable extends DataTableComponent
                 ->sortable(),
             Column::make("Name", "name")->searchable()
                 ->sortable(),
-            Column::make("Category", "Kategori.category_general")
+            Column::make("Category", "Category.category")
                 ->sortable(),
-            Column::make("Brand", "Brand.company_name")
+            Column::make("Brand", "Brand.name")
                 ->sortable(),
             Column::make("Price", "price")
                 ->sortable(),
@@ -71,7 +81,7 @@ class ProductTable extends DataTableComponent
             Column::make("Description", "description")
                 ->sortable(),
             Column::make("Action", "id")->format(
-                fn($value, $row, Column $column) => view("admin-page.buttons")->withValue($value)
+                fn($value, $row, Column $column) => view("admin-page.product-management.buttons")->withValue($value)
             ),
           
         ];

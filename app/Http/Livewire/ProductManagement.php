@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Kategori;
+use App\Models\Category;
 use App\Models\Brand;
 use App\Models\Product;
 use Livewire\Component;
@@ -23,14 +23,18 @@ class ProductManagement extends Component
     public $category_id;
     public $company_id;
     public $stock;
-    
+    protected $listeners = ['deleteMessage'];
     use Actions;
 
     public function mount(){
-        $this->categories = Kategori::all();
+        $this->categories = Category::all();
         $this->brands = Brand::all();
         $this->curProduct = null;
         
+    }
+
+    public function deleteMessage(){
+        session()->flash('message', 'The product has been deleted');
     }
 
     public function setId($id){
@@ -58,8 +62,8 @@ class ProductManagement extends Component
     public function render()
     { 
         $this->products = DB::table('products')
-        ->join('category_general', 'products.category_id', '=', 'category_general.id')
-        ->select('products.*', 'category_general.category_general')
+        ->join('categories', 'products.category_id', '=', 'categories.id')
+        ->select('products.*', 'categories.category')
         ->get();
         return view('livewire.product-management', ["products" => $this->products]);
     }

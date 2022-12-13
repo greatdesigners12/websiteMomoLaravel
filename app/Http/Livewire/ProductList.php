@@ -16,7 +16,7 @@ class ProductList extends Component
     public $min;
     public $max;
     public $search;
-    public $kategori;
+    public $Category;
     public $priceSort;
 
     protected $paginationTheme = 'bootstrap';
@@ -62,7 +62,7 @@ class ProductList extends Component
 
     public function updateProductsWithCategory($data){
        
-        $this->kategori = $data;
+        $this->Category = $data;
         $this->resetPage();
     }
 
@@ -84,8 +84,8 @@ class ProductList extends Component
             $curProducts->where("name", "like", "%" . $this->search . "%");
         }
 
-        if($this->kategori != null){
-            $curProducts->where("category_id",  $this->kategori);
+        if($this->Category != null){
+            $curProducts->where("category_id",  $this->Category);
             
         }
         $sort = "ASC";

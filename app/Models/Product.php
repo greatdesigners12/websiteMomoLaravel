@@ -11,9 +11,9 @@ class Product extends Model
     protected $table = "products";
     protected $fillable = ["name", "category_id", "company_id", "price", "stock", "image_product", "description"];
     public $timestamps = false;
-    public function Kategori()
+    public function Category()
     {
-        return $this->belongsTo(Kategori::class, 'category_id');
+        return $this->belongsTo(Category::class, 'category_id');
     }
     public function Brand()
     {

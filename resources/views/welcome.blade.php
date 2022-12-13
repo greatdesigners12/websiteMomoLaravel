@@ -1,5 +1,6 @@
 @extends('template')
 @section('content')
+
     <div class="main-block load-bg">
         <div class="wrapper">
             <div class="main-block__content">
@@ -11,8 +12,12 @@
             </div>
         </div>
     </div>
-    
-    <livewire:product-pilihan :kategori="$allKategori" :curProducts="$curProducts" />
+    @if (Auth::check())
+        <div class="alert alert-danger">
+            Silahkan isi nomor telepon, untuk mendapatkan nomor yang menarik setiap hari
+        </div>
+    @endif
+    <livewire:product-pilihan :allCategories="$allCategory" :curProducts="$curProducts" />
     @livewire("testimonies")
     <livewire:brands :brands="$brands"  />
     <livewire:lokasi />

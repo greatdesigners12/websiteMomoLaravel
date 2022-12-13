@@ -26,11 +26,11 @@
                             <i class="icon-search"></i>
                         </div>
                         <div class="shop-aside__item">
-                            <span class="shop-aside__item-title">{{__('Kategori')}}</span>
+                            <span class="shop-aside__item-title">{{__('Category')}}</span>
                             <ul>
                                 <li><a href="#" class="{{$curCategory == 'semua' ? 'active' : ''}}" onclick="return false;" wire:click="setCategory('semua')">{{__('Semua')}} </a></li>
                                 @foreach ($categories as $category)
-                                    <li><a href="#" onclick="return false;" class="{{$curCategory == $category->id ? 'active' : ''}}"  wire:click="setCategory('{{$category->id}}')">{{__($category->category_general)}} </a></li>
+                                    <li><a href="#" onclick="return false;" class="{{$curCategory == $category->id ? 'active' : ''}}"  wire:click="setCategory('{{$category->id}}')">{{__($category->name)}} </a></li>
                                 @endforeach
                                 
                             </ul>
