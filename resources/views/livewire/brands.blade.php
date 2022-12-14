@@ -10,11 +10,13 @@
                     <div class="brand">
                         <!--Start single item-->
                         @foreach($brands as $brand)
+                        @if ($brand['id']>1)
                             <div class="tool_tip " title="Media Partner"  style=".tool_tip:hover {cursor: default;}">
                                 <div class="single-item">
                                     <img src="{{asset('storage/img/momo_partner/') . '/' . $brand->logo}}" style='height: 100%; width: 100%; object-fit: contain'  alt="Awesome Brand Image">
                                 </div>
                             </div>
+                            @endif
                         @endforeach
                         
                         <!--End single item-->

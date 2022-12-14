@@ -87,11 +87,11 @@ class RouteController extends Controller
         return view('admin-page.product-management.product-management');
     }
 
-    public function toCreateProductPage(){
+    public function toCreateproductPage(){
         
         $categories = Category::all();
         $brands = Brand::all();
-        return view('admin-page.create-product', ["categories" => $categories, "brands" => $brands]);
+        return view('admin-page.product-management.create-product', ["categories" => $categories, "brands" => $brands]);
     }
 
     public function toCartPage(){

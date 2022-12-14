@@ -4,14 +4,18 @@ namespace App\Http\Livewire;
 
 use Rappasoft\LaravelLivewireTables\DataTableComponent;
 use Rappasoft\LaravelLivewireTables\Views\Column;
+
 use App\Models\Product;
 use Illuminate\Support\Facades\File; 
 use WireUi\Traits\Actions;
 
-class ProductTable extends DataTableComponent
+
+class productTable extends DataTableComponent
 {
+
     protected $model = Product::class;
     use Actions;
+
     public function configure(): void
     {
         $this->setPrimaryKey('id');
@@ -68,7 +72,9 @@ class ProductTable extends DataTableComponent
                 ->sortable(),
             Column::make("Name", "name")->searchable()
                 ->sortable(),
+
             Column::make("Category", "Category.category")
+
                 ->sortable(),
             Column::make("Brand", "Brand.name")
                 ->sortable(),

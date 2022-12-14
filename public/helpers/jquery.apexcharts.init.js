@@ -402,13 +402,13 @@ for(var i=0; i<12; i++) {
     enabled: false
   },
   series: [{
-    name: 'PRODUCT A',
+    name: 'product A',
     data: dataSet[0]
   }, {
-    name: 'PRODUCT B',
+    name: 'product B',
     data: dataSet[1]
   }, {
-    name: 'PRODUCT C',
+    name: 'product C',
     data: dataSet[2]
   }],
   markers: {
@@ -1830,28 +1830,28 @@ var options2 = {
       enabled: false
   },
   series: [{
-      name: 'Product 1',
+      name: 'product 1',
       data: generateData1(new Date('11 Feb 2017 GMT').getTime(), 20, {
           min: 10,
           max: 60
       })
   },
   {
-      name: 'Product 2',
+      name: 'product 2',
       data: generateData1(new Date('11 Feb 2017 GMT').getTime(), 20, {
           min: 10,
           max: 60
       })
   },
   {
-      name: 'Product 3',
+      name: 'product 3',
       data: generateData1(new Date('11 Feb 2017 GMT').getTime(), 20, {
           min: 10,
           max: 60
       })
   },
   {
-      name: 'Product 4',
+      name: 'product 4',
       data: generateData1(new Date('11 Feb 2017 GMT').getTime(), 20, {
           min: 10,
           max: 60

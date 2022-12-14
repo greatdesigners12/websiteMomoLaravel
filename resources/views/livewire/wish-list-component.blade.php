@@ -21,7 +21,7 @@
                 <div class="cart-table">
                     <div class="cart-table__box">
                         <div class="cart-table__row cart-table__row-head">
-                            <div class="cart-table__col">Product</div>
+                            <div class="cart-table__col">product</div>
                             <div class="cart-table__col">Price</div>
                             <div class="cart-table__col">status</div>
                             <div class="cart-table__col">Add to cart</div>

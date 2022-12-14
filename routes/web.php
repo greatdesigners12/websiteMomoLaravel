@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [RouteController::class, "toHomePage"])->name("home");
-Route::get('/products', [RouteController::class, "toProductsPage"])->name("products");
+Route::get('/products', [RouteController::class, "toproductsPage"])->name("products");
 Route::get('/contact', [RouteController::class, "toContactPage"])->name("contact");
 
 // authentication

@@ -4,8 +4,8 @@
         <div class="trending-content">
             <div class="trending-top">
                 <span class="saint-text">{{__('Aksesoris Dan Kosmetik')}}</span>
-                <h2>{{__('Produk Pilihan')}}</h2>
-                <p>{{__('Percantik diri kalian dengan pilihan produk yang menarik dan berkualitas')}}</p>
+                <h2>{{__('Product Pilihan')}}</h2>
+                <p>{{__('Percantik diri kalian dengan pilihan product yang menarik dan berkualitas')}}</p>
             </div>
             
             
@@ -24,7 +24,7 @@
                 <div class="box-tab-cont" >
                     <div class="tab-cont" id="trending-tab_1">
                         <div class="products-items js-products-items" >
-                        @foreach ($curProducts as $product)
+                        @foreach ($curproducts as $product)
                             
                                 <a href="#" class="products-item" style="color:white;">
                                 

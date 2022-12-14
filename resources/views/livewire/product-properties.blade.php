@@ -4,12 +4,12 @@
         <div class="detail-block detail-block_margin">
             <div class="wrapper">
                 <div class="detail-block__content">
-                    <h1>{{__('Produk')}}</h1>
+                    <h1>{{__('Product')}}</h1>
                     <ul class="bread-crumbs" style="padding-left:0;">
                         <li class="bread-crumbs__item">
                             <a href="/" class="bread-crumbs__link">{{__('Beranda')}}</a>
                         </li>
-                        <li class="bread-crumbs__item">{{__('Produk')}}</li>
+                        <li class="bread-crumbs__item">{{__('Product')}}</li>
                     </ul>
                 </div>
             </div>

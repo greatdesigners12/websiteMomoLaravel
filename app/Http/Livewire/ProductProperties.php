@@ -2,10 +2,10 @@
 
 namespace App\Http\Livewire;
 
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\productController;
 use Livewire\Component;
 
-class ProductProperties extends Component
+class productProperties extends Component
 {
    
     public $categories;
@@ -16,7 +16,7 @@ class ProductProperties extends Component
     public $priceSort;
 
     public function search(){
-        $this->emit("updateProductsWithSearch", $this->search);
+        $this->emit("updateproductsWithSearch", $this->search);
     }
 
     public function mount(){
@@ -24,7 +24,7 @@ class ProductProperties extends Component
     }
 
     public function setPriceSort(){
-        $this->emit("updateProductsWithPriceSort", $this->priceSort);
+        $this->emit("updateproductsWithPriceSort", $this->priceSort);
     }
 
     public function setCategory($category){
@@ -35,16 +35,16 @@ class ProductProperties extends Component
             $categoryId = $category;
         }
 
-        $this->emit("updateProductsWithCategory", $categoryId);
+        $this->emit("updateproductsWithCategory", $categoryId);
     }
     
     public function setPriceRange(){
    
-        $this->emit("updateProductsWithPriceRange", array("min" => $this->min, "max" => $this->max));
+        $this->emit("updateproductsWithPriceRange", array("min" => $this->min, "max" => $this->max));
     }
 
     public function render()
     {
-        return view('livewire.product-properties', ["max" => ProductController::getHighestPrice(), "min" => ProductController::getLowestPrice()]);
+        return view('livewire.product-properties', ["max" => productController::getHighestPrice(), "min" => productController::getLowestPrice()]);
     }
 }

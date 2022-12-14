@@ -4,16 +4,16 @@ namespace App\Http\Livewire;
 
 use App\Models\Category;
 use App\Models\Brand;
-use App\Models\Product;
+use App\Models\product;
 use Livewire\Component;
 use Illuminate\Support\Facades\DB;
 use WireUi\Traits\Actions;
 
-class ProductManagement extends Component
+class productManagement extends Component
 {
     public $products;
     
-    public $curProduct;
+    public $curproduct;
     public $categories;
     public $brands;
     public $simpleModal;
@@ -29,7 +29,7 @@ class ProductManagement extends Component
     public function mount(){
         $this->categories = Category::all();
         $this->brands = Brand::all();
-        $this->curProduct = null;
+        $this->curproduct = null;
         
     }
 
@@ -38,19 +38,19 @@ class ProductManagement extends Component
     }
 
     public function setId($id){
-    //    $this->emit("setValue",  Product::find($id)->toArray());
+    //    $this->emit("setValue",  product::find($id)->toArray());
         
     }
 
     public function openModal($id){
         $this->simpleModal = true;
-        $product = Product::find($id);
+        $product = product::find($id);
         $this->name = $product->name;
         $this->price = $product->price;
         $this->description = $product->description;
         $this->category_id = $product->category_id;
         $this->stock = $product->stock;
-        $this->company_id = $product->company_id;
+        $this->brand_id = $product->brand_id;
         $this->dispatchBrowserEvent("showModal");
     }
 
@@ -63,7 +63,9 @@ class ProductManagement extends Component
     { 
         $this->products = DB::table('products')
         ->join('categories', 'products.category_id', '=', 'categories.id')
+
         ->select('products.*', 'categories.category')
+
         ->get();
         return view('livewire.product-management', ["products" => $this->products]);
     }
