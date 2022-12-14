@@ -20,32 +20,32 @@
             <form method="POST" action="{{route('processCreateproduct')}}" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group mt-3">
-                    <label for="exampleInputEmail1">product Name</label>
+                    <label for="exampleInputEmail1">{{ "Nama Produk" }}</label>
                  
                     <input type="text" class="form-control" id="exampleInputEmail1" value="{{$product == null ? '' : $product->name}}" name="name" placeholder="Enter product name">
                     {{-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> --}}
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">product Description</label>
+                    <label for="exampleInputEmail1">{{ "Deskripsi Produk" }}</label>
                     <textarea class="form-control" wire:model="description" name="description" rows="5" id="message">{{$product == null ? '' : $product->description}}</textarea>
                     
                     {{-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> --}}
                 </div>
                 <div class="form-group">
-                    <label class="mb-3">Category</label>
+                    <label class="mb-3">{{ "Kategori" }}</label>
                     <select class="select2 form-control mb-2 custom-select" value="{{$product == null ? '' : $product->category_id}}" name="category_id"  style="width: 100%; height:36px;">
-                        <option>Select</option>
+                        <option>{{ "Pilih" }}</option>
                     
                         @foreach ($categories as $category)
                             
-                            <option value="{{$category['id']}}">{{$category['category_general']}}</option>
+                            <option value="{{$category['id']}}">{{$category['categories']}}</option>
                         @endforeach
                     </select>
                 </div>
                 <div class="form-group">
-                    <label class="mb-3">Brand</label>
+                    <label class="mb-3">{{ "Brand" }}</label>
                     <select class="select2 form-control mb-2 custom-select" value="{{$product == null ? '' : $product->brand_id}}"  name="id" style="width: 100%; height:36px;">
-                        <option>Select</option>
+                        <option>{{ "Pilih" }}</option>
                         @foreach ($brands as $brand)
                             @if ($brand['id']!=1)
                             <option value="{{$brand['id']}}">{{$brand['logo']}}</option>
@@ -57,7 +57,7 @@
                     </select>
                 </div>          
                 <div class="form-group">
-                    <label for="example-input3-group1">Price</label>
+                    <label for="example-input3-group1">{{ "Harga" }}</label>
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text">Rp.</span>
@@ -69,11 +69,11 @@
                     </div>                                                    
                 </div>
                 <div class="form-group">
-                    <label for="example-input3-group1">Stocks</label>
+                    <label for="example-input3-group1">{{ Stok }}</label>
                     <input type="number" class="form-control" name="stock" value="{{$product == null ? '' : $product->stock}}" placeholder="Enter product stock"  >                                                  
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Gambar Product</label>
+                    <label for="exampleInputPassword1">{{ "Gambar Produk" }}</label>
                     <div class="col-12 mb-3">
                         
                     
@@ -81,7 +81,7 @@
                                                                         
                 </div>
                
-                <button type="submit" class="btn btn-gradient-primary">Submit</button>
+                <button type="submit" class="btn btn-gradient-primary">{{ "Kirim" }}</button>
                 
                 
     

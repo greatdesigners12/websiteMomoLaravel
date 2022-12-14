@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('name');
             $table->text('description');
             $table->bigInteger('price');
-            $table->integer('inventory_stock');
+            $table->integer('stock');
             $table->float('weight');
             $table->string('status');
             $table->unsignedBigInteger('category_id');
@@ -27,7 +27,7 @@ return new class extends Migration
             $table->unsignedBigInteger('brand_id');
             $table->foreign('brand_id')->references('id')->on('brands')->onDelete('cascade');
             $table->foreign('admin_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('category_id')->references('id')->on('category_general')->onDelete('cascade');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->timestamps();
         });
     }

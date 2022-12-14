@@ -50,8 +50,8 @@ class productManagement extends Component
     public function render()
     { 
         $this->products = DB::table('products')
-        ->join('category_general', 'products.category_id', '=', 'category_general.id')
-        ->select('products.*', 'category_general.name')
+        ->join('categories', 'products.category_id', '=', 'categories.id')
+        ->select('products.*', 'categories.name')
         ->get();
         return view('livewire.product-management', ["products" => $this->products]);
     }
