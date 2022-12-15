@@ -1,6 +1,7 @@
 @extends('template')
 @section('content')
-    <div class="main-block load-bg">
+
+    <div class="main-block load-bg" style="background-image: {{asset('storage/img/shopping.png')}};">
         <div class="wrapper">
             <div class="main-block__content">
                 <span class="saint-text">{{__('MOMO Accessories')}}</span>
@@ -11,8 +12,12 @@
             </div>
         </div>
     </div>
-    
-    <livewire:product-pilihan :category="$allCategory" :curproducts="$curproducts" />
+    @if (Auth::check())
+        <div class="alert alert-danger">
+            Silahkan isi nomor telepon, untuk mendapatkan nomor yang menarik setiap hari
+        </div>
+    @endif
+    <livewire:product-pilihan :allCategories="$allCategory" :curProducts="$curProducts" />
     @livewire("testimonies")
     <livewire:brands :brands="$brands"  />
     <livewire:lokasi />

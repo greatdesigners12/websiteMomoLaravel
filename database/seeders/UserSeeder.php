@@ -21,6 +21,20 @@ class UserSeeder extends Seeder
             'role'=>'owner',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s"),
-    ]);
+        ]);
+        User::factory()->create([
+            'email'=>'admin@momo.com',
+            'password'=>'Admin1234',
+            'role'=>'admin',
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
+        ]);
+        User::factory()->create([
+            'email'=>'user@momo.com',
+            'password'=>'User1234',
+            'role'=>'user',
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
+        ]);
     }
 }

@@ -11,19 +11,26 @@
             <div class="header-box">
                 <ul class="header-nav">
                     
-                    
+
                     <li><a href="/" class="{{Route::current()->getName() == 'home' ? 'active' : ''}}">{{__('Beranda')}}</a>  </li>
                     <li><a href="/products" class="{{Route::current()->getName() == 'products' ? 'active' : ''}}">{{__('Product')}}</a></li>
                     <li><a href="/contact" class="{{Route::current()->getName() == 'contact' ? 'active' : ''}} ">{{__('Kontak Kami')}}</a></li>
-                    <li><a href="/login" class="{{Route::current()->getName() == 'toLoginPage' ? 'active' : ''}} ">Login</a></li>
-                    <li><a href="/register" class="{{Route::current()->getName() == 'toRegisterPage' ? 'active' : ''}} ">Register</a></li>
+                    @if (!Auth::check())
+                        <li><a href="/login" class="{{Route::current()->getName() == 'toLoginPage' ? 'active' : ''}} ">Login</a></li>
+                        <li><a href="/register" class="{{Route::current()->getName() == 'toRegisterPage' ? 'active' : ''}} ">Register</a></li>
+                    @endif
+                   
                 </ul>
                 <ul class="header-options">
                     
                     <li><a href="#"><i class="icon-search"></i></a></li>
-                    <li><a href="#"><i class="icon-user"></i></a></li>
-                    <li><a href="{{route('toWishListPage')}}"><i class="icon-heart"></i></a></li>
-                    <li><a href="{{route('toCartPage')}}"><i class="icon-cart"></i><span>0</span></a></li>
+                    
+                    @if (!Auth::check())
+                        <li><a href="#"><i class="icon-user"></i></a></li>
+                        <li><a href="{{route('toWishListPage')}}"><i class="icon-heart"></i></a></li>
+                        <li><a href="{{route('toCartPage')}}"><i class="icon-cart"></i><span>0</span></a></li>
+                    @endif
+                    
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" style="background-color: #d05278;" data-bs-toggle="dropdown" aria-expanded="false">
                             <span class="fi fi-{{Config::get('languages')[App::getLocale()]['flag-icon']}}"></span> {{ Config::get('languages')[App::getLocale()]['display'] }}

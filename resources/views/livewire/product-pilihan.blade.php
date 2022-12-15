@@ -11,10 +11,10 @@
             
             <div class="tab-wrap trending-tabs">
                 <ul class="nav-tab-list tabs">
-                    @foreach ($allCategory as $category)
-                    <li class="{{$curCategory == $category->id ? 'active' : ''}} ">
+                    @foreach ($allCategory as $Category)
+                    <li class="{{$curCategory == $Category->id ? 'active' : ''}} ">
                        
-                        <a href="#trending-tab_1" wire:click="setCategory('{{$category->id}}')">{{__($category->name)}}</a>
+                        <a href="#trending-tab_1" wire:click="setCategory('{{$Category->id}}')">{{__($Category->category)}}</a>
                     </li>
                     @endforeach
                     
@@ -24,13 +24,13 @@
                 <div class="box-tab-cont" >
                     <div class="tab-cont" id="trending-tab_1">
                         <div class="products-items js-products-items" >
-                        @foreach ($curproducts as $product)
+                        @foreach ($curProducts as $product)
                             
                                 <a href="#" class="products-item" style="color:white;">
                                 
                                     <div class="products-item__img">
                                         <img 
-                                            src="img/momo_product/{{$product->image_product}}" class="js-img" alt="">
+                                            src="{{asset('storage/img/momo_product/').'/' . $product->image_product}}" class="js-img" alt="">
                                         <div class="products-item__hover">
                                            
                                         </div>

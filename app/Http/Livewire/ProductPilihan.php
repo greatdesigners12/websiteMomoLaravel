@@ -2,21 +2,24 @@
 
 namespace App\Http\Livewire;
 
-use App\Http\Controllers\productController;
+use App\Http\Controllers\ProductController;
 use App\Models\Category;
-use App\Models\product;
+use App\Models\Product;
+
 use Livewire\Component;
 use Stichoza\GoogleTranslate\GoogleTranslate;
 
 class productPilihan extends Component
 {
 
-    public $category;
+
+    public $allCategories;
     public $curCategory;
-    public $curproducts;
+    public $curProducts;
 
     public function mount(){
-        $this->curCategory = $this->category[0]->id;
+        $this->curCategory = $this->allCategories[0]->id;
+
     }
 
     public function translateKeInggris($str){
@@ -29,8 +32,10 @@ class productPilihan extends Component
         return $tr->translate($str);
     }
 
-    public function setCategory($category){
-        $this->curCategory = $category;
+
+    public function setCategory($Category){
+        $this->curCategory = $Category;
+
         
         $this->setproducts();
         $this->reInitSlider();
@@ -42,13 +47,14 @@ class productPilihan extends Component
             $this->dispatchBrowserEvent('initSlider');
         }
 
-    public function setproducts(){
-        $this->curproducts = product::where("category_id", $this->curCategory)->limit(5)->get();
+
+    public function setProducts(){
+        $this->curProducts = Product::where("category_id", $this->curCategory)->limit(5)->get();
+
     }
 
     public function render()
     {
-        
-        return view('livewire.product-pilihan', ["allCategory" => $this->category, "curproducts" => $this->curproducts]);
+        return view('livewire.product-pilihan', ["allCategory" => $this->allCategories, "curProducts" => $this->curProducts]);
     }
 }

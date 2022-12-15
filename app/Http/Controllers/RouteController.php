@@ -6,20 +6,21 @@ use App\Mail\StoreEmailSender;
 use App\Models\Brand;
 use Illuminate\Http\Request;
 use App\Models\Category;
-use App\Models\product;
+use App\Models\Product;
 use App\Models\Transaction;
 use App\Models\User;
 use Illuminate\Support\Facades\Mail;
 use App\Services\Midtrans\CreateSnapTokenService;
+use Illuminate\Support\Facades\Auth;
 
 
 class RouteController extends Controller
 {
     public function toHomePage(){
-        return view("welcome", ["allCategory" => Category::all(), "curproducts" => ProductController::getproductsBasedOnCategoryId("1"), "brands" => Brand::all()]);
+        return view("welcome", ["allCategory" => Category::all(), "curProducts" => ProductController::getProductsBasedOnCategoryId("1"), "brands" => Brand::all()]);
     }
 
-    public function toproductsPage(){
+    public function toProductsPage(){
         return view("productList", ["categories" => Category::all()]);
     }
     public function toContactPage(){
@@ -73,24 +74,24 @@ class RouteController extends Controller
         return view('user-page.wishlist');
     }
 
-    public function toEditproductPage($id){
-        $product = product::find($id);
+    public function toEditProductPage($id){
+        $product = Product::find($id);
         $categories = Category::all();
         $brands = Brand::all();
         return view('admin-page.edit-product', ["product" => $product, "categories" => $categories, "brands" => $brands]);
     }
 
-    public function toproductManagementPage(){
+    public function toProductsManagementPage(){
        
     
-        return view('admin-page.product-management');
+        return view('admin-page.product-management.product-management');
     }
 
     public function toCreateproductPage(){
         
         $categories = Category::all();
         $brands = Brand::all();
-        return view('admin-page.create-product', ["categories" => $categories, "brands" => $brands]);
+        return view('admin-page.product-management.create-product', ["categories" => $categories, "brands" => $brands]);
     }
 
     public function toCartPage(){
@@ -103,5 +104,27 @@ class RouteController extends Controller
 
     public function toDashboardPage(){
         return view('admin-page.dashboard');
+    }
+
+    public function toBrandsManagementPage(){
+        return view('admin-page.brand-management.brand-management');
+    }
+
+    public function toCategoriesManagementPage(){
+        return view('admin-page.category-management.category-management');
+    }
+
+    public function toOtpVerificationPage($token){
+        
+        return view('auth.otpVerificationPage', ["token" => $token]);
+    }
+
+    public function toValidatePhoneNumber(){
+        $hasPhoneNumber = true;
+        if(Auth::check()){
+            $user = User::find(Auth::id());
+            $hasPhoneNumber = $user->is_phone_verified == 1;
+        }
+        return view('auth.phoneNumberForm', ["hasPhoneNumber" => $hasPhoneNumber]);
     }
 }

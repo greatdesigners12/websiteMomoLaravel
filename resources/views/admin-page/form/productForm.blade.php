@@ -18,19 +18,24 @@
                 </div>
             @endif
 <<<<<<< HEAD
+<<<<<<< HEAD
             <form method="POST" action="{{$product == null ? route('processCreateProduct') : route('processUpdateProduct')}}" enctype="multipart/form-data">
 =======
             <form method="POST" action="{{route('processCreateproduct')}}" enctype="multipart/form-data">
 >>>>>>> origin/database
+=======
+            <form method="POST" action="{{$product == null ? route('processCreateProduct') : route('processUpdateProduct')}}" enctype="multipart/form-data">
+>>>>>>> e2fffd2692b3146148ffa3abb8ba7a18cda5df3d
                 @csrf
                 <input type="hidden" name="id" value="{{$product == null ? '' : $product->id}}">
                 <div class="form-group mt-3">
-                    <label for="exampleInputEmail1">product Name</label>
+                    <label for="exampleInputEmail1">{{ "Nama Produk" }}</label>
                  
                     <input type="text" class="form-control" id="exampleInputEmail1" value="{{$product == null ? '' : $product->name}}" name="name" placeholder="Enter product name">
                     {{-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> --}}
                 </div>
                 <div class="form-group">
+<<<<<<< HEAD
 <<<<<<< HEAD
                     <label for="exampleInputEmail1">Product Description</label>
                     <textarea class="form-control" wire:model.defer="description" name="description" rows="5" id="message" wire:model='description'></textarea>
@@ -38,6 +43,10 @@
                     <label for="exampleInputEmail1">product Description</label>
                     <textarea class="form-control" wire:model="description" name="description" rows="5" id="message">{{$product == null ? '' : $product->description}}</textarea>
 >>>>>>> origin/database
+=======
+                    <label for="exampleInputEmail1">Product Description</label>
+                    <textarea class="form-control" wire:model.defer="description" name="description" rows="5" id="message" wire:model='description'></textarea>
+>>>>>>> e2fffd2692b3146148ffa3abb8ba7a18cda5df3d
                     
                     {{-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> --}}
                 </div>
@@ -48,12 +57,13 @@
                     
                         @foreach ($categories as $category)
                             
-                            <option value="{{$category['id']}}" {{$category->id == $product->category_id ? 'selected' : ''}} >{{$category['category_general']}}</option>
+                            <option value="{{$category['id']}}" {{$category->id == $product->category_id ? 'selected' : ''}} >{{$category['category']}}</option>
                         @endforeach
                     </select>
                 </div>
                 <div class="form-group">
                     <label class="mb-3">Brand</label>
+<<<<<<< HEAD
 <<<<<<< HEAD
                     <select class="select2 form-control mb-2 custom-select" wire:model.defer='company_id' name="company_id"  style="width: 100%; height:36px;">
                         <option>Select</option>
@@ -68,6 +78,12 @@
                             @endif
                             
 >>>>>>> origin/database
+=======
+                    <select class="select2 form-control mb-2 custom-select" wire:model.defer='company_id' name="company_id"  style="width: 100%; height:36px;">
+                        <option>Select</option>
+                        @foreach ($brands as $brand)
+                            <option value="{{$brand['id']}}" {{$brand->id == $product->company_id ? 'selected' : ''}}>{{$brand['name']}}</option>
+>>>>>>> e2fffd2692b3146148ffa3abb8ba7a18cda5df3d
                         @endforeach
                         
                     
@@ -89,12 +105,12 @@
                     <input type="number" class="form-control" name="stock" value="{{$product == null ? '' : $product->stock}}" placeholder="Enter product stock"  >                                                  
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Gambar Product</label>
+                    <label for="exampleInputPassword1">{{ "Gambar Produk" }}</label>
                     <div class="col-12 mb-3">
                         <input type="file" id="input-file-now" class="dropify" name="image_product" data-default-file="{{ URL::to('/') }}/img/momo_product/{{$product->image_product}}"/>                                                                              
                 </div>
                
-                <button type="submit" class="btn btn-gradient-primary">Submit</button>
+                <button type="submit" class="btn btn-gradient-primary">{{ "Kirim" }}</button>
                 
                 
     

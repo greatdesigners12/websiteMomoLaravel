@@ -23,7 +23,7 @@ class productManagement extends Component
     public $category_id;
     public $company_id;
     public $stock;
-    
+    protected $listeners = ['deleteMessage'];
     use Actions;
 
     public function mount(){
@@ -31,6 +31,10 @@ class productManagement extends Component
         $this->brands = Brand::all();
         $this->curproduct = null;
         
+    }
+
+    public function deleteMessage(){
+        session()->flash('message', 'The product has been deleted');
     }
 
     public function setId($id){
@@ -58,8 +62,10 @@ class productManagement extends Component
     public function render()
     { 
         $this->products = DB::table('products')
-        ->join('category_general', 'products.category_id', '=', 'category_general.id')
-        ->select('products.*', 'category_general.name')
+        ->join('categories', 'products.category_id', '=', 'categories.id')
+
+        ->select('products.*', 'categories.category')
+
         ->get();
         return view('livewire.product-management', ["products" => $this->products]);
     }

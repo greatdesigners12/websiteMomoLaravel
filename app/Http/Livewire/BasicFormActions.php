@@ -4,7 +4,9 @@ namespace App\Http\Livewire;
 
 use App\Models\Brand;
 use App\Models\Category;
-use App\Models\product;
+
+use App\Models\Product;
+
 use Livewire\Component;
 
 class BasicFormActions extends Component

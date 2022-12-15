@@ -4,7 +4,7 @@
         @foreach ($products as $product)
             <a href="#" onclick="return false;" style="color: white;" class="products-item" wire:click="contactproduct('{{$product->name}}')">
                 <div class="products-item__img">
-                    <img src="img/momo_product/{{$product->image_product}}" class="js-img" alt="" >
+                    <img src="{{asset('storage/img/momo_product/').'/' . $product->image_product}}" class="js-img" alt="" >
                     <div class="products-item__hover">
                         
                     </div>

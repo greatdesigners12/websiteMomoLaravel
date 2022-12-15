@@ -25,6 +25,8 @@ class User extends Authenticatable
     ];
     protected $table = "users";
 
+    
+
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -45,4 +47,8 @@ class User extends Authenticatable
     protected $casts = [
         'last_login' => 'datetime',
     ];
+
+    public function user_information(){
+        return $this->hasOne(UserInformation::class);
+    }
 }

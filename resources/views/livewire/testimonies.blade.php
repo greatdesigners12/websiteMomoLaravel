@@ -15,7 +15,7 @@
                             </div>
                             <div class="client-info">
                                 <div class="img-holder">
-                                    <img src="img/user.png" alt="Client Photo">    
+                                    <img src="{{asset('storage/img/user.png')}}" alt="Client Photo">    
                                 </div>
                                 <div class="name">
                                     <h3>Cantika B</h3>
@@ -31,7 +31,7 @@
                             </div>
                             <div class="client-info">
                                 <div class="img-holder">
-                                    <img src="img/user.png" alt="Client Photo">    
+                                    <img src="{{asset('storage/img/user.png')}}" alt="Client Photo">    
                                 </div>
                                 <div class="name">
                                     <h3>Citra M</h3>
