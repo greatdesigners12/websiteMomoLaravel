@@ -12,12 +12,19 @@ use App\Models\User;
 use Illuminate\Support\Facades\Mail;
 use App\Services\Midtrans\CreateSnapTokenService;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 
 class RouteController extends Controller
 {
+
     public function toHomePage(){
-        return view("welcome", ["allCategory" => Category::all(), "curProducts" => ProductController::getProductsBasedOnCategoryId("1"), "brands" => Brand::all()]);
+        $products = DB::table('products')->leftJoin("favourite_products", function ($join) {
+            $join->on('products.id', '=', 'favourite_products.product_id')
+                 ->where('favourite_products.user_id', '=', Auth::id());
+        })->select('products.*', 'favourite_products.user_id')->where('category_id', 1)->limit(5)->get();
+       
+        return view("welcome", ["allCategory" => Category::all(), "curProducts" => $products, "brands" => Brand::all()]);
     }
 
     public function toProductsPage(){
@@ -78,7 +85,7 @@ class RouteController extends Controller
         $product = Product::find($id);
         $categories = Category::all();
         $brands = Brand::all();
-        return view('admin-page.edit-product', ["product" => $product, "categories" => $categories, "brands" => $brands]);
+        return view('admin-page.product-management.edit-product', ["product" => $product, "categories" => $categories, "brands" => $brands]);
     }
 
     public function toProductsManagementPage(){

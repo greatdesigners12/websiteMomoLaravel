@@ -72,12 +72,12 @@ class AuthController extends Controller
             $response = Http::asForm()->post("https://app.ruangwa.id/api/send_message", [
                 'token' => 'H7tZPKvSP13n5CZAUA9TbRD323xJ4dex7968bSQSRwhhdyJt3s',
                 'number' => $request->phoneNumber,
-                "message" => "*MOMO ACCESORIS EMAIL VERIFICATION*\n\nHere is your otp code : $kodeOtp \n\nAfter your account has been verified, you can login through this link : " . $_ENV['SERVER'] . "/login",
+                "message" => "*MOMO ACCESORIS EMAIL VERIFICATION*\n\nHere is your otp code : $kodeOtp",
                 "date"=> date("Y-m-d"),
                 "time"=> date("H:i:s")
             ]);
 
-            UserOtp::create(["user_id" => Auth::id(), "kode_otp" => (string)mt_rand(100000, 999999), "token" => $token, "date_otp_created" => $time]);
+            UserOtp::create(["user_id" => Auth::id(), "kode_otp" => $kodeOtp, "token" => $token, "date_otp_created" => $time]);
 
           
 

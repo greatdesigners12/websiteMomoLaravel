@@ -19,6 +19,10 @@ class Product extends Model
     {
         return $this->belongsTo(Brand::class, 'brand_id');
     }
+
+    public function favourite_products(){
+        return $this->hasOne(FavouriteProduct::class);
+    }
     use HasFactory;
 
     

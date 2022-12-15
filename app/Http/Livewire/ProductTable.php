@@ -4,12 +4,6 @@ namespace App\Http\Livewire;
 
 use Rappasoft\LaravelLivewireTables\DataTableComponent;
 use Rappasoft\LaravelLivewireTables\Views\Column;
-<<<<<<< HEAD
-use App\Models\product;
-
-<<<<<<< HEAD
-=======
->>>>>>> e2fffd2692b3146148ffa3abb8ba7a18cda5df3d
 
 use App\Models\Product;
 use Illuminate\Support\Facades\File; 
@@ -21,16 +15,7 @@ class productTable extends DataTableComponent
 
     protected $model = Product::class;
     use Actions;
-<<<<<<< HEAD
-=======
-class productTable extends DataTableComponent
-{
-    protected $model = product::class;
 
->>>>>>> origin/database
-=======
-
->>>>>>> e2fffd2692b3146148ffa3abb8ba7a18cda5df3d
     public function configure(): void
     {
         $this->setPrimaryKey('id');

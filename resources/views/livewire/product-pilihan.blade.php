@@ -32,7 +32,8 @@
                                         <img 
                                             src="{{asset('storage/img/momo_product/').'/' . $product->image_product}}" class="js-img" alt="">
                                         <div class="products-item__hover">
-                                           
+                                         
+                                            
                                         </div>
                                     </div>
                                     @php($productName = "")

@@ -2,16 +2,18 @@
     <div class="shop-main__items">
         @if(count($products) > 0)
         @foreach ($products as $product)
-            <a href="#" onclick="return false;" style="color: white;" class="products-item" wire:click="contactproduct('{{$product->name}}')">
+            <a href="#" onclick="return false;" style="color: white;" class="products-item" >
                 <div class="products-item__img">
                     <img src="{{asset('storage/img/momo_product/').'/' . $product->image_product}}" class="js-img" alt="" >
                     <div class="products-item__hover">
-                        
+                        <div class="products-item__hover-options">
+                            <i wire:click="setFavourite('{{$product->id}}')" class="icon-heart {{$product->user_id != null ? 'active' : ''}}"></i>
+                            <i wire:click="setToCart('{{$product->id}}')" class="icon-cart {{$product->quantity != null ? 'active' : ''}}"></i>
+                        </div>
                     </div>
                 </div>
                 <div class="products-item__info">
                     @php($productName = "")
-
                     @if(Session()->get('applocale') == "cn")
                         @php($productName = $this->translateKeChina($product->name))
                     @elseif(Session()->get('applocale') == "en")
