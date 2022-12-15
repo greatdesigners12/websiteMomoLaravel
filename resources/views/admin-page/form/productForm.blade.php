@@ -39,7 +39,7 @@
                     
                         @foreach ($categories as $category)
                             
-                            <option value="{{$category['id']}}" {{$category->id == $product->category_id ? 'selected' : ''}} >{{$category['category']}}</option>
+                            <option value="{{$category['id']}}" {{$product != null ? ($category->id == $product->category_id ? 'selected' : '') : ''}} >{{$category['category']}}</option>
                         @endforeach
                     </select>
                 </div>
@@ -48,7 +48,7 @@
                     <select class="select2 form-control mb-2 custom-select" wire:model.defer='company_id' name="company_id"  style="width: 100%; height:36px;">
                         <option>Select</option>
                         @foreach ($brands as $brand)
-                            <option value="{{$brand['id']}}" {{$brand->id == $product->company_id ? 'selected' : ''}}>{{$brand['name']}}</option>
+                            <option value="{{$brand['id']}}" {{$product != null ? ($brand->id == $product->company_id ? 'selected' : '') : ''}}>{{$brand['name']}}</option>
                         @endforeach
                         
                     
@@ -72,7 +72,12 @@
                 <div class="form-group">
                     <label for="exampleInputPassword1">{{ "Gambar Produk" }}</label>
                     <div class="col-12 mb-3">
-                        <input type="file" id="input-file-now" class="dropify" name="image_product" data-default-file="{{ URL::to('/') }}/img/momo_product/{{$product->image_product}}"/>                                                                              
+                        @if ($product != null)
+                            <input type="file" id="input-file-now" class="dropify" name="image_product" data-default-file="{{ URL::to('/') }}/img/momo_product/{{$product->image_product}}"/> 
+                        @else
+                        <input type="file" id="input-file-now" class="dropify" name="image_product" data-default-file=""/> 
+                        @endif
+                                                                                                     
                 </div>
                
                 <button type="submit" class="btn btn-gradient-primary">{{ "Kirim" }}</button>

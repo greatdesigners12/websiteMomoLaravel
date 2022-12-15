@@ -12,12 +12,8 @@
             </div>
         </div>
     </div>
-    @if (Auth::check())
-        <div class="alert alert-danger">
-            Silahkan isi nomor telepon, untuk mendapatkan nomor yang menarik setiap hari
-        </div>
-    @endif
-    <livewire:product-pilihan :allCategories="$allCategory" :curProducts="$curProducts" />
+   
+    <livewire:product-pilihan :allCategories="$allCategory"  />
     @livewire("testimonies")
     <livewire:brands :brands="$brands"  />
     <livewire:lokasi />

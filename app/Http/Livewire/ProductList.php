@@ -3,9 +3,12 @@
 namespace App\Http\Livewire;
 
 use App\Models\product;
+use App\Models\FavouriteProduct;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Stichoza\GoogleTranslate\GoogleTranslate;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class productList extends Component
 {   
@@ -66,11 +69,27 @@ class productList extends Component
         $this->resetPage();
     }
 
+    public function setFavourite($id){
+        $check = FavouriteProduct::where("product_id", $id)->where("user_id", Auth::id())->first();
+        
+        if($check != null){
+            FavouriteProduct::where("product_id", $id)->where("user_id", Auth::id())->delete();
+        }else{
+            FavouriteProduct::insert(["user_id" => Auth::id() ,"product_id"=> $id]);
+        }
+
+      
+    }
+
 
 
     public function render()
     {
-        $curproducts = product::select("*");
+        $curproducts = DB::table('products')->leftJoin("favourite_products", function ($join) {
+            $join->on('products.id', '=', 'favourite_products.product_id')
+                 ->where('favourite_products.user_id', '=', Auth::id());
+        })->select('products.*', 'favourite_products.user_id');
+
         if($this->min != null ){
             $curproducts->where("price", ">=", $this->min);
             

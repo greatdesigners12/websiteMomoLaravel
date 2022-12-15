@@ -24,7 +24,7 @@
                 <div class="box-tab-cont" >
                     <div class="tab-cont" id="trending-tab_1">
                         <div class="products-items js-products-items" >
-                        @foreach ($curproducts as $product)
+                        @foreach ($curProducts as $product)
                             
                                 <a href="#" class="products-item" style="color:white;">
                                 
@@ -32,7 +32,8 @@
                                         <img 
                                             src="{{asset('storage/img/momo_product/').'/' . $product->image_product}}" class="js-img" alt="">
                                         <div class="products-item__hover">
-                                           
+                                         
+                                            
                                         </div>
                                     </div>
                                     @php($productName = "")

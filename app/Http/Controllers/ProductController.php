@@ -41,7 +41,6 @@ class ProductController extends Controller
             return redirect()->back()->withErrors($validator);
         }else{
             $validated = $validator->validated();
-            
             $imageName = time().'.'.$request->image_product->extension(); 
             
             $this->photo->storeAs('img/momo_product/', $imageName, 'public');
