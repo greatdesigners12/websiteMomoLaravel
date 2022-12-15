@@ -13,7 +13,7 @@
                     
                     
                     <li><a href="/" class="{{Route::current()->getName() == 'home' ? 'active' : ''}}">{{__('Beranda')}}</a>  </li>
-                    <li><a href="/products" class="{{Route::current()->getName() == 'products' ? 'active' : ''}}">{{__('Produk')}}</a></li>
+                    <li><a href="/products" class="{{Route::current()->getName() == 'products' ? 'active' : ''}}">{{__('Product')}}</a></li>
                     <li><a href="/contact" class="{{Route::current()->getName() == 'contact' ? 'active' : ''}} ">{{__('Kontak Kami')}}</a></li>
                     <li><a href="/login" class="{{Route::current()->getName() == 'toLoginPage' ? 'active' : ''}} ">Login</a></li>
                     <li><a href="/register" class="{{Route::current()->getName() == 'toRegisterPage' ? 'active' : ''}} ">Register</a></li>

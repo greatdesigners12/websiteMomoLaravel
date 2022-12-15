@@ -40,9 +40,9 @@
                 <li>
                     <a href="javascript: void(0);"><i class="ti-control-record"></i>Ecommerce <span class="menu-arrow left-has-menu"><i class="mdi mdi-chevron-right"></i></span></a>
                     <ul class="nav-second-level" aria-expanded="false">
-                        <li><a href="../apps/ecommerce-products.html">Products</a></li>                                    
-                        <li><a href="../apps/ecommerce-product-list.html">Product List</a></li>
-                        <li><a href="../apps/ecommerce-product-detail.html">Product Detail</a></li>
+                        <li><a href="../apps/ecommerce-products.html">products</a></li>                                    
+                        <li><a href="../apps/ecommerce-product-list.html">product List</a></li>
+                        <li><a href="../apps/ecommerce-product-detail.html">product Detail</a></li>
                         <li><a href="../apps/ecommerce-cart.html">Cart</a></li>
                         <li><a href="../apps/ecommerce-checkout.html">Checkout</a></li>                                    
                     </ul>

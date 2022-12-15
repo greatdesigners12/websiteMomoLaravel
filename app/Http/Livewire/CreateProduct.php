@@ -4,7 +4,7 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 
-class CreateProduct extends Component
+class Createproduct extends Component
 {
     public $categories;
     public $brands;
@@ -12,9 +12,9 @@ class CreateProduct extends Component
     public $description;
     public $price;
     public $category_id;
-    public $company_id;
+    public $brand_id;
     public $stock;
-    public $curProduct = null;
+    public $curproduct = null;
     public $product = null;
 
     public function mount(){

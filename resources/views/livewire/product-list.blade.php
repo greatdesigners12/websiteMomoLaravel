@@ -2,7 +2,7 @@
     <div class="shop-main__items">
         @if(count($products) > 0)
         @foreach ($products as $product)
-            <a href="#" onclick="return false;" style="color: white;" class="products-item" wire:click="contactProduct('{{$product->name}}')">
+            <a href="#" onclick="return false;" style="color: white;" class="products-item" wire:click="contactproduct('{{$product->name}}')">
                 <div class="products-item__img">
                     <img src="img/momo_product/{{$product->image_product}}" class="js-img" alt="" >
                     <div class="products-item__hover">
@@ -26,7 +26,7 @@
         @endforeach
         @else
             <div class="w-100 d-flex justify-content-center align-items-center" style="height: 50vh;">
-                <h1>{{__('Produk Tidak Ditemukan')}}</h1>
+                <h1>{{__('Product Tidak Ditemukan')}}</h1>
             </div>
         @endif
         

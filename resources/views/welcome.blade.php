@@ -12,7 +12,7 @@
         </div>
     </div>
     
-    <livewire:product-pilihan :kategori="$allKategori" :curProducts="$curProducts" />
+    <livewire:product-pilihan :category="$allCategory" :curproducts="$curproducts" />
     @livewire("testimonies")
     <livewire:brands :brands="$brands"  />
     <livewire:lokasi />

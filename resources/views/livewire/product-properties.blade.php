@@ -4,12 +4,12 @@
         <div class="detail-block detail-block_margin">
             <div class="wrapper">
                 <div class="detail-block__content">
-                    <h1>{{__('Produk')}}</h1>
+                    <h1>{{__('Product')}}</h1>
                     <ul class="bread-crumbs" style="padding-left:0;">
                         <li class="bread-crumbs__item">
                             <a href="/" class="bread-crumbs__link">{{__('Beranda')}}</a>
                         </li>
-                        <li class="bread-crumbs__item">{{__('Produk')}}</li>
+                        <li class="bread-crumbs__item">{{__('Product')}}</li>
                     </ul>
                 </div>
             </div>
@@ -26,11 +26,11 @@
                             <i class="icon-search"></i>
                         </div>
                         <div class="shop-aside__item">
-                            <span class="shop-aside__item-title">{{__('Kategori')}}</span>
+                            <span class="shop-aside__item-title">{{__('Category')}}</span>
                             <ul>
                                 <li><a href="#" class="{{$curCategory == 'semua' ? 'active' : ''}}" onclick="return false;" wire:click="setCategory('semua')">{{__('Semua')}} </a></li>
                                 @foreach ($categories as $category)
-                                    <li><a href="#" onclick="return false;" class="{{$curCategory == $category->id ? 'active' : ''}}"  wire:click="setCategory('{{$category->id}}')">{{__($category->category_general)}} </a></li>
+                                    <li><a href="#" onclick="return false;" class="{{$curCategory == $category->id ? 'active' : ''}}"  wire:click="setCategory('{{$category->id}}')">{{__($category->name)}} </a></li>
                                 @endforeach
                                 
                             </ul>

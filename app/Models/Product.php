@@ -9,15 +9,15 @@ class Product extends Model
 {
     public $brands;
     protected $table = "products";
-    protected $fillable = ["name", "category_id", "company_id", "price", "stock", "image_product", "description"];
+    protected $fillable = ["name", "category_id", "brand_id", "price", "stock", "image_product", "description"];
     public $timestamps = false;
-    public function Kategori()
+    public function Category()
     {
-        return $this->belongsTo(Kategori::class, 'category_id');
+        return $this->belongsTo(Category::class, 'category_id');
     }
     public function Brand()
     {
-        return $this->belongsTo(Brand::class, 'company_id');
+        return $this->belongsTo(Brand::class, 'brand_id');
     }
     use HasFactory;
 
