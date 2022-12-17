@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class UserInformation extends Model
 {
+    protected $table = "user_informations";
     use HasFactory;
 }

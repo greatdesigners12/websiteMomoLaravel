@@ -6,46 +6,44 @@ use Midtrans\Snap;
  
 class CreateSnapTokenService extends Midtrans
 {
-    protected $order;
- 
-    public function __construct($order)
+    protected $invoice;
+    protected $totalPrice;
+    protected $products;
+    protected $user;
+    
+    public function __construct($invoice, $totalPrice, $products, $userInformation)
     {
         parent::__construct();
- 
-        $this->order = $order;
+        $this->totalPrice = $totalPrice;
+        $this->invoice = $invoice;
+        $this->products = $products;
+        $this->user = $userInformation;
     }
  
     public function getSnapToken()
     {
+        $items = [];
+        foreach($this->products as $product){
+            
+            array_push($items, ["id" => $product->id, "price" => $product->transaction_product->price, "quantity" => $product->transaction_product->quantity, "name" => $product->transaction_product->name]);
+        }
+        
         $params = [
             'transaction_details' => [
-                'order_id' => "12312awoidqawad",
-                'gross_amount' => "1000000",
+                'order_id' => $this->invoice,
+                'gross_amount' => $this->totalPrice,
             ],
-            'item_details' => [
-                [
-                    'id' => 1,
-                    'price' => '150000',
-                    'quantity' => 1,
-                    'name' => 'Flashdisk Toshiba 32GB',
-                ],
-                [
-                    'id' => 2,
-                    'price' => '60000',
-                    'quantity' => 2,
-                    'name' => 'Memory Card VGEN 4GB',
-                ],
-            ],
+            'item_details' => $items,
             'customer_details' => [
-                'first_name' => 'Martin Mulyo Syahidin',
-                'email' => 'mulyosyahidin95@gmail.com',
-                'phone' => '081234567890',
+                'full_name' => $this->user->user_information->nama_lengkap,
+                'email' => $this->user->email,
+                'phone' => $this->user->phoneNumber,
             ]
         ];
+        
+        $snapToken = Snap::getSnapToken($params);
  
-        $url = Snap::createTransaction($params)->redirect_url;
- 
-        return $url;
+        return $snapToken;
     }
 }
 

@@ -30,88 +30,43 @@
                                 <div class="cart-table__col">Price</div>
                                 <div class="cart-table__col">Quantity</div>
                                 <div class="cart-table__col">Total</div>
+                                <div class="cart-table__col text-center">Delete</div>
                             </div>
-                            <div class="cart-table__row">
+                             @foreach ($carts as $index => $cart)
+                            
+                             <div class="cart-table__row" wire:key="item-{{ $index }}">
                                 <div class="cart-table__col">
                                     <a href="product.html" class="cart-table__img">
-                                        <img data-src="https://via.placeholder.com/110" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" class="js-img" alt="">
+                                        <img data-src="{{asset('storage/img/momo_product') . '/' . $cart->product->image_product}}" src="{{asset('storage/img/momo_product') . '/' . $cart->product->image_product}}" class="js-img" alt="">
                                     </a>
                                     <div class="cart-table__info">
-                                        <a href="product.html" class="title5">Foundation Beshop</a>
+                                        <a href="product.html" class="title5" wire:model="carts.{{$index}}.product.name">{{$cart->product->name}}</a>
                                         <span class="cart-table__info-stock">in stock</span>
                                         <span class="cart-table__info-num">SKU: IN1203</span>
                                     </div>
                                 </div>
                                 <div class="cart-table__col">
-                                    <span class="cart-table__price"><span>$265.95</span>$200.95</span>
+                                    <span class="cart-table__price">Rp. {{number_format($cart->product->price, 2, '.', ',')}}</span>
                                 </div>
                                 <div class="cart-table__col">
                                     <div class="cart-table__quantity">
                                         <div class="counter-box">
-                                            <span class="counter-link counter-link__prev"><i class="icon-arrow"></i></span>
-                                            <input type="text" class="counter-input" disabled value="1">
-                                            <span class="counter-link counter-link__next"><i class="icon-arrow"></i></span>
+                                            <span class="counter-link counter-link__prev" wire:click="minPrice('{{$cart->product_id}}')"><i class="icon-arrow" ></i></span>
+                                            <input type="text" class="counter-input" disabled value="{{$cart->quantity}}">
+                                            <span class="counter-link counter-link__next" wire:click="addPrice('{{$cart->product_id}}')"><i class="icon-arrow"></i></span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="cart-table__col">
-                                    <span class="cart-table__total">$401.90</span>
+                                    <span class="cart-table__total">Rp. {{number_format($cart->product->price * $cart->quantity, 2, '.', ',')}}</span>
+                                </div>
+                                <div class="cart-table__col d-flex justify-content-center">
+                                    <button class="btn" style="background-color: #D23377; color: white; height:40px;" wire:click="deleteCart('{{$cart->product_id}}')">X</button>
                                 </div>
                             </div>
-                            <div class="cart-table__row">
-                                <div class="cart-table__col">
-                                    <a href="product.html" class="cart-table__img">
-                                        <img data-src="https://via.placeholder.com/110" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" class="js-img" alt="">
-                                    </a>
-                                    <div class="cart-table__info">
-                                        <a href="product.html" class="title5">Hair mask with oat extract</a>
-                                        <span class="cart-table__info-stock">in stock</span>
-                                        <span class="cart-table__info-num">SKU: IN1203</span>
-                                    </div>
-                                </div>
-                                <div class="cart-table__col">
-                                    <span class="cart-table__price">$125.95</span>
-                                </div>
-                                <div class="cart-table__col">
-                                    <div class="cart-table__quantity">
-                                        <div class="counter-box">
-                                            <span class="counter-link counter-link__prev"><i class="icon-arrow"></i></span>
-                                            <input type="text" class="counter-input" disabled value="1">
-                                            <span class="counter-link counter-link__next"><i class="icon-arrow"></i></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="cart-table__col">
-                                    <span class="cart-table__total">$125.95</span>
-                                </div>
-                            </div>
-                            <div class="cart-table__row">
-                                <div class="cart-table__col">
-                                    <a href="product.html" class="cart-table__img">
-                                        <img data-src="https://via.placeholder.com/110" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" class="js-img" alt="">
-                                    </a>
-                                    <div class="cart-table__info">
-                                        <a href="product.html" class="title5">Spray balm with oat extract</a>
-                                        <span class="cart-table__info-stock">in stock</span>
-                                        <span class="cart-table__info-num">SKU: IN1203</span>
-                                    </div>
-                                </div>
-                                <div class="cart-table__col">
-                                    <span class="cart-table__price">$60.95</span>
-                                </div>
-                                <div class="cart-table__col">
-                                    <div class="cart-table__quantity">
-                                        <div class="counter-box">
-                                            <span class="counter-link counter-link__prev"><i class="icon-arrow"></i></span>
-                                            <input type="text" class="counter-input" disabled value="1">
-                                            <span class="counter-link counter-link__next"><i class="icon-arrow"></i></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="cart-table__col">
-                                    <span class="cart-table__total">$60.95</span>
-                                </div>
-                            </div>
+                             @endforeach
+                                
+                           
                         </div>
                     </div>
                     <div class="cart-bottom">
@@ -142,7 +97,7 @@
                         <div class="cart-bottom__total">
                             <div class="cart-bottom__total-goods">
                                 Goods on
-                                <span>$588.80</span>
+                                <span>Rp. {{number_format($carts[$carts->count() - 1]->totalPrice, 2, '.', ',')}}</span>
                             </div>
                             <div class="cart-bottom__total-promo">
                                 Discount on promo code
@@ -150,9 +105,9 @@
                             </div>
                             <div class="cart-bottom__total-num">
                                 total:
-                                <span>$588.80</span>
+                                <span>Rp. {{number_format($carts[$carts->count() - 1]->totalPrice, 2, '.', ',')}}</span>
                             </div>
-                            <a href="checkout1.html" class="btn">Checkout</a>
+                            <button class="btn text-white" style="background-color: #D23377;" class="btn" wire:click="checkout">Checkout</button>
                         </div>
                     </div>
                 </div>
@@ -208,4 +163,5 @@
             <!-- INSTA PHOTOS EOF   -->
 
         </main>
+    </div>
 </div>

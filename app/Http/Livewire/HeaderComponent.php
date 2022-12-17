@@ -8,11 +8,14 @@ use App\Models\Cart;
 
 class HeaderComponent extends Component
 {
-    public $cartCounter;
+    public $cartCounter = 0;
     protected $listeners = ["updateCartCounter"];
 
     public function mount(){
-        $this->cartCounter = Cart::where("user_id", Auth::id())->count();
+        if(Auth::id() != null){
+            $this->cartCounter = Cart::where("user_id", Auth::id())->count();
+        }
+        
     }
 
     public function updateCartCounter(){

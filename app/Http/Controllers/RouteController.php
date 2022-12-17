@@ -4,10 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Mail\StoreEmailSender;
 use App\Models\Brand;
+use App\Models\Cart;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\Transaction;
+use App\Models\TransactionGroup;
+use App\Models\TransactionRelation;
 use App\Models\User;
 use Illuminate\Support\Facades\Mail;
 use App\Services\Midtrans\CreateSnapTokenService;
@@ -46,24 +49,36 @@ class RouteController extends Controller
         return view("auth.login");
     }
 
+    public function toHistoryTransactionsPage(){
+        $transactions = TransactionGroup::where("user_id", Auth::id())->get();
+       
+        return view("transactions.historyTransaction", ["transactions" => $transactions]);
+    }
+
+    public function toTransactionDetailPage($invoice){
+        $transactionDetail = TransactionGroup::where("invoice", $invoice)->first();
+       
+        return view("transactions.transactionDetail", ["transaction" => $transactionDetail]);
+    }
+
     public function toRegisterPage(){
         
-        $transaction = Transaction::first();
-        $url = "";
-        if($transaction != null){
-            $url = $transaction->snap_token;
-            if (empty($snapToken)) {
-                // Jika snap token masih NULL, buat token snap dan simpan ke database
+        // $transaction = TransactionGroup::first();
+        // $url = "";
+        // if($transaction != null){
+        //     $url = $transaction->snap_token;
+        //     if (empty($snapToken)) {
+        //         // Jika snap token masih NULL, buat token snap dan simpan ke database
     
-                $midtrans = new CreateSnapTokenService($transaction);
-                $url = $midtrans->getSnapToken();
+        //         $midtrans = new CreateSnapTokenService($transaction);
+        //         $url = $midtrans->getSnapToken();
     
-                // $transaction->snap_token = $snapToken;
-                // $transaction->save();
-            }
-        }
+        //         // $transaction->snap_token = $snapToken;
+        //         // $transaction->save();
+        //     }
+        // }
         
-        return view("auth.register", ["url" => $url]);
+        return view("auth.register");
     }
 
     public function toVerificationPage(Request $request){
@@ -102,7 +117,8 @@ class RouteController extends Controller
     }
 
     public function toCartPage(){
-        return view('transactions.cart');
+        $carts = Cart::where("user_id", Auth::id())->get();
+        return view('transactions.cart', ["carts" => $carts]);
     }
 
     public function toProtectedPage(){
@@ -133,5 +149,9 @@ class RouteController extends Controller
             $hasPhoneNumber = $user->is_phone_verified == 1;
         }
         return view('auth.phoneNumberForm', ["hasPhoneNumber" => $hasPhoneNumber]);
+    }
+
+    public function toUsersManagementPage(){
+        return view("admin-page.user-management.user-management");
     }
 }

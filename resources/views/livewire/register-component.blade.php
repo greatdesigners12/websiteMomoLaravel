@@ -125,19 +125,6 @@
             </div><!--end col-->           
         </div><!--end row-->
     </div><!--end container-->
-    <button class="btn btn-primary" id="pay-button">Pay Now</button>
-    <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="{{ config('midtrans.client_key') }}"></script>
-    <script>
-        const payButton = document.querySelector('#pay-button');
-        payButton.addEventListener('click', function(e) {
-            window.location.href = "{{$snapToken}}"
-        });
-        
-        $("#registerBtn").click(function(){
-            if($('#customSwitchSuccess').is(':checked')){
-                
-                $("#registerForm").submit();
-            }
-        });
-    </script>
+    {{-- <button class="btn btn-primary" id="pay-button">Pay Now</button> --}}
+    
 </div>

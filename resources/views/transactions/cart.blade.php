@@ -1,5 +1,5 @@
 @extends('template')
 
 @section('content')
-    <livewire:cart />
+    <livewire:carts />
 @endsection

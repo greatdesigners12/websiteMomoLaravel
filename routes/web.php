@@ -39,6 +39,11 @@ Route::get('/otpVerification/{token}', [RouteController::class, "toOtpVerificati
 Route::get('/wishlist', [RouteController::class, "toWishListPage"])->name("toWishListPage");
 Route::get('/cart', [RouteController::class, "toCartPage"])->name("toCartPage");
 
+// Transactions
+Route::get('/transactions', [RouteController::class, "toHistoryTransactionsPage"])->name("toHistoryTransactionsPage");
+Route::get('/transaction/{invoice}', [RouteController::class, "toTransactionDetailPage"])->name("toTransactionDetailPage");
+
+
 // Admin
 Route::get('/dashboard', [RouteController::class, "toDashboardPage"])->name("toDashboardPage");
 Route::get('/createProduct', [RouteController::class, "toCreateProductPage"])->name("toCreateProductPage");
@@ -46,6 +51,7 @@ Route::get('/editProduct/{id}', [RouteController::class, "toEditProductPage"])->
 Route::get('/productsManagement', [RouteController::class, "toProductsManagementPage"])->name("toProductsManagementPage");
 Route::get('/brandsManagement', [RouteController::class, "toBrandsManagementPage"])->name("toBrandsManagementPage");
 Route::get('/categoriesManagement', [RouteController::class, "toCategoriesManagementPage"])->name("toategoriesManagementPage");
+Route::get('/usersManagement', [RouteController::class, "toUsersManagementPage"])->name("toUsersManagementPage");
 
 // Product
 Route::post('/processCreateProduct', [ProductController::class, "createProduct"])->name("processCreateProduct");
