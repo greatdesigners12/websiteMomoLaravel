@@ -21,7 +21,7 @@ return new class extends Migration
             $table->bigInteger('price');
             $table->integer('stock');
             $table->float('weight');
-            $table->string('status');
+            $table->integer('status');
             $table->unsignedBigInteger('category_id');
             $table->unsignedBigInteger('admin_id');
             $table->unsignedBigInteger('brand_id');

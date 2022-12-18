@@ -57,7 +57,7 @@ class AuthController extends Controller
             $token = Str::random(64);
             $user = User::create(['email' => $request->email,
             'password' => Hash::make($request->password),
-            'role' => 'user',
+            'role' => 'customer',
             'is_verified' => 0,
             'token' => $token]);
             

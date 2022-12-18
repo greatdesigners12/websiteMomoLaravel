@@ -36,7 +36,7 @@ class productTable extends DataTableComponent
             Column::make("Description", "description")
                 ->sortable(),
             Column::make("Action", "id")->format(
-                fn($value, $row, Column $column) => view("admin-page.buttons")->withValue($value)
+                fn($value, $row, Column $column) => view("admin-page.product-management.buttons")->withValue($value)
             ),
           
         ];

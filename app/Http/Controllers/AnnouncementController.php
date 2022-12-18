@@ -6,81 +6,51 @@ use App\Models\announcement;
 use App\Http\Requests\StoreannouncementRequest;
 use App\Http\Requests\UpdateannouncementRequest;
 
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
+
 class AnnouncementController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
+    function createannouncement(Request $request){
+      
+        $rules = ['content' => 'required','promo_id'=>'required','status'=>'required'];
+        $messages = ["required" => "Input :attribute tidak boleh kosong","unique" => ":attribute sudah ada, silahkan input :attribute yang berbeda"];
+        $validator = Validator::make($request->all(), $rules, $messages);
+        if($validator->fails()){
+            return redirect()->back()->withErrors($validator);
+        }else{
+            if($request->status == 1){
+              announcement::query()->update(['status'=>0]);
+             
+            }
+                announcement::create(['content' => $request->content,
+                'promo_id' => $request->promo_id,
+                'status' => $request->status]);
+                return redirect()->back()->with("message", "announcement has been created");
+            
+           
+            
+        }
     }
+    function updateannouncement(Request $request){
+      
+        $rules = ['id'=>'required','content' => 'required' ,'promo_id'=>'required','status'=>'required'];
+        $messages = ["required" => "Input :attribute tidak boleh kosong","unique" => ":attribute sudah ada, silahkan input :attribute yang berbeda"];
+        $validator = Validator::make($request->all(), $rules, $messages);
+        if($validator->fails()){
+            return redirect()->back()->withErrors($validator);
+        }else{
+            $validated = $validator->validated();
+            if($request->status == 1){
+                announcement::query()->update(['status'=>0]);
+            }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+            announcement::where('id',$validated['id'])->update(['content' => $request->content,
+            'promo_id' => $request->promo_id,
+            'status' => $request->status]);
+            return redirect()->back()->with("message", "announcement has been updated");
+            
+        }}
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StoreannouncementRequest  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(StoreannouncementRequest $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\announcement  $announcement
-     * @return \Illuminate\Http\Response
-     */
-    public function show(announcement $announcement)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\announcement  $announcement
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(announcement $announcement)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateannouncementRequest  $request
-     * @param  \App\Models\announcement  $announcement
-     * @return \Illuminate\Http\Response
-     */
-    public function update(UpdateannouncementRequest $request, announcement $announcement)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\announcement  $announcement
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(announcement $announcement)
-    {
-        //
-    }
+    
 }

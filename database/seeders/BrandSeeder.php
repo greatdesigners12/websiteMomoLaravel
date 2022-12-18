@@ -18,56 +18,56 @@ class BrandSeeder extends Seeder
         Brand::factory()->create([
             'name'=>'-',
             'logo'=>'-',
-            'status'=>'aktif',
+            'status'=>'1',
             'admin_id'=>'1'
 
         ]);
         Brand::factory()->create([
             'name'=>'Lomira',
             'logo'=>'lomira.png',
-            'status'=>'aktif',
+            'status'=>'1',
             'admin_id'=>'1'
 
         ]);
         Brand::factory()->create([
             'name'=>'JustMiss',
             'logo'=>'justmiss.jpg',
-            'status'=>'aktif',
+            'status'=>'1',
             'admin_id'=>'1'
 
         ]);
         Brand::factory()->create([
             'name'=>'Follacure',
             'logo'=>'follacure.png',
-            'status'=>'aktif',
+            'status'=>'1',
             'admin_id'=>'1'
 
         ]);
         Brand::factory()->create([
             'name'=>'Implora',
             'logo'=>'implora.png',
-            'status'=>'aktif',
+            'status'=>'1',
             'admin_id'=>'1'
 
         ]);
         Brand::factory()->create([
             'name'=>'L`Oréal',
             'logo'=>'loreal.jpg',
-            'status'=>'aktif',
+            'status'=>'1',
             'admin_id'=>'1'
 
         ]);
         Brand::factory()->create([
             'name'=>'matrix',
             'logo'=>'matrix.png',
-            'status'=>'aktif',
+            'status'=>'1',
             'admin_id'=>'1'
 
         ]);
         Brand::factory()->create([
             'name'=>'Wardah',
             'logo'=>'wardah.jpg',
-            'status'=>'aktif',
+            'status'=>'1',
             'admin_id'=>'1'
 
         ]);

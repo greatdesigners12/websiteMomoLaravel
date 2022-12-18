@@ -20,7 +20,10 @@ class User extends Authenticatable
     protected $fillable =[
         "email",
         "password",
-        "role",
+        "role_id",
+        "phoneNumber",
+        "token",
+        "status",
         'last_login'
     ];
     protected $table = "users";
@@ -45,4 +48,8 @@ class User extends Authenticatable
     protected $casts = [
         'last_login' => 'datetime',
     ];
+    public function Role()
+    {
+        return $this->belongsTo(Roles::class, 'role_id');
+    }
 }
