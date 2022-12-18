@@ -7,8 +7,8 @@
 
 <livewire:admin-management>
 <script>
-    deleteId(id){
-        document.getElementById(id)
+    function deleteId(id){
+        $("#deleteAdminId").val(id)
     }
 </script>
 

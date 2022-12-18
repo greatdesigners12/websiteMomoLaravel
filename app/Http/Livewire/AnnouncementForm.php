@@ -13,7 +13,6 @@ class AnnouncementForm extends Component
     public function mount(){
         if($this->announcement != null){
             $this->content = $this->announcement->content;
-            $this->promo_id = $this->announcement->promo_id;
             $this->status = $this->announcement->status;
         }
     }

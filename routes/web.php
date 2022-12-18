@@ -44,6 +44,12 @@ Route::get('/validatePhoneNumber', [RouteController::class, "toValidatePhoneNumb
 Route::get('/otpVerification/{token}', [RouteController::class, "toOtpVerificationPage"])->name("toOtpVerificationPage");
 
 
+Route::get('/about', function () {
+    return view('AboutUs');
+})->name("about");
+
+
+
 
 // User 
 Route::get('/wishlist', [RouteController::class, "toWishListPage"])->name("toWishListPage");
@@ -114,3 +120,6 @@ Route::post('/sendEmailto', [RouteController::class, "sendEmail"])->name("sendEm
 Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LanguageController@switchLang']);
 Route::get('/languageDemo', 'App\Http\Controllers\Controller@languageDemo');
 Route::get('/protectedPage', [RouteController::class, "toProtectedPage"])->middleware('auth.basic');
+Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LanguageController@switchLang']);
+Route::get('/languageDemo', 'App\Http\Controllers\Controller@languageDemo');
+

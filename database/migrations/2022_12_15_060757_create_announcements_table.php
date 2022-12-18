@@ -16,9 +16,7 @@ return new class extends Migration
         Schema::create('announcements', function (Blueprint $table) {
             $table->id();
             $table->text('content');
-            $table->unsignedBigInteger('promo_id');
             $table->string('status');
-            $table->foreign('promo_id')->references('id')->on('promo')->onDelete('cascade');
             $table->timestamps();
         });
     }

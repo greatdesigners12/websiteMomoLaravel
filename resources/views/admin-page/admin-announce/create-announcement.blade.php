@@ -2,6 +2,6 @@
 
 @section('content')
 
-   <livewire:announcement-form :announcement="null" :promo="$promo"/>
+   <livewire:announcement-form :announcement="null" />
    
 @endsection

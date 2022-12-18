@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 /* reset */
 /* main variables */
 body {
@@ -352,10 +353,6 @@ li {
 	color: #fff;
 }
 
-.icon-facebook:before {
-	content: "\e906";
-	color: #999;
-}
 
 .icon-heart:before {
 	content: "\e907";
@@ -7361,10 +7358,6 @@ blockquote:after,
 
 .login-form__social li a i:before {
 	color: #fff;
-}
-
-.login-form__social li a i.icon-facebook {
-	background: #3b5999;
 }
 
 .login-form__social li a i.icon-twitter {

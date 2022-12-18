@@ -13,7 +13,7 @@ class AnnouncementController extends Controller
 {
     function createannouncement(Request $request){
       
-        $rules = ['content' => 'required','promo_id'=>'required','status'=>'required'];
+        $rules = ['content' => 'required','status'=>'required'];
         $messages = ["required" => "Input :attribute tidak boleh kosong","unique" => ":attribute sudah ada, silahkan input :attribute yang berbeda"];
         $validator = Validator::make($request->all(), $rules, $messages);
         if($validator->fails()){
@@ -24,7 +24,10 @@ class AnnouncementController extends Controller
              
             }
                 announcement::create(['content' => $request->content,
+<<<<<<< HEAD
                 'promo_id' => $request->promo_id,
+=======
+>>>>>>> origin/wansen
                 'status' => $request->status]);
                 return redirect()->back()->with("message", "announcement has been created");
             
@@ -34,7 +37,11 @@ class AnnouncementController extends Controller
     }
     function updateannouncement(Request $request){
       
+<<<<<<< HEAD
         $rules = ['id'=>'required','content' => 'required' ,'promo_id'=>'required','status'=>'required'];
+=======
+        $rules = ['id'=>'required','content' => 'required' ,'status'=>'required'];
+>>>>>>> origin/wansen
         $messages = ["required" => "Input :attribute tidak boleh kosong","unique" => ":attribute sudah ada, silahkan input :attribute yang berbeda"];
         $validator = Validator::make($request->all(), $rules, $messages);
         if($validator->fails()){
@@ -44,9 +51,13 @@ class AnnouncementController extends Controller
             if($request->status == 1){
                 announcement::query()->update(['status'=>0]);
             }
+<<<<<<< HEAD
 
             announcement::where('id',$validated['id'])->update(['content' => $request->content,
             'promo_id' => $request->promo_id,
+=======
+            announcement::where('id',$validated['id'])->update(['content' => $request->content,
+>>>>>>> origin/wansen
             'status' => $request->status]);
             return redirect()->back()->with("message", "announcement has been updated");
             

@@ -17,37 +17,30 @@ class CategorySeeder extends Seeder
     {
         Category::factory()->create([
                 'name'=>'Aksesoris',
-                'admin_id'=>'1',
                 'status'=>'1'
         ]);
         Category::factory()->create([
                 'name'=>'Kosmetik',
-                'admin_id'=>'1',
                 'status'=>'1'
         ]);
          Category::factory()->create([
                 'name'=>'Aksesoris Mandi',
-                'admin_id'=>'1',
                 'status'=>'1'
         ]);
         Category::factory()->create([
                 'name'=>'Perlengkapan Bayi',
-                'admin_id'=>'1',
                 'status'=>'1'
         ]);
         Category::factory()->create([
                 'name'=>'Hijab',
-                'admin_id'=>'1',
                 'status'=>'1'
         ]);
         Category::factory()->create([
                 'name'=>'Tas',
-                'admin_id'=>'1',
                 'status'=>'1'
         ]);
         Category::factory()->create([
                 'name'=>'Dekorasi',
-                'admin_id'=>'1',
                 'status'=>'1'
         ]);
     }

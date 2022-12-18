@@ -74,5 +74,9 @@ class AdminController extends Controller
             
         }
     }
+    function deleteAdmin(Request $request){
+        User::where('id',$request->id)->delete();
+        return redirect()->back()->with("message", "Admin deleted");
+    }
     
 }

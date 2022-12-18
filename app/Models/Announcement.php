@@ -7,10 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 
 class Announcement extends Model
-<<<<<<< HEAD
-{
 
-=======
 {   
     
     public function Promo()
@@ -18,13 +15,16 @@ class Announcement extends Model
         return $this->belongsTo(Promo::class, 'promo_id');
     }
 
+
+    
+
+
     protected $table = "announcements";
     protected $fillable=[
         "content",
-        "promo_id",
         "status", 
-        "admin_id"
+    
     ];
->>>>>>> origin/database
+
     use HasFactory;
 }

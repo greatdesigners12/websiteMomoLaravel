@@ -80,9 +80,6 @@ class ProductController extends Controller
         }
     }
 
-    public function getProductById($id){
-        $product = Product::find($id);
-        return view("detail-product", ["product" => $product]);
-    }
+    
 
 }

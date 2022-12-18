@@ -41,7 +41,11 @@
                     </div>
                 </div>
             <div class="footer-copy">
+<<<<<<< HEAD
                 <span>&copy; {{__('All rights reserved. MOMO 2022')}}</span>
+=======
+                <span>&copy; All rights reserved.</span>
+>>>>>>> origin/wansen
             </div>
         </div>
     </footer>

@@ -27,6 +27,7 @@ class RouteController extends Controller
 {
 
     public function toHomePage(){
+
         $products = DB::table('products')->leftJoin("favourite_products", function ($join) {
             $join->on('products.id', '=', 'favourite_products.product_id')
                  ->where('favourite_products.user_id', '=', Auth::id());
@@ -199,16 +200,18 @@ class RouteController extends Controller
         return view('admin-page.admin-announce.annnouncement-management');
     }
     public function toCreateannouncementPage(){
+
         $promo = Promo::all();
 
         
         return view('admin-page.admin-announce.create-announcement',["promo" => $promo]);
     }
+    
     public function toEditannouncementPage($id){
         $announcement = Announcement::find($id);
-        $promo = Promo::all();
 
-        return view('admin-page.admin-announce.edit-announcement', ["announcement" =>$announcement, "promo" => $promo]);
+        return view('admin-page.admin-announce.edit-announcement', ["announcement" =>$announcement]);
+
     }
 
 

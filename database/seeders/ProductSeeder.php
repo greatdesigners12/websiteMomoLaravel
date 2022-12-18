@@ -24,7 +24,6 @@ class ProductSeeder extends Seeder
             'weight'=>'0.5',
             'status'=>'1',
             'category_id'=>'5',
-            'admin_id'=>'1',
             'brand_id'=>'1',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
@@ -39,7 +38,6 @@ class ProductSeeder extends Seeder
             'weight'=>'0.75',
             'status'=>'1',
             'category_id'=>'4',
-            'admin_id'=>'1',
             'brand_id'=>'1',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
@@ -54,7 +52,7 @@ class ProductSeeder extends Seeder
             'weight'=>'0.75',
             'status'=>'1',
             'category_id'=>'5',
-            'admin_id'=>'1',
+              
             'brand_id'=>'1',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
@@ -69,7 +67,11 @@ class ProductSeeder extends Seeder
             'weight'=>'0.5',
             'status'=>'1',
             'category_id'=>'3',
-            'admin_id'=>'1',
+
+            
+
+              
+
             'brand_id'=>'1',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
@@ -84,7 +86,11 @@ class ProductSeeder extends Seeder
             'weight'=>'0.80',
             'status'=>'1',
             'category_id'=>'3',
-            'admin_id'=>'1',
+
+            
+
+              
+
             'brand_id'=>'1',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
@@ -99,7 +105,11 @@ class ProductSeeder extends Seeder
             'weight'=>'0.80',
             'status'=>'1',
             'category_id'=>'3',
-            'admin_id'=>'1',
+
+            
+
+              
+
             'brand_id'=>'1',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
@@ -114,7 +124,11 @@ class ProductSeeder extends Seeder
             'weight'=>'1.5',
             'status'=>'1',
             'category_id'=>'1',
-            'admin_id'=>'1',
+
+            
+
+              
+
             'brand_id'=>'1',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
@@ -129,7 +143,11 @@ class ProductSeeder extends Seeder
             'weight'=>'1.5',
             'status'=>'1',
             'category_id'=>'1',
-            'admin_id'=>'1',
+
+            
+
+              
+
             'brand_id'=>'1',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
@@ -144,7 +162,11 @@ class ProductSeeder extends Seeder
             'weight'=>'0.25',
             'status'=>'1',
             'category_id'=>'7',
-            'admin_id'=>'1',
+
+            
+
+              
+
             'brand_id'=>'1',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
@@ -159,7 +181,11 @@ class ProductSeeder extends Seeder
             'weight'=>'0.4',
             'status'=>'1',
             'category_id'=>'1',
-            'admin_id'=>'1',
+
+            
+
+              
+
             'brand_id'=>'1',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
@@ -174,7 +200,6 @@ class ProductSeeder extends Seeder
             'weight'=>'0.5',
             'status'=>'1',
             'category_id'=>'2',
-            'admin_id'=>'1',
             'brand_id'=>'2',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
@@ -189,7 +214,11 @@ class ProductSeeder extends Seeder
             'weight'=>'0.7',
             'status'=>'1',
             'category_id'=>'2',
-            'admin_id'=>'1',
+
+            
+
+              
+
             'brand_id'=>'3',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
@@ -204,7 +233,11 @@ class ProductSeeder extends Seeder
             'weight'=>'0.7',
             'status'=>'1',
             'category_id'=>'2',
-            'admin_id'=>'1',
+
+            
+
+              
+
             'brand_id'=>'4',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
@@ -219,7 +252,9 @@ class ProductSeeder extends Seeder
             'weight'=>'0.7',
             'status'=>'1',
             'category_id'=>'1',
-            'admin_id'=>'1',
+
+            
+
             'brand_id'=>'1',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
@@ -234,7 +269,11 @@ class ProductSeeder extends Seeder
             'weight'=>'0.7',
             'status'=>'1',
             'category_id'=>'1',
-            'admin_id'=>'1',
+
+            
+
+              
+
             'brand_id'=>'1',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
@@ -249,7 +288,11 @@ class ProductSeeder extends Seeder
             'weight'=>'1.5',
             'status'=>'1',
             'category_id'=>'1',
-            'admin_id'=>'1',
+
+            
+
+              
+
             'brand_id'=>'1',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
@@ -264,7 +307,11 @@ class ProductSeeder extends Seeder
             'weight'=>'1.5',
             'status'=>'1',
             'category_id'=>'1',
-            'admin_id'=>'1',
+
+            
+
+              
+
             'brand_id'=>'1',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
@@ -279,7 +326,11 @@ class ProductSeeder extends Seeder
             'weight'=>'1.5',
             'status'=>'1',
             'category_id'=>'1',
-            'admin_id'=>'1',
+
+            
+
+              
+
             'brand_id'=>'1',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
@@ -294,7 +345,11 @@ class ProductSeeder extends Seeder
             'weight'=>'1.5',
             'status'=>'1',
             'category_id'=>'1',
-            'admin_id'=>'1',
+
+            
+
+              
+
             'brand_id'=>'1',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
@@ -309,7 +364,11 @@ class ProductSeeder extends Seeder
             'weight'=>'1.5',
             'status'=>'1',
             'category_id'=>'1',
-            'admin_id'=>'1',
+
+            
+
+              
+
             'brand_id'=>'1',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
@@ -324,7 +383,11 @@ class ProductSeeder extends Seeder
             'weight'=>'1.5',
             'status'=>'1',
             'category_id'=>'1',
-            'admin_id'=>'1',
+
+            
+
+              
+
             'brand_id'=>'1',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
@@ -339,7 +402,11 @@ class ProductSeeder extends Seeder
             'weight'=>'2',
             'status'=>'1',
             'category_id'=>'1',
-            'admin_id'=>'1',
+
+            
+
+              
+
             'brand_id'=>'1',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
@@ -354,7 +421,11 @@ class ProductSeeder extends Seeder
             'weight'=>'1.25',
             'status'=>'1',
             'category_id'=>'1',
-            'admin_id'=>'1',
+
+            
+
+              
+
             'brand_id'=>'1',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
@@ -369,7 +440,11 @@ class ProductSeeder extends Seeder
             'weight'=>'1.25',
             'status'=>'1',
             'category_id'=>'1',
-            'admin_id'=>'1',
+
+            
+
+              
+
             'brand_id'=>'1',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
@@ -384,7 +459,11 @@ class ProductSeeder extends Seeder
             'weight'=>'1.25',
             'status'=>'1',
             'category_id'=>'1',
-            'admin_id'=>'1',
+
+            
+
+              
+
             'brand_id'=>'1',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
@@ -399,7 +478,11 @@ class ProductSeeder extends Seeder
             'weight'=>'3.25',
             'status'=>'1',
             'category_id'=>'1',
-            'admin_id'=>'1',
+
+            
+
+              
+
             'brand_id'=>'1',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
@@ -414,7 +497,11 @@ class ProductSeeder extends Seeder
             'weight'=>'3.25',
             'status'=>'1',
             'category_id'=>'1',
-            'admin_id'=>'1',
+
+            
+
+              
+
             'brand_id'=>'1',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
@@ -429,7 +516,11 @@ class ProductSeeder extends Seeder
             'weight'=>'2.25',
             'status'=>'1',
             'category_id'=>'1',
-            'admin_id'=>'1',
+
+            
+
+              
+
             'brand_id'=>'1',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
@@ -444,7 +535,11 @@ class ProductSeeder extends Seeder
             'weight'=>'2.3',
             'status'=>'1',
             'category_id'=>'1',
-            'admin_id'=>'1',
+
+            
+
+              
+
             'brand_id'=>'1',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
@@ -459,7 +554,11 @@ class ProductSeeder extends Seeder
             'weight'=>'2.25',
             'status'=>'1',
             'category_id'=>'1',
-            'admin_id'=>'1',
+
+            
+
+              
+
             'brand_id'=>'1',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
@@ -474,7 +573,11 @@ class ProductSeeder extends Seeder
             'weight'=>'2.25',
             'status'=>'1',
             'category_id'=>'1',
-            'admin_id'=>'1',
+
+            
+
+              
+
             'brand_id'=>'1',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
@@ -489,7 +592,11 @@ class ProductSeeder extends Seeder
             'weight'=>'2.25',
             'status'=>'1',
             'category_id'=>'1',
-            'admin_id'=>'1',
+
+            
+
+              
+
             'brand_id'=>'1',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
@@ -504,7 +611,11 @@ class ProductSeeder extends Seeder
             'weight'=>'2.3',
             'status'=>'1',
             'category_id'=>'1',
-            'admin_id'=>'1',
+
+            
+
+              
+
             'brand_id'=>'1',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
@@ -519,7 +630,11 @@ class ProductSeeder extends Seeder
             'weight'=>'2.3',
             'status'=>'1',
             'category_id'=>'1',
-            'admin_id'=>'1',
+
+            
+
+              
+
             'brand_id'=>'1',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
@@ -534,7 +649,11 @@ class ProductSeeder extends Seeder
             'weight'=>'2.3',
             'status'=>'1',
             'category_id'=>'1',
-            'admin_id'=>'1',
+
+            
+
+              
+
             'brand_id'=>'1',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
@@ -549,7 +668,11 @@ class ProductSeeder extends Seeder
             'weight'=>'2',
             'status'=>'1',
             'category_id'=>'1',
-            'admin_id'=>'1',
+
+            
+
+              
+
             'brand_id'=>'1',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
@@ -564,7 +687,11 @@ class ProductSeeder extends Seeder
             'weight'=>'2',
             'status'=>'1',
             'category_id'=>'1',
-            'admin_id'=>'1',
+
+            
+
+              
+
             'brand_id'=>'1',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
@@ -579,7 +706,11 @@ class ProductSeeder extends Seeder
             'weight'=>'2',
             'status'=>'1',
             'category_id'=>'1',
-            'admin_id'=>'1',
+
+            
+
+              
+
             'brand_id'=>'1',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
@@ -594,7 +725,11 @@ class ProductSeeder extends Seeder
             'weight'=>'2',
             'status'=>'1',
             'category_id'=>'1',
-            'admin_id'=>'1',
+
+            
+
+              
+
             'brand_id'=>'1',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
@@ -609,7 +744,11 @@ class ProductSeeder extends Seeder
             'weight'=>'2.2',
             'status'=>'1',
             'category_id'=>'1',
-            'admin_id'=>'1',
+
+            
+
+              
+
             'brand_id'=>'1',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
@@ -624,7 +763,11 @@ class ProductSeeder extends Seeder
             'weight'=>'2.3',
             'status'=>'1',
             'category_id'=>'1',
-            'admin_id'=>'1',
+
+            
+
+              
+
             'brand_id'=>'1',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
@@ -639,7 +782,11 @@ class ProductSeeder extends Seeder
             'weight'=>'2.3',
             'status'=>'1',
             'category_id'=>'1',
-            'admin_id'=>'1',
+
+            
+
+              
+
             'brand_id'=>'1',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
@@ -654,7 +801,11 @@ class ProductSeeder extends Seeder
             'weight'=>'2.2',
             'status'=>'1',
             'category_id'=>'1',
-            'admin_id'=>'1',
+
+            
+
+              
+
             'brand_id'=>'1',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
@@ -669,7 +820,11 @@ class ProductSeeder extends Seeder
             'weight'=>'2.2',
             'status'=>'1',
             'category_id'=>'3',
-            'admin_id'=>'1',
+
+            
+
+              
+
             'brand_id'=>'1',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
@@ -684,7 +839,11 @@ class ProductSeeder extends Seeder
             'weight'=>'2.2',
             'status'=>'1',
             'category_id'=>'3',
-            'admin_id'=>'1',
+
+            
+
+              
+
             'brand_id'=>'1',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
@@ -699,7 +858,11 @@ class ProductSeeder extends Seeder
             'weight'=>'2.2',
             'status'=>'1',
             'category_id'=>'6',
-            'admin_id'=>'1',
+
+            
+
+              
+
             'brand_id'=>'1',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
@@ -714,7 +877,11 @@ class ProductSeeder extends Seeder
             'weight'=>'2.2',
             'status'=>'1',
             'category_id'=>'6',
-            'admin_id'=>'1',
+
+            
+
+              
+
             'brand_id'=>'1',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
@@ -729,7 +896,11 @@ class ProductSeeder extends Seeder
             'weight'=>'2.2',
             'status'=>'1',
             'category_id'=>'6',
-            'admin_id'=>'1',
+
+            
+
+              
+
             'brand_id'=>'1',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
@@ -744,7 +915,11 @@ class ProductSeeder extends Seeder
             'weight'=>'2.2',
             'status'=>'1',
             'category_id'=>'6',
-            'admin_id'=>'1',
+
+            
+
+              
+
             'brand_id'=>'1',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
@@ -759,7 +934,11 @@ class ProductSeeder extends Seeder
             'weight'=>'2.2',
             'status'=>'1',
             'category_id'=>'6',
-            'admin_id'=>'1',
+
+            
+
+              
+
             'brand_id'=>'1',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")

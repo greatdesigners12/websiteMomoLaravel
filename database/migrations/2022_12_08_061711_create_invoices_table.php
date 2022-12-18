@@ -22,8 +22,6 @@ return new class extends Migration
             $table->string('payment_status');
             $table->string('order_status');
             $table->timestamp('admin_response')->useCurrent();
-            $table->unsignedBigInteger('admin_id');
-            $table->foreign('admin_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
