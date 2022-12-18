@@ -94,6 +94,7 @@ Route::get('/toEditAdminPass/{id}',[RouteController::class, "toEditpassadminPage
 Route::POST('/processCreateadmin', [AdminController::class, "createadmin"])->name("processCreateadmin");
 Route::POST('/processUpdatepassadmin', [AdminController::class, "updatepassword"])->name("processUpdatepassadmin");
 Route::POST('/processUpdateadmin', [AdminController::class, "updateadmin"])->name("processUpdateadmin");
+Route::POST('/deleteAdmin', [AdminController::class, "deleteAdmin"])->name("deleteAdmin");
 
 
 //promo
@@ -103,6 +104,7 @@ Route::get('/editPromo/{id}',[RouteController::class, "toEditpromoPage"])->name(
 Route::get('/promoManagement',[RouteController::class, "topromoManagementPage"])->name("topromoManagementPage");
 Route::POST('/processCreatepromo', [PromoController::class, "createpromo"])->name("processCreatepromo");
 Route::POST('/processUpdatepromo', [PromoController::class, "updatepromo"])->name("processUpdatepromo");
+Route::POST('/deletePromo', [PromoController::class, "deletePromo"])->name("deletePromo");
 
 //announcement
 Route::get('/createAnnouncement',[RouteController::class, "toCreateannouncementPage"])->name("toCreateannouncementPage");
@@ -110,6 +112,7 @@ Route::get('/editAnnouncement/{id}',[RouteController::class, "toEditannouncement
 Route::get('/announcementManagement',[RouteController::class, "toannouncementManagementPage"])->name("toannouncementManagementPage");
 Route::POST('/processCreateannouncement', [AnnouncementController::class, "createannouncement"])->name("processCreateannouncement");
 Route::POST('/processUpdateannouncement', [AnnouncementController::class, "updateannouncement"])->name("processUpdateannouncement");
+Route::POST('/deleteAnnouncement', [AnnouncementController::class, "deleteAnnouncement"])->name("deleteAnnouncement");
 
 //user_info
 

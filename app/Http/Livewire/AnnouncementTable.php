@@ -17,7 +17,9 @@ class AnnouncementTable extends DataTableComponent
     {
         $this->setPrimaryKey('id');
     }
-
+    public function deleteId($id){
+        $this->deleteId = $id;
+    }
     public function columns(): array
     {
         

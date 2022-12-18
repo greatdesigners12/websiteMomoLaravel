@@ -16,8 +16,6 @@ return new class extends Migration
         Schema::create('promo', function (Blueprint $table) {
             $table->id();
             $table->text('code');
-            $table->string('type');
-            $table->bigInteger('fixed')->nullable();
             $table->integer('percentage')->nullable();
             $table->biginteger('max_discount')->nullable();
             $table->string('status');

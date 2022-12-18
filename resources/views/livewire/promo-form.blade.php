@@ -27,22 +27,6 @@
                     <input type="text" class="form-control" id="exampleInputEmail1" value="{{$promo == null ? '' : $promo->code}}" name="code" placeholder="Enter product name">
                     {{-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> --}}
                 </div>
-                <div class="form-group">
-                    <label class="mb-3">{{ "Tipe Promo" }}</label>
-                    <select class="select2 form-control mb-2 custom-select promo_type" value="{{$promo == null ? '' : $promo->type}}" name="type"  style="width: 100%; height:36px;">
-                        <option value="">{{ "Pilih" }}</option>
-                        <option value="fixed">{{ "Diskon Total Harga" }}</option>
-                        <option value="percentage">{{ "Diskon Persentase Total Harga" }}</option>
-                    
-                       
-                    </select>
-                </div>
-                <div class="form-group mt-3" id="fixed">
-                    <label for="exampleInputEmail1">{{ "Diskon Harga Pasti" }}</label>
-                 
-                    <input type="text" class="form-control" id="exampleInputEmail1" value="{{$promo == null ? '' : $promo->fixed}}" name="fixed" placeholder="Masukkan harga diskon pasti">
-                    {{-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> --}}
-                </div>
                 <div id="percentage">
                     <div class="form-group mt-3">
                         <label for="exampleInputEmail1">{{ "Persentase Diskon" }}</label>
@@ -59,9 +43,9 @@
                 </div>
                 <div class="form-group">
                     <label class="mb-3">{{ "Status Code" }}</label>
-                    <select class="select2 form-control mb-2 custom-select" id="promo_type" value="{{$promo == null ? '' : $promo->status}}" name="status"  style="width: 100%; height:36px;">
-                        <option value="1">{{ "Aktif" }}</option>
-                        <option value="0">{{ "Non-Aktif" }}</option>
+                    <select class="select2 form-control mb-2 custom-select"  value="{{$promo == null ? '' : $promo->status}}" name="status"  style="width: 100%; height:36px;">
+                        <option value="1"<?=($promo == null ? '' : $promo->status) == 1 ? ' selected="selected"' : '';?>>{{ "Aktif" }}</option>
+                        <option value="0" <?=($promo == null ? '' : $promo->status) == 0 ? ' selected="selected"' : '';?>>{{ "Non-Aktif" }}</option>
                     
                        
                     </select>

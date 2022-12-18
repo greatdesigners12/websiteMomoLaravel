@@ -12,8 +12,6 @@ class PromoForm extends Component
     public function mount(){
         if($this->promo != null){
             $this->code = $this->promo->code;
-            $this->type = $this->promo->type;
-            $this->fixed = $this->promo->fixed;
             $this->percentage = $this->promo->percentage;
             $this->max_discount = $this->promo->max_discount;
             $this->status = $this->promo->status;
