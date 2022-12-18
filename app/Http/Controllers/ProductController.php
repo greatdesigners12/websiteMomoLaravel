@@ -34,24 +34,27 @@ class ProductController extends Controller
     }
 
     function createproduct(Request $request){
-        $rules = ['name' => 'required', 'description' => "required", 'category_id' => "required|integer", 'brand_id' => "required|integer", 'price' => "required|integer", 'stock' => "required|integer", 'image_product' => 'required'];
+        
+        $rules = ['name' => 'required', 'description' => "required", 'category_id' => "required|integer", 'brand_id' => "required|integer", 'price' => "required", 'stock' => "required|integer", 'image_product' => 'required'];
         $messages = ["required" => "Input :attribute tidak boleh kosong", "integer" => "Input :attribute harus angka"];
+        
         $validator = Validator::make($request->all(), $rules, $messages);
         if($validator->fails()){
             return redirect()->back()->withErrors($validator);
         }else{
             $validated = $validator->validated();
             $imageName = time().'.'.$request->image_product->extension(); 
-            
-            $this->photo->storeAs('img/momo_product/', $imageName, 'public');
+            $validated["price"] = str_replace('.', '', $validated["price"]);
+            $request->image_product->storeAs('img/momo_product/', $imageName, 'public');
             $validated['image_product'] = $imageName;
+            
             product::create($validated);
             return redirect()->back()->with("message", "product has been inserted");
         }
     }
 
     function updateProduct(Request $request){
-        $rules = ['id' => 'required' ,'name' => 'required', 'description' => "required", 'category_id' => "required|integer", 'company_id' => "required|integer", 'price' => "required", 'stock' => "required|integer"];
+        $rules = ['id' => 'required' ,'name' => 'required', 'description' => "required", 'category_id' => "required|integer", 'brand_id' => "required|integer", 'price' => "required", 'stock' => "required|integer"];
         $messages = ["required" => "Input :attribute tidak boleh kosong", "integer" => "Input :attribute harus angka"];
         $validator = Validator::make($request->all(), $rules, $messages);
         $validated = $validator->validated();
@@ -78,6 +81,12 @@ class ProductController extends Controller
             Product::where('id', $validated['id'])->update($validated);
             return redirect()->route('toProductManagementPage')->with("message", "Product has been updated");
         }
+    }
+
+    public function getProductById($id){
+        $product = Product::find($id);
+        return view("detail-product", ["product" => $product]);
+
     }
 
     

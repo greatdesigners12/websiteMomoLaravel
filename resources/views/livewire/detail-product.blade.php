@@ -31,13 +31,13 @@
                             <div class="product-slider__main">
                                 
                                 <div class="product-slider__main-item">
-                                    <img loading="lazy" src="{{route('storage/img/momo_product/') . $product->product_image}}" alt="product">
+                                    <img loading="lazy" src="{{asset('storage/img/momo_product/') . $product->product_image}}" alt="product">
                                 </div>
                             </div>
                             <div class="product-slider__nav">
                                 
                                 <div class="product-slider__nav-item">
-                                    <img loading="lazy" src="{{route('storage/img/momo_product/') . $product->product_image}}" alt="product">
+                                    <img loading="lazy" src="{{asset('storage/img/momo_product/') . $product->product_image}}" alt="product">
                                 </div>
                             </div>
                         </div>
