@@ -68,6 +68,8 @@ Route::get('/transactionsManagement', [RouteController::class, "totransactionsMa
 // Product
 Route::post('/processCreateProduct', [ProductController::class, "createProduct"])->name("processCreateProduct");
 Route::post('/processUpdateProduct', [ProductController::class, "updateProduct"])->name("processUpdateProduct");
+Route::get('/product/{id}', [ProductController::class, "getProductById"])->name("getProductById");
+
 
 // Brand
 

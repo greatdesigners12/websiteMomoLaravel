@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class FavouriteProduct extends Model
 {
+    protected $fillable = ["user_id", "product_id"];
+    public $timestamps = false;
     use HasFactory;
 }

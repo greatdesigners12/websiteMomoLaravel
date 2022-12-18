@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\product;
+use App\Models\Product;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File; 
@@ -78,6 +78,11 @@ class ProductController extends Controller
             Product::where('id', $validated['id'])->update($validated);
             return redirect()->route('toProductManagementPage')->with("message", "Product has been updated");
         }
+    }
+
+    public function getProductById($id){
+        $product = Product::find($id);
+        return view("detail-product", ["product" => $product]);
     }
 
 }
