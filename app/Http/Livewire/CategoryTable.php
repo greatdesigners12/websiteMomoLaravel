@@ -42,7 +42,7 @@ class CategoryTable extends DataTableComponent
     }
 
     public function categoryUpdated(){
-        $this->emit("categoryMsg", "The category has been updated");
+       
         
     }
 

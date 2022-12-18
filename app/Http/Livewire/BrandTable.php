@@ -8,9 +8,10 @@ use App\Models\Brand;
 
 class BrandTable extends DataTableComponent
 {
+
     protected $model = Brand::class;
 
-    protected $listeners = ["brandsUpdated"];
+    protected $listeners = ["brandsUpdated", ""];
 
     public function configure(): void
     {
@@ -19,6 +20,11 @@ class BrandTable extends DataTableComponent
     public function openEditModal($id){
        
         $this->emit("openBrandEditModal", $id);
+    }
+
+    public function openDeleteBrandConfirmation($id){
+        
+        $this->emit('openDeleteBrandConfirmation', $id);
     }
 
     public function brandsUpdated(){

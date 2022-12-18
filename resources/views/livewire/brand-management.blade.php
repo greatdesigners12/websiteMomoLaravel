@@ -9,6 +9,7 @@
                     default, so all you need to do to use it with your own tables is to call
                     the construction function: <code>$().DataTable();</code>.
                 </p>
+                <button class="btn btn-primary my-3" wire:click="openCreateBrandModal">+ Create Brand</button>
                 <img src="{{asset('storage/img/momo_partner/1670940595.png')}}" alt="">
                 @if (session()->has('message'))
 
@@ -21,7 +22,7 @@
             @endif
                 <livewire:brand-table />
                 <x-dialog />
-                <x-modal.card title="Edit Customer" blur wire:model.defer="openModal">
+                <x-modal.card title="{{$status == 'create' ? 'Create' : 'Edit'}} Brand" blur wire:model.defer="openModal">
                     <div class="px-3">
                 
                         <div class="form-group">

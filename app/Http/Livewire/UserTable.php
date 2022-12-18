@@ -3,7 +3,6 @@
 namespace App\Http\Livewire;
 
 use Rappasoft\LaravelLivewireTables\DataTableComponent;
-<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Builder;
 use Rappasoft\LaravelLivewireTables\Views\Column;
 use Rappasoft\LaravelLivewireTables\Views\Columns\BooleanColumn;
@@ -15,16 +14,11 @@ use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Http;    
 use Carbon\Carbon;
 use Rappasoft\LaravelLivewireTables\Views\Filters\DateFilter;
-=======
-use Rappasoft\LaravelLivewireTables\Views\Column;
-use App\Models\User;
->>>>>>> origin/database
 
 class UserTable extends DataTableComponent
 {
     protected $model = User::class;
 
-<<<<<<< HEAD
     protected $listeners = ["broadcastWhatsapp"];
 
     
@@ -138,11 +132,6 @@ class UserTable extends DataTableComponent
     public function builder(): Builder
     {
         return User::query()->where("role", "user")->select("*"); 
-=======
-    public function configure(): void
-    {
-        $this->setPrimaryKey('id');
->>>>>>> origin/database
     }
 
     public function columns(): array
@@ -151,7 +140,6 @@ class UserTable extends DataTableComponent
             Column::make("Id", "id")
                 ->sortable(),
             Column::make("Email", "email")
-<<<<<<< HEAD
                 ->sortable()->searchable(),
             Column::make("Gender", "user_information.gender")->format(
                 fn($value, $row, Column $column) => $value != "" ? ($value == "m" ? "male" : "female") : ""
@@ -165,20 +153,6 @@ class UserTable extends DataTableComponent
                 ->sortable(),
             BooleanColumn::make('Phone Verified','user_information.is_phone_verified'),
             BooleanColumn::make('Email Verified', 'user_information.is_email_verified')
-=======
-                ->sortable(),
-            Column::make("Role", "Role.name")
-                ->sortable(),
-            Column::make("Last login", "last_login")
-                ->sortable(),
-            Column::make("Created at", "created_at")
-                ->sortable(),
-            Column::make("Updated at", "updated_at")
-                ->sortable(),
-                Column::make("Action", "id")->format(
-                    fn($value, $row, Column $column) => view("admin-page.user-management.buttons")->withValue($value)
-                ),
->>>>>>> origin/database
         ];
     }
 }

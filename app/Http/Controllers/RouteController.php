@@ -8,13 +8,9 @@ use App\Models\Brand;
 use App\Models\Cart;
 use Illuminate\Http\Request;
 use App\Models\Category;
-<<<<<<< HEAD
-use App\Models\Product;
-=======
 use App\Models\product;
 use App\Models\Promo;
 use App\Models\roles;
->>>>>>> origin/database
 use App\Models\Transaction;
 use App\Models\TransactionGroup;
 use App\Models\TransactionRelation;

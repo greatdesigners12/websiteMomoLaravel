@@ -8,11 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Brand extends Model
 {
     protected $table = "brands";
-
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/database
+    protected $fillable = ["name", "logo"];
+    public $timestamps = false;
     use HasFactory;
 
 }
