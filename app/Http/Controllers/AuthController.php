@@ -148,12 +148,20 @@ class AuthController extends Controller
             $token = Str::random(64);         
             $user = User::create(['email' => $request->email,
             'password' => Hash::make($request->password),
+<<<<<<< HEAD
             'role_id' => 1,
             ]);
             $url = $_ENV['SERVER'] . "/emailVerification?" . "id=" . $user->id . "&" . "token=" .$token ;
             UserInformation::create(["user_id" => $user->id, "token" => $token, "is_email_verified" => 0]);
            
            
+=======
+            'role' => 'customer',
+            'is_verified' => 0,
+            'token' => $token]);
+            
+            
+>>>>>>> origin/database
             Mail::to($request->email)->send(new StoreEmailSender("Email Verification", $user->id ,$token));
   
             return redirect()->route("toLoginPage")->with("message", "Account has been registered, please check your email to verify your account");

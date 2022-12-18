@@ -32,3 +32,7 @@ class ProductForm extends Component
         return view('livewire.product-form');
     }
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/database

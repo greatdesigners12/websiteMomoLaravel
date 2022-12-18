@@ -2,7 +2,11 @@
 
 namespace App\Http\Livewire;
 
+<<<<<<< HEAD
 use App\Models\UserInformation;
+=======
+use App\Models\User;
+>>>>>>> origin/database
 use App\Models\UserOtp;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
@@ -19,7 +23,10 @@ class KodeOtpVerification extends Component
     public $currentSeconds = 0;
     public $display = true;
     protected $listeners = ["verifyOtp", "errorMessage"];
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/database
     public function mount(){
         $this->checker();
     }
@@ -48,6 +55,7 @@ class KodeOtpVerification extends Component
             if($user == null){
                 $this->display = false;
             }else{
+<<<<<<< HEAD
                 $checkOtp = UserOtp::where("user_id", Auth::id())->where("token", $this->token)->where("kode_otp", $otp)->first();
                 
                 if($checkOtp != null){
@@ -58,6 +66,15 @@ class KodeOtpVerification extends Component
                 }else{
                     $this->timerVisible = false;
                     $this->emitSelf("errorMessage", "Error OTP Code");
+=======
+                $checkOtp = UserOtp::where("user_id", Auth::id())->where("token", $this->token)->where("kode_otp", $otp)->latest();
+                if($checkOtp != null){
+                    User::where("id", Auth::id())->update(["is_phone_verified" => 1]);
+                    UserOtp::where("user_id", Auth::id())->where("token", $this->token)->delete();
+                    $this->successMessage();
+                }else{
+                    $this->errorMessage("Wrong OTP Code");
+>>>>>>> origin/database
                 }
                 
             }
@@ -68,9 +85,13 @@ class KodeOtpVerification extends Component
     }
 
     public function successMessage(){
+<<<<<<< HEAD
         if($this->timerVisible == true){
             $this->timerVisible = false;
         }
+=======
+        $this->timerVisible = false;
+>>>>>>> origin/database
         $this->dialog([
             'title'=> 'Success',
             'description'=>'Your phone number has been verified',
@@ -93,9 +114,13 @@ class KodeOtpVerification extends Component
     }
 
     public function errorMessage($message){
+<<<<<<< HEAD
         if($this->timerVisible == true){
             $this->timerVisible = false;
         }
+=======
+        $this->timerVisible = false;
+>>>>>>> origin/database
         $this->dialog()->confirm([
 
             'title'       => 'Error',

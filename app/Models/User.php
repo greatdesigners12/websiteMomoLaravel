@@ -21,6 +21,12 @@ class User extends Authenticatable
         "email",
         "password",
         "role_id",
+<<<<<<< HEAD
+=======
+        "phoneNumber",
+        "token",
+        "status",
+>>>>>>> origin/database
         'last_login'
     ];
     protected $table = "users";
@@ -47,6 +53,7 @@ class User extends Authenticatable
     protected $casts = [
         'last_login' => 'datetime',
     ];
+<<<<<<< HEAD
 
     public function user_information(){
         return $this->hasOne(UserInformation::class);
@@ -54,5 +61,10 @@ class User extends Authenticatable
 
     public function role(){
         return $this->belongsTo(Role::class, "role_id");
+=======
+    public function Role()
+    {
+        return $this->belongsTo(Roles::class, 'role_id');
+>>>>>>> origin/database
     }
 }
