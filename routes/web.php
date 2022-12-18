@@ -23,8 +23,78 @@ Route::get('/products', function () {
     return view('ProductList');
 })->name("products");
 
+<<<<<<< Updated upstream
 Route::get('/about', function () {
     return view('AboutUs');
 })->name("about");
+=======
+
+
+// User 
+Route::get('/wishlist', [RouteController::class, "toWishListPage"])->name("toWishListPage");
+Route::get('/cart', [RouteController::class, "toCartPage"])->name("toCartPage");
+
+// Transactions
+Route::get('/transactions', [RouteController::class, "toHistoryTransactionsPage"])->name("toHistoryTransactionsPage");
+Route::get('/transaction/{invoice}', [RouteController::class, "toTransactionDetailPage"])->name("toTransactionDetailPage");
+
+
+// Admin
+Route::get('/dashboard', [RouteController::class, "toDashboardPage"])->name("toDashboardPage");
+Route::get('/createProduct', [RouteController::class, "toCreateProductPage"])->name("toCreateProductPage");
+Route::get('/editProduct/{id}', [RouteController::class, "toEditProductPage"])->name("toEditProductPage");
+Route::get('/productsManagement', [RouteController::class, "toProductsManagementPage"])->name("toProductsManagementPage");
+Route::get('/brandsManagement', [RouteController::class, "toBrandsManagementPage"])->name("toBrandsManagementPage");
+Route::get('/categoriesManagement', [RouteController::class, "toCategoriesManagementPage"])->name("toategoriesManagementPage");
+Route::get('/usersManagement', [RouteController::class, "toUsersManagementPage"])->name("toUsersManagementPage");
+Route::get('/transactionsManagement', [RouteController::class, "totransactionsManagementPage"])->name("totransactionsManagementPage");
+
+
+// Product
+Route::post('/processCreateProduct', [ProductController::class, "createProduct"])->name("processCreateProduct");
+Route::post('/processUpdateProduct', [ProductController::class, "updateProduct"])->name("processUpdateProduct");
+
+// Brand
+
+
+// Owner
+Route::get('/userManagement',[RouteController::class, "touserManagementPage"])->name("touserManagementPage");
+Route::get('/createUser',[RouteController::class, "tocreateuserPage"])->name("tocreateuserPage");
+Route::get('/editUser/{id}',[RouteController::class, "toedituserPage"])->name("toedituserPage");
+Route::post('/processCreateuser', [userController::class, "createuser"])->name("processCreateuser");
+
+//Owner-Admin Management
+Route::get('/adminManagement',[RouteController::class, "toadminManagementPage"])->name("toadminManagementPage");
+Route::get('/createAdmin',[RouteController::class, "tocreateadminPage"])->name("tocreateadminPage");
+Route::get('/editAdmin/{id}',[RouteController::class, "toEditadminPage"])->name("toEditadminPage");
+Route::get('/toEditAdminPass/{id}',[RouteController::class, "toEditpassadminPage"])->name("toEditadminpassPage");
+Route::POST('/processCreateadmin', [AdminController::class, "createadmin"])->name("processCreateadmin");
+Route::POST('/processUpdatepassadmin', [AdminController::class, "updatepassword"])->name("processUpdatepassadmin");
+Route::POST('/processUpdateadmin', [AdminController::class, "updateadmin"])->name("processUpdateadmin");
+Route::POST('/deleteAdmin', [AdminController::class, "deleteAdmin"])->name("deleteAdmin");
+
+
+//promo
+
+Route::get('/createPromo',[RouteController::class, "toCreatepromoPage"])->name("toCreatepromoPage");
+Route::get('/editPromo/{id}',[RouteController::class, "toEditpromoPage"])->name("toEditpromoPage");
+Route::get('/promoManagement',[RouteController::class, "topromoManagementPage"])->name("topromoManagementPage");
+Route::POST('/processCreatepromo', [PromoController::class, "createpromo"])->name("processCreatepromo");
+Route::POST('/processUpdatepromo', [PromoController::class, "updatepromo"])->name("processUpdatepromo");
+
+//announcement
+Route::get('/createAnnouncement',[RouteController::class, "toCreateannouncementPage"])->name("toCreateannouncementPage");
+Route::get('/editAnnouncement/{id}',[RouteController::class, "toEditannouncementPage"])->name("toEditannouncementPage");
+Route::get('/announcementManagement',[RouteController::class, "toannouncementManagementPage"])->name("toannouncementManagementPage");
+Route::POST('/processCreateannouncement', [AnnouncementController::class, "createannouncement"])->name("processCreateannouncement");
+Route::POST('/processUpdateannouncement', [AnnouncementController::class, "updateannouncement"])->name("processUpdateannouncement");
+
+//user_info
+
+
+
+// Utility
+Route::post('/sendEmailto', [RouteController::class, "sendEmail"])->name("sendEmailTo");
+>>>>>>> Stashed changes
 Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LanguageController@switchLang']);
 Route::get('/languageDemo', 'App\Http\Controllers\Controller@languageDemo');
