@@ -30,10 +30,15 @@ Route::get('/sendEmail', [RouteController::class, "toSendEmailPage"])->name("sen
 Route::get('/login', [RouteController::class, "toLoginPage"])->name("toLoginPage");
 Route::post('/processLogin', [AuthController::class, "login"])->name("processLogin");
 Route::get('/emailVerification', [RouteController::class, "toVerificationPage"])->name("toVerificationPage");
+Route::get('/sendResetPassword', [RouteController::class, "toSendResetPasswordPage"])->name("toSendResetPasswordPage");
+Route::get('/resetPassword', [RouteController::class, "toResetPasswordPage"])->name("toResetPasswordPage");
+Route::post('/processSendResetPasswordEmail', [AuthController::class, "processSendResetPasswordEmail"])->name("processSendResetPasswordEmail");
+Route::post('/processResetPassword', [AuthController::class, "processResetPassword"])->name("processResetPassword");
 Route::post('/verifyUser', [AuthController::class, "verifyUser"])->name("verifyUser");
 Route::post('/processPhoneNumber', [AuthController::class, "processPhoneNumber"])->name("processPhoneNumber");
 Route::get('/validatePhoneNumber', [RouteController::class, "toValidatePhoneNumber"])->middleware('hasPhoneNumber')->name("toValidatePhoneNumber");
 Route::get('/otpVerification/{token}', [RouteController::class, "toOtpVerificationPage"])->name("toOtpVerificationPage");
+
 
 // User 
 Route::get('/wishlist', [RouteController::class, "toWishListPage"])->name("toWishListPage");
@@ -52,6 +57,8 @@ Route::get('/productsManagement', [RouteController::class, "toProductsManagement
 Route::get('/brandsManagement', [RouteController::class, "toBrandsManagementPage"])->name("toBrandsManagementPage");
 Route::get('/categoriesManagement', [RouteController::class, "toCategoriesManagementPage"])->name("toategoriesManagementPage");
 Route::get('/usersManagement', [RouteController::class, "toUsersManagementPage"])->name("toUsersManagementPage");
+Route::get('/transactionsManagement', [RouteController::class, "totransactionsManagementPage"])->name("totransactionsManagementPage");
+
 
 // Product
 Route::post('/processCreateProduct', [ProductController::class, "createProduct"])->name("processCreateProduct");

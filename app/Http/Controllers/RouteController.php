@@ -12,10 +12,12 @@ use App\Models\Transaction;
 use App\Models\TransactionGroup;
 use App\Models\TransactionRelation;
 use App\Models\User;
+use App\Models\UserInformation;
 use Illuminate\Support\Facades\Mail;
 use App\Services\Midtrans\CreateSnapTokenService;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use LaravelDaily\LaravelCharts\Classes\LaravelChart;
 
 
 class RouteController extends Controller
@@ -61,6 +63,10 @@ class RouteController extends Controller
         return view("transactions.transactionDetail", ["transaction" => $transactionDetail]);
     }
 
+    public function totransactionsManagementPage(){
+        return view("admin-page.transaction-management.transaction-management");
+    }
+
     public function toRegisterPage(){
         
         // $transaction = TransactionGroup::first();
@@ -82,13 +88,32 @@ class RouteController extends Controller
     }
 
     public function toVerificationPage(Request $request){
-        $user = User::where("id", $request->query("id"))->where("token", $request->query("token"))->first();
+        $user = UserInformation::where("user_id", $request->query("id"))->where("token", $request->query("token"))->first();
         $status = "verified";
-        if($user == null){
+        if($user->is_email_verified == 1){
             $status = "Not Found";
         }
 
         return view('auth.verificationPage', ["status" => $status]);
+        
+    }
+
+    public function toSendResetPasswordPage(){
+        return view('auth.SendResetPasswordPage');
+    }
+
+    public function toResetPasswordPage(Request $request){
+        $user = UserInformation::where("user_id", $request->query("id"))->where("token", $request->query("token"))->first();
+        $status = "verified";
+        if($user == null){
+            $status = "Not Found";
+        }
+        return view('auth.resetPassword', ["status" => $status]);
+    }
+
+    public function toEmailResetPasswordPage(Request $request){
+
+        return view('auth.emailResetPasswordPage');
         
     }
 
@@ -126,7 +151,37 @@ class RouteController extends Controller
     }
 
     public function toDashboardPage(){
-        return view('admin-page.dashboard');
+        
+        
+        $chart = [];
+        $chart_options = [
+            'chart_title' => 'Monthly revenue',
+            'report_type' => 'group_by_date',
+            'model' => 'App\Models\TransactionGroup',
+            'group_by_field' => 'date_transaction',
+            'group_by_period' => 'month',
+            'chart_type' => 'bar',
+            'aggregate_function' => 'sum',
+            'aggregate_field' => 'total_price',
+            'where_raw'  => "status = 'Terbayar'",
+            'chart_color' => '245, 39, 153'
+        ];
+        $chart_options_user = [
+            'chart_title' => 'Daily active User',
+            'report_type' => 'group_by_date',
+            'model' => 'App\Models\User',
+            'group_by_field' => 'last_login',
+            'group_by_period' => 'day',
+            'chart_type' => 'line',
+            'aggregate_function' => 'count',
+            'aggregate_field' => 'id',
+            'chart_color' => '245, 39, 153'
+        ];
+        $data = new LaravelChart($chart_options);
+        $userData = new LaravelChart($chart_options_user);
+        array_push($chart, $data);
+        array_push($chart, $userData);
+        return view('admin-page.dashboard', compact("chart"));
     }
 
     public function toBrandsManagementPage(){
@@ -143,9 +198,10 @@ class RouteController extends Controller
     }
 
     public function toValidatePhoneNumber(){
+        
         $hasPhoneNumber = true;
         if(Auth::check()){
-            $user = User::find(Auth::id());
+            $user = UserInformation::where("user_id", Auth::id())->first();
             $hasPhoneNumber = $user->is_phone_verified == 1;
         }
         return view('auth.phoneNumberForm', ["hasPhoneNumber" => $hasPhoneNumber]);

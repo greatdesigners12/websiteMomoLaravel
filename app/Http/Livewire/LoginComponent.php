@@ -14,9 +14,5 @@ class LoginComponent extends Component
         return view('livewire.login-component');
     }
 
-    public function payNow(){
-        
-
-
-    }
+    
 }

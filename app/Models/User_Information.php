@@ -10,7 +10,6 @@ class User_Information extends Model
     protected $fillable =[
         "full_name",
         "password",
-        "role",
         'last_login'
     ];
     protected $table = "user_informations";

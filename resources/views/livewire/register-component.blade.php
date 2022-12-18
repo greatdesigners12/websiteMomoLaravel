@@ -1,25 +1,4 @@
 <div>
-    
-   
-
-
-
-    {{-- <form method="POST" action="{{route('processRegister')}}">
-        @csrf
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Email address</label>
-          <input type="email" class="form-control" name="email" aria-describedby="emailHelp">
-        </div>
-        <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input type="password" name="password" class="form-control" >
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
-            <input type="password" name="password_confirm" class="form-control" >
-          </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form> --}}
      <!-- Log In page -->
      <div class="container">
         <div class="row vh-100 vw-100">
@@ -59,7 +38,7 @@
                                             <input type="email" name="email" class="form-control" id="useremail" placeholder="Enter Email">
                                         </div>                                    
                                     </div><!--end form-group-->
-                                    <div class="form-group">
+                                    {{-- <div class="form-group">
                                         <label for="useremail">No telp</label>
                                         <div class="input-group mb-3">
                                             <span class="auth-form-icon">
@@ -67,7 +46,7 @@
                                             </span>                                                                                                              
                                             <input type="text" name="noTelp" class="form-control" placeholder="Enter No Telp">
                                         </div>                                    
-                                    </div><!--end form-group-->
+                                    </div><!--end form-group--> --}}
         
                                     <div class="form-group">
                                         <label for="userpassword">Password</label>                                            
@@ -126,5 +105,12 @@
         </div><!--end row-->
     </div><!--end container-->
     {{-- <button class="btn btn-primary" id="pay-button">Pay Now</button> --}}
-    
+    <script>
+        $("#registerBtn").on("click", function(){
+            if($('#customSwitchSuccess:checked').length > 0){
+                $("#registerForm").submit();
+            }
+        });
+        
+    </script>
 </div>

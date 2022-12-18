@@ -1,7 +1,5 @@
 @extends('admin-page.template')
 
 @section('content')
-
-    <livewire:dashboard-component :chart="$chart" />
-    
+    <livewire:transaction-management />
 @endsection

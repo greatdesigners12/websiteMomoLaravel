@@ -23,8 +23,13 @@ class StoreEmailSender extends Mailable
 
     public function __construct($subject, $id, $token)
     {
-        $this->url = $_ENV['SERVER'] . "/emailVerification?" . "id=" . $id . "&" . "token=" .$token ;
         $this->subject = $subject;
+        if($this->subject == "Reset Password"){
+            $this->url = $_ENV['SERVER'] . "/resetPassword?" . "id=" . $id . "&" . "token=" .$token ;
+        }else{
+            $this->url = $_ENV['SERVER'] . "/emailVerification?" . "id=" . $id . "&" . "token=" .$token ;
+        }
+        
     }
 
     /**
@@ -34,6 +39,7 @@ class StoreEmailSender extends Mailable
      */
     public function envelope()
     {
+        
         return new Envelope(
             subject: $this->subject,
         );
@@ -46,9 +52,16 @@ class StoreEmailSender extends Mailable
      */
     public function content()
     {
+        $view = 'email';
+
+        if($this->subject == "Reset Password"){
+            $view = 'emailResetPassword';
+        }
+
         return new Content(
-            view: 'email'
+            view: $view
         );
+        
     }
 
     /**

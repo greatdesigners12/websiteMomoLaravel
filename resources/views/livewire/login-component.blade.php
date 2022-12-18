@@ -62,7 +62,7 @@
                                             </div>
                                         </div><!--end col--> 
                                         <div class="col-sm-6 text-right">
-                                            <a href="auth-recover-pw.html" class="text-muted font-13"><i class="dripicons-lock"></i> Forgot password?</a>                                    
+                                            <a href="{{route('toSendResetPasswordPage')}}" class="text-muted font-13"><i class="dripicons-lock"></i> Forgot password?</a>                                    
                                         </div><!--end col--> 
                                     </div><!--end form-group--> 
         
@@ -79,27 +79,7 @@
                             </div>
                         </div><!--end card-body-->
                     </div><!--end card-->
-                    <div class="account-social text-center mt-4">
-                        <h6 class="my-4">Or Login With</h6>
-                        <ul class="list-inline mb-4">
-                            <li class="list-inline-item">
-                                <a href="" class="">
-                                    <i class="fab fa-facebook-f facebook"></i>
-                                </a>                                    
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="" class="">
-                                    <i class="fab fa-twitter twitter"></i>
-                                </a>                                    
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="" class="">
-                                    <i class="fab fa-google google"></i>
-                                </a>                                    
-                            </li>
-                        </ul>
-                    </div><!--end account-social-->
-                </div><!--end auth-page-->
+                   
             </div><!--end col-->           
         </div><!--end row-->
     </div><!--end container-->

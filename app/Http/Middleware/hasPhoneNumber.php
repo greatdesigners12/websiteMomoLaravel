@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use App\Models\User;
+use App\Models\UserInformation;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -19,7 +20,7 @@ class hasPhoneNumber
     public function handle(Request $request, Closure $next)
     {
         if(Auth::check()){
-            $user = User::find(Auth::id());
+            $user = UserInformation::where("user_id", Auth::id())->first();
             if($user->is_phone_verified == 1){
                 return redirect()->route("home");
             }

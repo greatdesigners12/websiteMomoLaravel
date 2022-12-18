@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\StoreEmailSender;
+use App\Models\UserInformation;
 use App\Models\UserOtp;
 use Illuminate\Support\Facades\Http;    
 
@@ -18,7 +19,7 @@ class AuthController extends Controller
 {
     public function verifyUser(Request $request){
       
-        User::where("id", $request->id)->update(["token" => "", "is_verified" => 1]);
+        UserInformation::where("user_id", $request->id)->update(["token" => "", "is_email_verified" => 1]);
         return redirect()->route("toLoginPage")->with("message", "Your account is verified, please login");
     }
 
@@ -35,12 +36,14 @@ class AuthController extends Controller
             return redirect()->back()->withErrors($credentials);
         }else{
             $credentials = $credentials->validated();
-            $credentials['is_email_verified'] = 1;
+         
             
-            if(Auth::attempt($credentials, $request->rememberMe)){
+            if(Auth::attemptWhen($credentials, function ($user) {
+                return $user->user_information->is_email_verified == 1;
+            })){
                 $request->session()->regenerate();
                 
-                $user = User::find(Auth::id())->first();
+                $user = UserInformation::where("user_id", Auth::id())->first();
                 if($user->is_phone_verified == 0){
                     return redirect()->route("toValidatePhoneNumber");
                 }else{
@@ -55,6 +58,24 @@ class AuthController extends Controller
             ]);
         }  
     }   
+
+    public function processResetPassword(Request $request){
+        $rules = ['password' => "required|min:6", "password_confirm" => "required|same:password"];
+        $messages = ["required" => "Input :attribute tidak boleh kosong", "password_confirm.required" => "Input konfirmasi password tidak boleh kosong","unique" => ":attribute sudah ada, silahkan input :attribute yang berbeda" ,"password_confirm.same" => "Input konfirmasi password tidak sama",
+        ];
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if($validator->fails()){
+            return redirect()->back()->withErrors($validator);
+        }else{
+            
+            User::where("id", $request->id)->update(["password" => Hash::make($request->password)]);
+            UserInformation::where("user_id", $request->id)->update(["token" => ""]);
+            
+            return redirect()->route("toLoginPage")->with("message", "Password has been reset, you can login with the new password");
+            
+        }
+    }
 
     public function processPhoneNumber(Request $request){
         $rules = ["phoneNumber" => "required|max_digits:12|numeric"];
@@ -91,8 +112,33 @@ class AuthController extends Controller
         }
     }
 
+    public function processSendResetPasswordEmail(Request $request){
+        $rules = ['email' => 'required|email'];
+        $messages = ["required" => "Input :attrribute mustn't be empty", "email.email" => "Please input email format correctly" ];
+        $validator = Validator::make($request->all(), $rules, $messages);
+        if($validator->fails()){
+            return redirect()->back()->withErrors($validator);
+        }else{   
+            $token = Str::random(64);         
+            $user = User::where("email", $request->email)->first();
+            if($user != null){
+                UserInformation::where("user_id", $user->id)->update(["token" => $token]);
+                Mail::to($request->email)->send(new StoreEmailSender("Reset Password", $user->id ,$token));
+
+                return redirect()->back()->with("message", "Reset password link has been sent to your email");
+            }else{
+                return redirect()->back()->withErrors(["message" =>"Email doesn't exist, plase register first"]);
+            }
+          
+           
+           
+            
+        }
+    }
+
+
     public function processRegister(Request $request){
-        $rules = ['email' => 'required|unique:users,email|email', 'password' => "required|min:6", "password_confirm" => "required|same:password", "noTelp" => "required"];
+        $rules = ['email' => 'required|unique:users,email|email', 'password' => "required|min:6", "password_confirm" => "required|same:password"];
         $messages = ["required" => "Input :attribute tidak boleh kosong", "password_confirm.required" => "Input konfirmasi password tidak boleh kosong","unique" => ":attribute sudah ada, silahkan input :attribute yang berbeda" ,"password_confirm.same" => "Input konfirmasi password tidak sama",
         ];
         $validator = Validator::make($request->all(), $rules, $messages);
@@ -102,11 +148,10 @@ class AuthController extends Controller
             $token = Str::random(64);         
             $user = User::create(['email' => $request->email,
             'password' => Hash::make($request->password),
-            'role' => 'user',
-            'is_verified' => 0,
-            'token' => $token]);
+            'role_id' => 1,
+            ]);
             $url = $_ENV['SERVER'] . "/emailVerification?" . "id=" . $user->id . "&" . "token=" .$token ;
-
+            UserInformation::create(["user_id" => $user->id, "token" => $token, "is_email_verified" => 0]);
            
            
             Mail::to($request->email)->send(new StoreEmailSender("Email Verification", $user->id ,$token));

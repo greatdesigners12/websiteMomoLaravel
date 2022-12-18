@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\User;
+use App\Models\UserInformation;
 use App\Models\UserOtp;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
@@ -51,7 +51,7 @@ class KodeOtpVerification extends Component
                 $checkOtp = UserOtp::where("user_id", Auth::id())->where("token", $this->token)->where("kode_otp", $otp)->first();
                 
                 if($checkOtp != null){
-                    User::where("id", Auth::id())->update(["is_phone_verified" => 1]);
+                    UserInformation::where("user_id", Auth::id())->update(["is_phone_verified" => 1]);
                     UserOtp::where("user_id", Auth::id())->where("token", $this->token)->delete();
                     $this->timerVisible = false;
                     $this->successMessage();
