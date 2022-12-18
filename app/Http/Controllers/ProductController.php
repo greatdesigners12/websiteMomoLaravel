@@ -79,7 +79,7 @@ class ProductController extends Controller
              $validated['price'] = str_replace('.', '', $validated['price']);
             
             Product::where('id', $validated['id'])->update($validated);
-            return redirect()->route('toProductManagementPage')->with("message", "Product has been updated");
+            return redirect()->route('toProductsManagementPage')->with("message", "Product has been updated");
         }
     }
 
