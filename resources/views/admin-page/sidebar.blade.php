@@ -54,7 +54,9 @@
                 
             </ul>
         </li> 
-
+        <li>
+            <a href="{{route('logout')}}"><i class="ti-back-left"></i><span>Logout</span></a>
+        </li>
         
     </ul>
 </div>

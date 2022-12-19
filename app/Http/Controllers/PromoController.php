@@ -61,7 +61,7 @@ class PromoController extends Controller
             'percentage' => $request->percentage,
             'max_discount' => $request->max_discount,
             'status' => $request->status]);
-            return redirect()->back()->with("message", "promo has been created");
+            return redirect()->route("topromoManagementPage")->with("message", "promo has been updated");
             
         }}
         function deletePromo(Request $request){

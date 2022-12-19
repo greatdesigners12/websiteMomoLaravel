@@ -45,7 +45,7 @@ class AnnouncementController extends Controller
             }
             announcement::where('id',$validated['id'])->update(['content' => $request->content,
             'status' => $request->status]);
-            return redirect()->back()->with("message", "announcement has been updated");
+            return redirect()->route("toannouncementManagementPage")->with("message", "announcement has been updated");
             
         }}
         function deleteAnnouncement(Request $request){

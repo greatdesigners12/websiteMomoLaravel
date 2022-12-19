@@ -30,7 +30,7 @@ class UserTable extends DataTableComponent
         $this->setColumnSelectEnabled();
         $this->setBulkActions([
             'exportExcel' => 'Export Excel',
-            'openBroadcastContentModal' => 'Broadcast Whatsapp'
+            'openBroadcastContentModal' => 'Broadcast WA'
         ]);
     }
 

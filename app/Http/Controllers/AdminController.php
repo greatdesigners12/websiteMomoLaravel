@@ -52,7 +52,7 @@ class AdminController extends Controller
             User::where('id',$validated['id'])->update([
             'password' => Hash::make($request->password),
             ]);
-            return redirect()->back()->with("message", "admin password has been updated");
+            return redirect()->route("toadminManagementPage")->with("message", "admin password has been updated");
             
         }
     }
@@ -70,7 +70,7 @@ class AdminController extends Controller
             'role_id' => 2,
             'phoneNumber'=>$request->phonenumber
             ]);
-            return redirect()->back()->with("message", "admin has been updated");
+            return redirect()->route("toadminManagementPage")->with("message", "admin has been updated");
             
         }
     }

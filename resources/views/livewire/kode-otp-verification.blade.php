@@ -7,13 +7,13 @@
                     <div class="card auth-card shadow-lg">
                         <div class="card-body">
                             <div class="px-3">
-                                <div class="auth-logo-box">
-                                    <a href="../dashboard/analytics-index.html" class="logo logo-admin"><img src="../assets/images/logo-sm.png" height="55" alt="logo" class="auth-logo"></a>
+                                <div class="auth-logo-box d-flex justify-content-center">
+                                    <a href="#" class="logo logo-admin"><img src="{{asset('storage/img/logo.png')}}" height="55" alt="logo" style="width: 70px;" class="auth-logo"></a>
                                 </div><!--end auth-logo-box-->
                                 @if ($display)
                                     <div class="text-center auth-logo-text">
                                         <h4 class="mt-0 mb-3 mt-5">Please enter the one time password <br> to verify your account</h4>
-                                        <p class="text-muted mb-0"><span>A code has been sent to</span> <small>*******9897</small></p>  
+                                        <p class="text-muted mb-0"><span>A code has been sent to </span> <small>{{$phoneNumber}}</small></p>  
                                     </div> <!--end auth-logo-text-->  
                                     @if (session()->has("message"))
 

@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\UserInformation;
+use App\Models\User;
 use App\Models\UserOtp;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
@@ -17,12 +18,15 @@ class KodeOtpVerification extends Component
     public $token;
     public $currentMinutes = 10;
     public $currentSeconds = 0;
+    public $phoneNumber;
     public $display = true;
     protected $listeners = ["verifyOtp", "errorMessage"];
     
     public function mount(){
         $this->checker();
-    }
+        $user = User::where("id", Auth::id())->first();
+        $this->phoneNumber = $user->phoneNumber;
+    }   
 
     public function checker(){
         if(Auth::check()){
@@ -51,6 +55,7 @@ class KodeOtpVerification extends Component
                 $checkOtp = UserOtp::where("user_id", Auth::id())->where("token", $this->token)->where("kode_otp", $otp)->first();
                 
                 if($checkOtp != null){
+
                     UserInformation::where("user_id", Auth::id())->update(["is_phone_verified" => 1]);
                     UserOtp::where("user_id", Auth::id())->where("token", $this->token)->delete();
                     $this->timerVisible = false;
