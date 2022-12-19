@@ -300,6 +300,6 @@ class RouteController extends Controller
         return view("auth.userInformationForm");
     }
     public function toPassword(){
-        return view("userpassword");
+        return view("ProfileUser.ResetPassUser");
     }
 }

@@ -10,7 +10,7 @@ use WireUi\Traits\Actions;
 
 class UserPasswordForm extends Component
 {   
-
+    
     public function render()
     {
         return view('livewire.user-password-form');

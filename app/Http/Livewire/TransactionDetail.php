@@ -55,7 +55,7 @@ class TransactionDetail extends Component
         $userInformation = UserInformation::where("user_id", Auth::id())->first();
         
         $response = Http::post('https://api.rajaongkir.com/starter/cost', [
-            'key' => '0620d0488afc773f4036040af5ebd959',
+            'key' => '86abbd5e931a2d5d6d0cca75316477c7',
             'origin' => 42,
             'destination' => $userInformation->city_id,
             'weight' => $totalWeight,
