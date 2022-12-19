@@ -1,7 +1,7 @@
 <div>
     <header class="header">
         <div class="header-top">
-            <span>{{__('ayo kunjungi instagram kami!')}}<a href="https://www.instagram.com/momoacc.bwi/" style="color:yellow; text-decoration-line:underline"> {{__('Klik Di Sini!')}}</a></span>
+            <span>{{$announcement}}</span>
             <i class="header-top-close js-header-top-close icon-close"></i>
         </div>
         <div class="header-content">

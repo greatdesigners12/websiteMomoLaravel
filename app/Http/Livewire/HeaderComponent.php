@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Announcement;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use App\Models\Cart;
@@ -10,11 +11,17 @@ class HeaderComponent extends Component
 {
     public $cartCounter = 0;
     protected $listeners = ["updateCartCounter"];
+    public $announcement;
 
     public function mount(){
         if(Auth::id() != null){
             $this->cartCounter = Cart::where("user_id", Auth::id())->count();
         }
+
+        $data = Announcement::where("status", 1)->first();
+        
+
+        $this->announcement = $data->content;
         
     }
 
