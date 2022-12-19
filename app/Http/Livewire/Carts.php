@@ -47,28 +47,32 @@ class Carts extends Component
        
            
         $result = TransactionGroup::create(["invoice" => $invoice, "total_price" => $this->carts[$this->carts->count() - 1]["totalPrice"], "user_id" => Auth::id(),
-        "date_transaction" => now(), "status" => "Belum bayar", "shipping_price" => 20000, "snap_token" => ""]);
+        "date_transaction" => now(), "status" => "Belum bayar", "shipping_price" => "0", "snap_token" => ""]);
         
         foreach($this->carts as $cart){
-            $createdProduct = TransactionProduct::create(["price" => $cart->product->price, "quantity" => $cart->quantity, "name" => $cart->product->name, "imageProduct" => $cart->product->image_product]);
+            $createdProduct = TransactionProduct::create(["price" => $cart->product->price, "quantity" => $cart->quantity, "name" => $cart->product->name, "imageProduct" => $cart->product->image_product, "weight" => $cart->product->weight
+        ]);
             Storage::copy('public/img/momo_product/' . $cart->product->image_product, 'public/img/transaction_histories/' . $cart->product->image_product);
             TransactionRelation::create(["transaction_group_id" => $result->id, "transaction_product_id" => $createdProduct->id]);
             Cart::where("id", $cart->id)->delete();
         }
 
-        
-        
+        return redirect()->route("toHistoryTransactionsPage");
         
     }
 
     public function getTotalPrice(){
         $total = 0;
         $this->carts = Cart::where("user_id", Auth::id())->get();
-        foreach($this->carts as $cart){
-            $total += ($cart->quantity * $cart->product->price); 
-        }
        
-        $this->carts[$this->carts->count() - 1]["totalPrice"] = $total;
+        if(!$this->carts->isEmpty()){
+            foreach($this->carts as $cart){
+                $total += ($cart->quantity * $cart->product->price); 
+            }
+           
+            $this->carts[$this->carts->count() - 1]["totalPrice"] = $total;
+        }
+        
     }
 
     public function render()

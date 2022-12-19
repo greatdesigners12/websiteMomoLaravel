@@ -97,7 +97,7 @@
                                     </a>
                                     <div class="checkout-order__item-info">
                                         <a class="title6" href="#">{{$item->transaction_product->name}} <span>{{$item->transaction_product->quantity}}x</span></a>
-                                        <span class="checkout-order__item-price">{{$item->transaction_product->price}}</span>
+                                        <span class="checkout-order__item-price">{{number_format($item->transaction_product->price, 2)}}</span>
                                         <span class="checkout-order__item-num">ID: {{$item->transaction_product->id}}</span>
                                     </div>
                                 </div>
@@ -105,24 +105,56 @@
                                
                                
                             </div>
+                           
+                            <x-select
+
+                                label="Select Courier"
+
+                                placeholder="Select courier"
+                                x-on:selected="$wire.getShippingPrice()"
+                                :options="[
+                                    ['name' => 'JNE',  'value' => 'jne'],
+                                    ['name' => 'POS INDONESIA', 'value' => 'pos'],
+                                    ['name' => 'TIKI',   'value' => 'tiki'],
+                                ]"
+                                option-label="name"
+                                option-value="value"
+                                wire:model.defer="courier"
+
+                            />
+                            @if ($services == null)
+                                <div style="height: 50px;"></div>
+                            @endif
+                            
+                            @if ($services != null)
+                                 
+                                <select class="form-control my-3" >
+                                    <h5>Services</h5>
+                                    <option value="">Select services</option>
+                                     @foreach ($services as $service)
+                                     
+                                        <option wire:click="selectShippingPrice('{{$service["service"]}}')">{{$service["service"]}} - {{number_format($service["cost"][0]["value"], 2)}}</option>
+                                     @endforeach
+                                    
+                                </select>
+                            @endif
+                            
+                             
                             <div class="cart-bottom__total">
                                 <div class="cart-bottom__total-goods">
                                     Goods on
-                                    <span>{{$transactionDetail->total_price}}</span>
+                                    <span>{{number_format($transactionDetail->total_price, 2)}}</span>
                                 </div>
                                 <div class="cart-bottom__total-promo">
-                                    Discount on promo code
-                                    <span>No</span>
+                                    Shipping price
+                                    <span>{{number_format($shippingPrice, 2)}}</span>
                                 </div>
-                                <div class="cart-bottom__total-delivery">
-                                    Delivery <span class="cart-bottom__total-delivery-date">({{$transactionDetail->date_transaction}})</span>
-                                    <span>$30</span>
-                                </div>
+                                
                                 <div class="cart-bottom__total-num">
                                     total:
-                                    <span>{{$transactionDetail->total_price}}</span>
+                                    <span>{{number_format($transactionDetail->total_price + $shippingPrice, 2)}}</span>
                                 </div>
-                                <button class="btn" style="background-color: #D23377; color: white; height:40px;" wire:click="pay">PAY NOW</button>
+                                <button class="btn" style="background-color: #D23377; color: white; height:40px;" {{$shippingPrice == null ? 'disabled' : ''}} wire:click="pay">PAY NOW</button>
                             </div>
                         </div>
                     </div>
@@ -132,50 +164,7 @@
             </div>
             <!-- CHECKOUT EOF   -->
             <!-- BEGIN INSTA PHOTOS -->
-            <div class="insta-photos">
-                <a href="#" class="insta-photo">
-                    <img data-src="https://via.placeholder.com/320" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" class="js-img"
-                        alt="">
-                    <div class="insta-photo__hover">
-                        <i class="icon-insta"></i>
-                    </div>
-                </a>
-                <a href="#" class="insta-photo">
-                    <img data-src="https://via.placeholder.com/320" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" class="js-img"
-                        alt="">
-                    <div class="insta-photo__hover">
-                        <i class="icon-insta"></i>
-                    </div>
-                </a>
-                <a href="#" class="insta-photo">
-                    <img data-src="https://via.placeholder.com/320" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" class="js-img"
-                        alt="">
-                    <div class="insta-photo__hover">
-                        <i class="icon-insta"></i>
-                    </div>
-                </a>
-                <a href="#" class="insta-photo">
-                    <img data-src="https://via.placeholder.com/320" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" class="js-img"
-                        alt="">
-                    <div class="insta-photo__hover">
-                        <i class="icon-insta"></i>
-                    </div>
-                </a>
-                <a href="#" class="insta-photo">
-                    <img data-src="https://via.placeholder.com/320" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" class="js-img"
-                        alt="">
-                    <div class="insta-photo__hover">
-                        <i class="icon-insta"></i>
-                    </div>
-                </a>
-                <a href="#" class="insta-photo">
-                    <img data-src="https://via.placeholder.com/320" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" class="js-img"
-                        alt="">
-                    <div class="insta-photo__hover">
-                        <i class="icon-insta"></i>
-                    </div>
-                </a>
-            </div>
+            <
             <!-- INSTA PHOTOS EOF   -->
     
         </main>
@@ -281,15 +270,15 @@
             window.snap.pay(event.detail.snapToken, {
             onSuccess: function(result){
                 /* You may add your own implementation here */
-                alert("payment success!"); console.log(result);
+                Livewire.emit("paymentSuccess");
             },
             onPending: function(result){
                 /* You may add your own implementation here */
-                alert("wating your payment!"); console.log(result);
+                alert("wating your payment!"); 
             },
             onError: function(result){
                 /* You may add your own implementation here */
-                alert("payment failed!"); console.log(result);
+                alert("payment failed!"); 
             },
             onClose: function(){
                 /* You may add your own implementation here */

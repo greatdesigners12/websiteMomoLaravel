@@ -56,9 +56,12 @@ class RouteController extends Controller
     }
 
     public function toHistoryTransactionsPage(){
+        
         $transactions = TransactionGroup::where("user_id", Auth::id())->get();
-       
-        return view("transactions.historyTransaction", ["transactions" => $transactions]);
+        $userInformation = UserInformation::where("user_id", Auth::id())->where("full_name", null)->where("gender", null)->where("city_id", null)->where("city_id", null)->where("province_id", null)->where("address", null)->where("postal_code", null)->where("birth_date", null)->first();
+        
+        $haveInformation = $userInformation == null;
+        return view("transactions.historyTransaction", ["transactions" => $transactions, "hasInformation" => $haveInformation]);
     }
 
     public function toTransactionDetailPage($invoice){
@@ -291,5 +294,9 @@ class RouteController extends Controller
 
     public function toUsersManagementPage(){
         return view("admin-page.user-management.user-management");
+    }
+
+    public function toUserInformationFormPage(){
+        return view("auth.userInformationForm");
     }
 }
