@@ -23,7 +23,7 @@
                     <div class="form-group mt-3">
                         <label for="exampleInputEmail1">{{ "Kata Sandi Lama" }}</label>
                      
-                        <input type="text" class="form-control" id="exampleInputEmail1" value="" name="old_password_confirmation" placeholder="Masukkan password lama">
+                        <input type="password" class="form-control" id="exampleInputEmail1" value="" name="old_password_confirmation" placeholder="Masukkan password lama">
                         
                     </div>
                     

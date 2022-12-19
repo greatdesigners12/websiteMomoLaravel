@@ -1,4 +1,4 @@
-@extends('template')
+@extends('admin-page.template')
 
 @section('cssImport')
 @endsection
