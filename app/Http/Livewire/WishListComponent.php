@@ -16,7 +16,7 @@ class WishListComponent extends Component
     protected $listeners = ["updateWishList"];
 
     public function mount(){
-        $this->wishlists = FavouriteProduct::all();
+        $this->wishlists = FavouriteProduct::where("user_id", Auth::id())->get();
 
     }
 
@@ -31,14 +31,12 @@ class WishListComponent extends Component
 
             'icon'        => 'success',
             'onClose' => [
-
                 'method' => 'resetWishlist',
-
-             
-
             ],
 
         ]);
+
+        $this->emit("updateCartCounter");
         
     }
 
@@ -62,11 +60,12 @@ class WishListComponent extends Component
 
         ]);
 
-        $this->emitSelf("updateWishList");
+        
+        
     }
 
     public function updateWishList(){
-        
+        $this->emit("updateCartCounter");
     }
 
     public function resetWishlist(){

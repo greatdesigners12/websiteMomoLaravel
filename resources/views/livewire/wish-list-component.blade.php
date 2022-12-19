@@ -1,7 +1,9 @@
 <div>
     <main class="content">
+        
         <!-- BEGIN DETAIL MAIN BLOCK -->
         <div class="detail-block detail-block_margin">
+            <x-dialog />
             <div class="wrapper">
                 <div class="detail-block__content">
                     <h1>Wishlist</h1>
@@ -17,6 +19,7 @@
         <!-- DETAIL MAIN BLOCK EOF   -->
         <!-- BEGIN WISHLIST -->
         <div class="wishlist" style="padding-top: 80px;">
+            
             <div class="wrapper">
                 
                 <div class="cart-table">
@@ -62,10 +65,9 @@
                 </div>
               
             </div>
-            <img class="promo-video__decor js-img" data-src="https://via.placeholder.com/1197x1371/FFFFFF"
-                src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="">
+            
         </div>
-        <x-dialog />
+        
        
    
 
