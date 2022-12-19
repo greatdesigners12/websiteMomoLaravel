@@ -8,12 +8,12 @@
                         <div class="card-body">
                             <div class="px-3">
                                 <div class="auth-logo-box">
-                                    <a href="../dashboard/analytics-index.html" class="logo logo-admin"><img src="../assets/images/logo-sm.png" height="55" alt="logo" class="auth-logo"></a>
+                                    <a href="/" class="logo logo-admin"><img src="img/logo.png" height="60" width="60" alt="logo" class="auth-logo"></a>
                                 </div><!--end auth-logo-box-->
                                 
                                 <div class="text-center auth-logo-text">
-                                    <h4 class="mt-0 mb-3 mt-5">Free Register for Crovex</h4>
-                                    <p class="text-muted mb-0">Get your free Crovex account now.</p>  
+                                    <h4 class="mt-0 mb-3 mt-5">Pendaftaran Akun</h4>
+                                    <p class="text-muted mb-0">Bergabung dengan kami sekarang!</p>  
                                 </div> <!--end auth-logo-text-->  
                                 @if ($errors->any())
                                 <div class="alert alert-danger" >

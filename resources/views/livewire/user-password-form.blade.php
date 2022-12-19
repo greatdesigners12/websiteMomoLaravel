@@ -23,7 +23,7 @@
                 <div class="tab-wrap">
                     <ul class="nav-tab-lists tabs">
                         <li>
-                            <a href="/Profile">Profil Saya</a>
+                            <a href="/profile">Profil Saya</a>
                         </li>
                         <li class="active">
                             <a href="#profile-tab_1">Reset Password</a>
