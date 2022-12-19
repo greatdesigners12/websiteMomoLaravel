@@ -3,7 +3,7 @@
     <div class="col-12 mt-3">
         <div class="card">
             <div class="card-body">
-                <h4 class="mt-0 header-title">{{ "Form Admin" }}</h4>
+                <h4 class="mt-0 header-title">{{ "Form Password Admin" }}</h4>
                 @if (session()->has("message"))
                     <div class="alert alert-success">
                         {{session()->get("message")}}
