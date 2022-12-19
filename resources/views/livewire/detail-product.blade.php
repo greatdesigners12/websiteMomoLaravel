@@ -24,22 +24,17 @@
             </div>
             <!-- DETAIL MAIN BLOCK EOF   -->
             <!-- BEGIN PRODUCT -->
-            <div class="product">
+            <div class="product" style="margin-bottom: 50px;">
                 <div class="wrapper">
                     <div class="product-content">
                         <div class="product-slider">
                             <div class="product-slider__main">
                                 
                                 <div class="product-slider__main-item">
-                                    <img loading="lazy" src="{{asset('storage/img/momo_product/') . $product->product_image}}" alt="product">
+                                    <img loading="lazy" src="{{asset('storage/img/momo_product/') . '/' . $product->image_product}}" alt="product">
                                 </div>
                             </div>
-                            <div class="product-slider__nav">
-                                
-                                <div class="product-slider__nav-item">
-                                    <img loading="lazy" src="{{asset('storage/img/momo_product/') . $product->product_image}}" alt="product">
-                                </div>
-                            </div>
+                            
                         </div>
                         <div class="product-info">
                             <h3>{{$product->name}}</h3>
@@ -69,135 +64,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="product-detail">
-    
-                        <div class="tab-wrap product-detail-tabs">
-                            <ul class="nav-tab-list tabs">
-                                
-                                <li class="active">
-                                    <a href="#product-tab_2">Reviews</a>
-                                </li>
-                            </ul>
-                            <div class="box-tab-cont">
-                                <div class="tab-cont hide" id="product-tab_1">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius perferendis amet
-                                        ullam quisquam ad pariatur quo accusantium quos dolores commodi officiis, cumque
-                                        iusto adipisci quae delectus temporibus et, cupiditate aliquam.</p>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi beatae provident
-                                        ipsum omnis dolor sapiente maiores reiciendis exercitationem earum deleniti,
-                                        reprehenderit iste ipsa saepe. Consectetur non et excepturi molestias esse?</p>
-                                </div>
-                                <div class="tab-cont product-reviews" id="product-tab_2">
-                                    <div class="product-detail__items">
-                                        <div class="review-item">
-                                            <div class="review-item__head">
-                                                <div class="review-item__author">
-                                                    <img data-src="https://via.placeholder.com/40"
-                                                        src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" class="js-img"
-                                                        alt="">
-                                                    <span class="review-item__name">Melissa Jones</span>
-                                                    <span class="review-item__date">July 23, 2020</span>
-                                                </div>
-                                                <div class="review-item__rating">
-                                                    <ul class="star-rating">
-                                                        <li><i class="icon-star"></i></li>
-                                                        <li><i class="icon-star"></i></li>
-                                                        <li><i class="icon-star"></i></li>
-                                                        <li><i class="icon-star"></i></li>
-                                                        <li><i class="icon-star"></i></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="review-item__content">
-                                                I am grateful to the employees of BeShop for the quality products that I
-                                                have been using
-                                                for more than a year, try to work at this level in the future. Thank
-                                                you)
-                                            </div>
-                                        </div>
-                                        <div class="review-item">
-                                            <div class="review-item__head">
-                                                <div class="review-item__author">
-                                                    <img data-src="https://via.placeholder.com/40"
-                                                        src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" class="js-img"
-                                                        alt="">
-                                                    <span class="review-item__name">Steve Gentley</span>
-                                                    <span class="review-item__date">July 05, 2020</span>
-                                                </div>
-                                                <div class="review-item__rating">
-                                                    <ul class="star-rating">
-                                                        <li><i class="icon-star"></i></li>
-                                                        <li><i class="icon-star"></i></li>
-                                                        <li><i class="icon-star"></i></li>
-                                                        <li><i class="icon-star"></i></li>
-                                                        <li><i class="icon-star"></i></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="review-item__content">
-                                                I am grateful to the employees of BeShop for the quality products that I have been using for more than a year, try to work at this level in the future. Thank you). I am grateful to the employees of BeShop for the quality products.
-                                            </div>
-                                        </div>
-                                        <div class="review-item">
-                                            <div class="review-item__head">
-                                                <div class="review-item__author">
-                                                    <img data-src="https://via.placeholder.com/40"
-                                                        src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" class="js-img"
-                                                        alt="">
-                                                    <span class="review-item__name">Amanda Clement</span>
-                                                    <span class="review-item__date">June 15, 2020</span>
-                                                </div>
-                                                <div class="review-item__rating">
-                                                    <ul class="star-rating">
-                                                        <li><i class="icon-star"></i></li>
-                                                        <li><i class="icon-star"></i></li>
-                                                        <li><i class="icon-star"></i></li>
-                                                        <li><i class="icon-star"></i></li>
-                                                        <li><i class="icon-star"></i></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="review-item__content">
-                                                I am grateful to the employees of BeShop for the quality products that I
-                                                have been using
-                                                for more than a year, try to work at this level in the future. Thank
-                                                you)
-                                            </div>
-                                        </div>
-                                        <a href="#" class="blog-item__link">show more <i
-                                                class="icon-arrow-md"></i></a>
-                                    </div>
-                                    <div class="product-detail__form post-comment__form">
-                                        <div class="subscribe-form__img">
-                                            <img data-src="https://via.placeholder.com/157x108" src="data:image/gif;base64,R0lGODlhAQABAAAAACw="
-                                                class="js-img" alt="">
-                                        </div>
-                                        <form>
-                                            <h4>leave a review</h4>
-                                            <p>Your email address will not be published.</p>
-                                            <div class="rating" data-id="rating_1"></div>
-                                            <div class="box-field">
-                                                <input type="text" class="form-control" placeholder="Enter your name">
-                                            </div>
-                                            <div class="box-field">
-                                                <input type="email" class="form-control" placeholder="Enter your email">
-                                            </div>
-                                            <div class="box-field box-field__textarea">
-                                                <textarea class="form-control"
-                                                    placeholder="Enter your review"></textarea>
-                                            </div>
-                                            <button type="submit" class="btn">send</button>
-                                        </form>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <img class="promo-video__decor js-img" data-src="https://via.placeholder.com/1197x1371/FFFFFF"
-                    src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="">
-                </div>
+                   
             </main>
         </div>
     </div>
