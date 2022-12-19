@@ -228,6 +228,10 @@ class RouteController extends Controller
         return view('protectedPage');
     }
 
+    public function toProfilePage(){
+        
+        return view('ProfileUser.ProfileUser');
+    }
     public function toDashboardPage(){
         
         

@@ -29,13 +29,13 @@ class AdminController extends Controller
             return redirect()->back()->withErrors($validator);
         }else{
             $validated = $validator->validated();
-            $token = Str::random(64);
+
             User::create(['email' => $request->email,
             'password' => Hash::make($request->password),
             'role_id' => 2,
             'phoneNumber'=>$request->phonenumber,
             'status' => 1,
-            'token' => $token]);
+            ]);
             return redirect()->back()->with("message", "user has been created");
             
         }
@@ -65,11 +65,11 @@ class AdminController extends Controller
             return redirect()->back()->withErrors($validator);
         }else{
             $validated = $validator->validated();
-            $token = Str::random(64);
+            // $token = Str::random(64);
             User::where('id',$validated['id'])->update(['email' => $request->email,
             'role_id' => 2,
-            'phoneNumber'=>$request->phonenumber,
-            'token' => $token]);
+            'phoneNumber'=>$request->phonenumber
+            ]);
             return redirect()->back()->with("message", "admin has been updated");
             
         }

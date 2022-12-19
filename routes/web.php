@@ -8,8 +8,6 @@ use App\Http\Controllers\userController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PromoController;
 use App\Http\Controllers\AnnouncementController;
-use App\Models\Category;
-use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -54,6 +52,7 @@ Route::get('/about', function () {
 // User 
 Route::get('/wishlist', [RouteController::class, "toWishListPage"])->name("toWishListPage");
 Route::get('/cart', [RouteController::class, "toCartPage"])->name("toCartPage");
+Route::get('/profile',[RouteController::class, "toProfilePage"])->name("toProfilePage");
 
 // Transactions
 Route::get('/transactions', [RouteController::class, "toHistoryTransactionsPage"])->name("toHistoryTransactionsPage");
