@@ -14,6 +14,7 @@ class Promo extends Model
     {
         return $this->belongsTo(User::class, 'admin_id');
     }
+    
     protected $fillable =[
         "code",
         "percentage",

@@ -9,15 +9,10 @@ use Illuminate\Database\Eloquent\Model;
 class Announcement extends Model
 
 {   
-    
     public function Promo()
     {
         return $this->belongsTo(Promo::class, 'promo_id');
     }
-
-
-    
-
 
     protected $table = "announcements";
     protected $fillable=[

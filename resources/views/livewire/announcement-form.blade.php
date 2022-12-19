@@ -44,9 +44,7 @@
                 
     
         </form>   
-        <a href="/announcementManagement">
-            <button class="btn btn-gradient-danger">Back</button>
-        </a>                                        
+                                      
     </div><!--end card-body-->
     <!--end card-->
     

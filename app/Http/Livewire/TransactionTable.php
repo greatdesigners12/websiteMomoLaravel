@@ -17,6 +17,7 @@ class TransactionTable extends DataTableComponent
 
     public function columns(): array
     {
+        
         return [
             
             Column::make("Invoice", "invoice")
