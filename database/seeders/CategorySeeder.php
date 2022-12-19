@@ -16,32 +16,32 @@ class CategorySeeder extends Seeder
     public function run()
     {
         Category::factory()->create([
-                'name'=>'Aksesoris',
-                'status'=>'1'
+                'category'=>'Aksesoris',
+                
         ]);
         Category::factory()->create([
-                'name'=>'Kosmetik',
-                'status'=>'1'
+                'category'=>'Kosmetik',
+                
         ]);
          Category::factory()->create([
-                'name'=>'Aksesoris Mandi',
-                'status'=>'1'
+                'category'=>'Aksesoris Mandi',
+                
         ]);
         Category::factory()->create([
-                'name'=>'Perlengkapan Bayi',
-                'status'=>'1'
+                'category'=>'Perlengkapan Bayi',
+                
         ]);
         Category::factory()->create([
-                'name'=>'Hijab',
-                'status'=>'1'
+                'category'=>'Hijab',
+                
         ]);
         Category::factory()->create([
-                'name'=>'Tas',
-                'status'=>'1'
+                'category'=>'Tas',
+                
         ]);
         Category::factory()->create([
-                'name'=>'Dekorasi',
-                'status'=>'1'
+                'category'=>'Dekorasi',
+                
         ]);
     }
 }

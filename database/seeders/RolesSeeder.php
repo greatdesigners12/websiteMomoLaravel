@@ -16,19 +16,19 @@ class RolesSeeder extends Seeder
     public function run()
     {
         Roles::factory()->create([
-            'name'=>'Owner',
+            'role'=>'Owner',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 
         ]);
         Roles::factory()->create([
-            'name'=>'Admin',
+            'role'=>'Admin',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 
         ]);
         Roles::factory()->create([
-            'name'=>'Customer',
+            'role'=>'Customer',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 

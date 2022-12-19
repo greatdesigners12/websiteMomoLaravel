@@ -21,14 +21,11 @@ return new class extends Migration
             $table->integer('province_id')->nullable();
             $table->integer('city_id')->nullable();
             $table->text('address')->nullable();
-            $table->string('postal_code')->nullable();
-            $table->text('image_profile')->nullable();
             $table->integer('is_phone_verified');
             $table->integer('is_email_verified');
             $table->string('token')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->timestamps('');
         });
     }
 

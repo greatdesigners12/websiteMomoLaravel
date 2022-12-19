@@ -13,10 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('roles', function (Blueprint $table) {
+        Schema::create('transactions_products', function (Blueprint $table) {
             $table->id();
-            $table->string("role");
-            $table->timestamps();
+            $table->string('name');
+            $table->bigInteger('price');
+            $table->Integer('quantity');
+            $table->Integer('weight');
+            $table->text('image_product');
+
         });
     }
 
@@ -27,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('roles');
+        Schema::dropIfExists('transactions_products');
     }
 };

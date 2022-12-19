@@ -21,10 +21,11 @@ class ProductSeeder extends Seeder
             'description'=>'Hijab dengan motif bercorak yang sangat indah dengan variasi warna yang pas',
             'price'=>'33000',
             'stock'=>'0',
-            'weight'=>'0.5',
-            'status'=>'1',
+            'weight'=>'2',
+            
             'category_id'=>'5',
-            'brand_id'=>'1',
+            'brand_id'=>null,
+            
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 
@@ -35,10 +36,10 @@ class ProductSeeder extends Seeder
             'description'=> 'Bedong bayi dengan beberapa varian',           
             'stock'=>'0',
             'price'=>'20000',
-            'weight'=>'0.75',
-            'status'=>'1',
+            'weight'=>'3',
+            
             'category_id'=>'4',
-            'brand_id'=>'1',
+            'brand_id'=>null,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 
@@ -49,11 +50,11 @@ class ProductSeeder extends Seeder
             'description'=>'Hijab dengan kain yang lembut',
             'price'=>'23000',
             'stock'=>'0',
-            'weight'=>'0.75',
-            'status'=>'1',
+            'weight'=>'3',
+            
             'category_id'=>'5',
               
-            'brand_id'=>'1',
+            'brand_id'=>null,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 
@@ -64,15 +65,15 @@ class ProductSeeder extends Seeder
             'description'=>'Handuk dengan kain lembut kecil',
             'price'=>'48500',
             'stock'=>'0',
-            'weight'=>'0.5',
-            'status'=>'1',
+            'weight'=>'2',
+            
             'category_id'=>'3',
 
             
 
               
 
-            'brand_id'=>'1',
+            'brand_id'=>null,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 
@@ -83,15 +84,15 @@ class ProductSeeder extends Seeder
             'description'=>'Handuk halus ukuran besar',
             'stock'=>'0',
             'price'=>'54500',
-            'weight'=>'0.80',
-            'status'=>'1',
+            'weight'=>'4',
+            
             'category_id'=>'3',
 
             
 
               
 
-            'brand_id'=>'1',
+            'brand_id'=>null,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 
@@ -102,15 +103,15 @@ class ProductSeeder extends Seeder
             'description'=>'Handuk bermotif halus',
             'stock'=>'0',
             'price'=>'65000',
-            'weight'=>'0.80',
-            'status'=>'1',
+            'weight'=>'4',
+            
             'category_id'=>'3',
 
             
 
               
 
-            'brand_id'=>'1',
+            'brand_id'=>null,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 
@@ -121,15 +122,15 @@ class ProductSeeder extends Seeder
             'description'=>'Dompet koin lucu dengan 4 varian',
             'stock'=>'0',
             'price'=>'13500',
-            'weight'=>'1.5',
-            'status'=>'1',
+            'weight'=>'5',
+            
             'category_id'=>'1',
 
             
 
               
 
-            'brand_id'=>'1',
+            'brand_id'=>null,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 
@@ -140,15 +141,15 @@ class ProductSeeder extends Seeder
             'description'=>'Dompet kartu dengan model yang polos',
             'stock'=>'0',
             'price'=>'34500',
-            'weight'=>'1.5',
-            'status'=>'1',
+            'weight'=>'5',
+            
             'category_id'=>'1',
 
             
 
               
 
-            'brand_id'=>'1',
+            'brand_id'=>null,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 
@@ -159,15 +160,15 @@ class ProductSeeder extends Seeder
             'description'=>'Penjepit foto lucu',
             'stock'=>'0',
             'price'=>'6000',
-            'weight'=>'0.25',
-            'status'=>'1',
+            'weight'=>'1',
+            
             'category_id'=>'7',
 
             
 
               
 
-            'brand_id'=>'1',
+            'brand_id'=>null,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 
@@ -178,15 +179,15 @@ class ProductSeeder extends Seeder
             'description'=>'Gantungan kunci lucu dengan beberapa varian',
             'stock'=>'0',
             'price'=>'5500',
-            'weight'=>'0.4',
-            'status'=>'1',
+            'weight'=>'1',
+            
             'category_id'=>'1',
 
             
 
               
 
-            'brand_id'=>'1',
+            'brand_id'=>null,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 
@@ -197,10 +198,10 @@ class ProductSeeder extends Seeder
             'description'=>'Serum pewarna bibir',
             'stock'=>'0',
             'price'=>'19500',
-            'weight'=>'0.5',
-            'status'=>'1',
+            'weight'=>'2',
+            
             'category_id'=>'2',
-            'brand_id'=>'2',
+            'brand_id'=>'1',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 
@@ -211,8 +212,27 @@ class ProductSeeder extends Seeder
             'description'=>'Produk kecantikan untuk mempercerah wajah',
             'stock'=>'0',
             'price'=>'33500',
-            'weight'=>'0.7',
-            'status'=>'1',
+            'weight'=>'2',
+            
+            'category_id'=>'2',
+
+            
+
+              
+
+            'brand_id'=>'2',
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s")
+
+        ]);
+        Product::factory()->create([
+            'image_product'=>'focallure_eyeshadow.png', 
+            'name'=> 'Focallure Eyeshadow',
+            'description'=>'Palet eyeshadow untuk merias mata',
+            'stock'=>'0',
+            'price'=>'80000',
+            'weight'=>'2',
+            
             'category_id'=>'2',
 
             
@@ -225,37 +245,18 @@ class ProductSeeder extends Seeder
 
         ]);
         Product::factory()->create([
-            'image_product'=>'focallure_eyeshadow.png', 
-            'name'=> 'Focallure Eyeshadow',
-            'description'=>'Palet eyeshadow untuk merias mata',
-            'stock'=>'0',
-            'price'=>'80000',
-            'weight'=>'0.7',
-            'status'=>'1',
-            'category_id'=>'2',
-
-            
-
-              
-
-            'brand_id'=>'4',
-            'created_at' => date("Y-m-d H:i:s"),
-            'updated_at' => date("Y-m-d H:i:s")
-
-        ]);
-        Product::factory()->create([
             'image_product'=>'cepol_bunga.jfif', 
             'name'=> 'Cepol Bunga',
             'description'=>'Cepol dengan beberapa variasi warna dan berbentuk bunga',
             'stock'=>'0',
             'price'=>'13500',
-            'weight'=>'0.7',
-            'status'=>'1',
+            'weight'=>'2',
+            
             'category_id'=>'1',
 
             
 
-            'brand_id'=>'1',
+            'brand_id'=>null,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 
@@ -266,15 +267,15 @@ class ProductSeeder extends Seeder
             'description'=>'Cepol bentuk siput dengan beberapa varian',
             'stock'=>'0',
             'price'=>'20000',
-            'weight'=>'0.7',
-            'status'=>'1',
+            'weight'=>'2',
+            
             'category_id'=>'1',
 
             
 
               
 
-            'brand_id'=>'1',
+            'brand_id'=>null,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 
@@ -285,15 +286,15 @@ class ProductSeeder extends Seeder
             'description'=>'Bando kain dengan motif bintik bintik',
             'stock'=>'0',
             'price'=>'15000',
-            'weight'=>'1.5',
-            'status'=>'1',
+            'weight'=>'5',
+            
             'category_id'=>'1',
 
             
 
               
 
-            'brand_id'=>'1',
+            'brand_id'=>null,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 
@@ -304,15 +305,15 @@ class ProductSeeder extends Seeder
             'description'=>'Bando kain yang mekar dengan beberapa varian warna',
             'stock'=>'0',
             'price'=>'15000',
-            'weight'=>'1.5',
-            'status'=>'1',
+            'weight'=>'5',
+            
             'category_id'=>'1',
 
             
 
               
 
-            'brand_id'=>'1',
+            'brand_id'=>null,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 
@@ -323,15 +324,15 @@ class ProductSeeder extends Seeder
             'description'=>'Bando dengan model kepang dengan beberapa varian warna',
             'stock'=>'0',
             'price'=>'17500',
-            'weight'=>'1.5',
-            'status'=>'1',
+            'weight'=>'5',
+            
             'category_id'=>'1',
 
             
 
               
 
-            'brand_id'=>'1',
+            'brand_id'=>null,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 
@@ -342,15 +343,15 @@ class ProductSeeder extends Seeder
             'description'=>'Bando dengan model kepang dengan beberapa varian warna',
             'stock'=>'0',
             'price'=>'17500',
-            'weight'=>'1.5',
-            'status'=>'1',
+            'weight'=>'5',
+            
             'category_id'=>'1',
 
             
 
               
 
-            'brand_id'=>'1',
+            'brand_id'=>null,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 
@@ -361,15 +362,15 @@ class ProductSeeder extends Seeder
             'description'=>'Bando dengan model kepang dengan beberapa varian warna',
             'stock'=>'0',
             'price'=>'17500',
-            'weight'=>'1.5',
-            'status'=>'1',
+            'weight'=>'5',
+            
             'category_id'=>'1',
 
             
 
               
 
-            'brand_id'=>'1',
+            'brand_id'=>null,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 
@@ -380,15 +381,15 @@ class ProductSeeder extends Seeder
             'description'=>'Bando kain kepang dengan rantai emas yang memiliki beberapa varian',
             'stock'=>'0',
             'price'=>'25000',
-            'weight'=>'1.5',
-            'status'=>'1',
+            'weight'=>'5',
+            
             'category_id'=>'1',
 
             
 
               
 
-            'brand_id'=>'1',
+            'brand_id'=>null,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 
@@ -400,14 +401,14 @@ class ProductSeeder extends Seeder
             'stock'=>'0',
             'price'=>'13500',
             'weight'=>'2',
-            'status'=>'1',
+            
             'category_id'=>'1',
 
             
 
               
 
-            'brand_id'=>'1',
+            'brand_id'=>null,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 
@@ -418,15 +419,15 @@ class ProductSeeder extends Seeder
             'description'=>'Scrunchie terbuat dari kain satin dengan beberapa varian warna',
             'stock'=>'0',
             'price'=>'13500',
-            'weight'=>'1.25',
-            'status'=>'1',
+            'weight'=>'3',
+            
             'category_id'=>'1',
 
             
 
               
 
-            'brand_id'=>'1',
+            'brand_id'=>null,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 
@@ -437,15 +438,15 @@ class ProductSeeder extends Seeder
             'description'=>'Scrunchie kain dengan motif bintik bintik yang berbentuk kotak-kotak',
             'stock'=>'0',
             'price'=>'7500',
-            'weight'=>'1.25',
-            'status'=>'1',
+            'weight'=>'3',
+            
             'category_id'=>'1',
 
             
 
               
 
-            'brand_id'=>'1',
+            'brand_id'=>null,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 
@@ -456,15 +457,15 @@ class ProductSeeder extends Seeder
             'description'=>'Scrunchie kain dengan motif bintik bintik yang berbentuk kotak-kotak',
             'stock'=>'0',
             'price'=>'7500',
-            'weight'=>'1.25',
-            'status'=>'1',
+            'weight'=>'3',
+            
             'category_id'=>'1',
 
             
 
               
 
-            'brand_id'=>'1',
+            'brand_id'=>null,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 
@@ -475,15 +476,15 @@ class ProductSeeder extends Seeder
             'description'=>'Tempat kacamata dengan motif bunga',
             'stock'=>'0',
             'price'=>'32500',
-            'weight'=>'3.25',
-            'status'=>'1',
+            'weight'=>'6',
+            
             'category_id'=>'1',
 
             
 
               
 
-            'brand_id'=>'1',
+            'brand_id'=>null,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 
@@ -494,15 +495,15 @@ class ProductSeeder extends Seeder
             'description'=>'Tempat kacamata dengan motif buah',
             'stock'=>'0',
             'price'=>'32500',
-            'weight'=>'3.25',
-            'status'=>'1',
+            'weight'=>'6',
+            
             'category_id'=>'1',
 
             
 
               
 
-            'brand_id'=>'1',
+            'brand_id'=>null,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 
@@ -513,15 +514,15 @@ class ProductSeeder extends Seeder
             'description'=>'Dompet kartu model buku dengan beberapa varian motif dan warna',
             'stock'=>'0',
             'price'=>'34500',
-            'weight'=>'2.25',
-            'status'=>'1',
+            'weight'=>'7',
+            
             'category_id'=>'1',
 
             
 
               
 
-            'brand_id'=>'1',
+            'brand_id'=>null,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 
@@ -532,15 +533,15 @@ class ProductSeeder extends Seeder
             'description'=>'Dompet gantungan kunci dengan beberapa varian motif dan warna',
             'stock'=>'0',
             'price'=>'34500',
-            'weight'=>'2.3',
-            'status'=>'1',
+            'weight'=>'2',
+            
             'category_id'=>'1',
 
             
 
               
 
-            'brand_id'=>'1',
+            'brand_id'=>null,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 
@@ -551,15 +552,15 @@ class ProductSeeder extends Seeder
             'description'=>'Dompet model buku dan cover yang polos dengan beberapa varian warna',
             'stock'=>'0',
             'price'=>'25000',
-            'weight'=>'2.25',
-            'status'=>'1',
+            'weight'=>'7',
+            
             'category_id'=>'1',
 
             
 
               
 
-            'brand_id'=>'1',
+            'brand_id'=>null,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 
@@ -570,15 +571,15 @@ class ProductSeeder extends Seeder
             'description'=>'Dompet kartu model buku dengan motif flora dan fauna dengan beberapa varian',
             'stock'=>'0',
             'price'=>'25000',
-            'weight'=>'2.25',
-            'status'=>'1',
+            'weight'=>'7',
+            
             'category_id'=>'1',
 
             
 
               
 
-            'brand_id'=>'1',
+            'brand_id'=>null,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 
@@ -589,15 +590,15 @@ class ProductSeeder extends Seeder
             'description'=>'Dompet kartu model buku dengan motif flora dan fauna dengan beberapa varian',
             'stock'=>'0',
             'price'=>'25000',
-            'weight'=>'2.25',
-            'status'=>'1',
+            'weight'=>'7',
+            
             'category_id'=>'1',
 
             
 
               
 
-            'brand_id'=>'1',
+            'brand_id'=>null,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 
@@ -608,15 +609,15 @@ class ProductSeeder extends Seeder
             'description'=>'Dompet model buku dengan gambar kartun hewan yang memiliki beberapa varian gambar dan warna',
             'stock'=>'0',
             'price'=>'25000',
-            'weight'=>'2.3',
-            'status'=>'1',
+            'weight'=>'2',
+            
             'category_id'=>'1',
 
             
 
               
 
-            'brand_id'=>'1',
+            'brand_id'=>null,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 
@@ -627,15 +628,15 @@ class ProductSeeder extends Seeder
             'description'=>'Dompet kulit lipat dengan beberapa varian warna',
             'stock'=>'0',
             'price'=>'60000',
-            'weight'=>'2.3',
-            'status'=>'1',
+            'weight'=>'2',
+            
             'category_id'=>'1',
 
             
 
               
 
-            'brand_id'=>'1',
+            'brand_id'=>null,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 
@@ -646,15 +647,15 @@ class ProductSeeder extends Seeder
             'description'=>'Dompet lipat panjang polos dengan beberapa varian warna',
             'stock'=>'0',
             'price'=>'40000',
-            'weight'=>'2.3',
-            'status'=>'1',
+            'weight'=>'2',
+            
             'category_id'=>'1',
 
             
 
               
 
-            'brand_id'=>'1',
+            'brand_id'=>null,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 
@@ -666,14 +667,14 @@ class ProductSeeder extends Seeder
             'stock'=>'0',
             'price'=>'27500',
             'weight'=>'2',
-            'status'=>'1',
+            
             'category_id'=>'1',
 
             
 
               
 
-            'brand_id'=>'1',
+            'brand_id'=>null,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 
@@ -685,14 +686,14 @@ class ProductSeeder extends Seeder
             'stock'=>'0',
             'price'=>'27500',
             'weight'=>'2',
-            'status'=>'1',
+            
             'category_id'=>'1',
 
             
 
               
 
-            'brand_id'=>'1',
+            'brand_id'=>null,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 
@@ -704,14 +705,14 @@ class ProductSeeder extends Seeder
             'stock'=>'0',
             'price'=>'27500',
             'weight'=>'2',
-            'status'=>'1',
+            
             'category_id'=>'1',
 
             
 
               
 
-            'brand_id'=>'1',
+            'brand_id'=>null,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 
@@ -723,14 +724,14 @@ class ProductSeeder extends Seeder
             'stock'=>'0',
             'price'=>'25000',
             'weight'=>'2',
-            'status'=>'1',
+            
             'category_id'=>'1',
 
             
 
               
 
-            'brand_id'=>'1',
+            'brand_id'=>null,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 
@@ -741,15 +742,15 @@ class ProductSeeder extends Seeder
             'description'=> 'Tempat kacamata yang bisa dilipat ',
             'stock'=>'0',
             'price'=>'27500',
-            'weight'=>'2.2',
-            'status'=>'1',
+            'weight'=>'4',
+            
             'category_id'=>'1',
 
             
 
               
 
-            'brand_id'=>'1',
+            'brand_id'=>null,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 
@@ -760,15 +761,15 @@ class ProductSeeder extends Seeder
             'description'=> 'Tempat kacamata dengan warna dan bunga-bunga',
             'stock'=>'0',
             'price'=>'25000',
-            'weight'=>'2.3',
-            'status'=>'1',
+            'weight'=>'2',
+            
             'category_id'=>'1',
 
             
 
               
 
-            'brand_id'=>'1',
+            'brand_id'=>null,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 
@@ -779,15 +780,15 @@ class ProductSeeder extends Seeder
             'description'=>'Dompet koin bulat dengan gambar dan tali',
             'stock'=>'0',
             'price'=>'37500',
-            'weight'=>'2.3',
-            'status'=>'1',
+            'weight'=>'2',
+            
             'category_id'=>'1',
 
             
 
               
 
-            'brand_id'=>'1',
+            'brand_id'=>null,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 
@@ -798,15 +799,15 @@ class ProductSeeder extends Seeder
             'description'=>'Dompet koin dengan motif garis-garis',
             'stock'=>'0',
             'price'=>'15000',
-            'weight'=>'2.2',
-            'status'=>'1',
+            'weight'=>'4',
+            
             'category_id'=>'1',
 
             
 
               
 
-            'brand_id'=>'1',
+            'brand_id'=>null,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 
@@ -817,15 +818,15 @@ class ProductSeeder extends Seeder
             'description'=>'Perangkat mandi',
             'stock'=>'0',
             'price'=>'50000',
-            'weight'=>'2.2',
-            'status'=>'1',
+            'weight'=>'4',
+            
             'category_id'=>'3',
 
             
 
               
 
-            'brand_id'=>'1',
+            'brand_id'=>null,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 
@@ -836,15 +837,15 @@ class ProductSeeder extends Seeder
             'description'=>'Set perlengkapan mandi ',
             'stock'=>'0',
             'price'=>'50000',
-            'weight'=>'2.2',
-            'status'=>'1',
+            'weight'=>'4',
+            
             'category_id'=>'3',
 
             
 
               
 
-            'brand_id'=>'1',
+            'brand_id'=>null,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 
@@ -855,15 +856,15 @@ class ProductSeeder extends Seeder
             'description'=>'Tas skin care dengan motif kotak kotak',
             'stock'=>'0',
             'price'=>'15000',
-            'weight'=>'2.2',
-            'status'=>'1',
+            'weight'=>'4',
+            
             'category_id'=>'6',
 
             
 
               
 
-            'brand_id'=>'1',
+            'brand_id'=>null,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 
@@ -874,15 +875,15 @@ class ProductSeeder extends Seeder
             'description'=>'Tas skin care motif bunga bunga',
             'stock'=>'0',
             'price'=>'28500',
-            'weight'=>'2.2',
-            'status'=>'1',
+            'weight'=>'4',
+            
             'category_id'=>'6',
 
             
 
               
 
-            'brand_id'=>'1',
+            'brand_id'=>null,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 
@@ -893,15 +894,15 @@ class ProductSeeder extends Seeder
             'description'=>'Tas skin care warna terang',
             'stock'=>'0',
             'price'=>'32500',
-            'weight'=>'2.2',
-            'status'=>'1',
+            'weight'=>'4',
+            
             'category_id'=>'6',
 
             
 
               
 
-            'brand_id'=>'1',
+            'brand_id'=>null,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 
@@ -912,15 +913,15 @@ class ProductSeeder extends Seeder
             'description'=>'Tas Skin Care Gelap',
             'stock'=>'0',
             'price'=>'25000',
-            'weight'=>'2.2',
-            'status'=>'1',
+            'weight'=>'4',
+            
             'category_id'=>'6',
 
             
 
               
 
-            'brand_id'=>'1',
+            'brand_id'=>null,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 
@@ -931,15 +932,15 @@ class ProductSeeder extends Seeder
             'description'=>'Tas laptop escort anti air',
             'stock'=>'0',
             'price'=>'150000',
-            'weight'=>'2.2',
-            'status'=>'1',
+            'weight'=>'4',
+            
             'category_id'=>'6',
 
             
 
               
 
-            'brand_id'=>'1',
+            'brand_id'=>null,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s")
 
