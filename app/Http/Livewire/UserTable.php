@@ -114,7 +114,7 @@ class UserTable extends DataTableComponent
                 'max' => '150',
             ])->filter(function(Builder $builder, string $value) {
                
-                $builder->where('tanggal_lahir', "<=", (now()->year - (int)$value) . "-1-1");
+                $builder->where('birth_date', "<=", (now()->year - (int)$value) . "-1-1");
                
             }), 
             NumberFilter::make('Max Age')
@@ -123,7 +123,7 @@ class UserTable extends DataTableComponent
                 'max' => '150',
             ])->filter(function(Builder $builder, string $value) {
                
-                $builder->where('tanggal_lahir', ">=", (now()->year - (int)$value) . "-1-1");
+                $builder->where('birth_date', ">=", (now()->year - (int)$value) . "-1-1");
                
             }), 
     ];

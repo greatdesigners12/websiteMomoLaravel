@@ -35,7 +35,7 @@ class ProductController extends Controller
 
     function createproduct(Request $request){
         
-        $rules = ['name' => 'required', 'description' => "required", 'category_id' => "required|integer", 'brand_id' => "required|integer", 'price' => "required", 'stock' => "required|integer", 'image_product' => 'required'];
+        $rules = ['name' => 'required', 'description' => "required", 'category_id' => "required|integer", 'brand_id' => "required|integer", 'weight' => 'required|integer', 'price' => "required", 'stock' => "required|integer", 'image_product' => 'required'];
         $messages = ["required" => "Input :attribute tidak boleh kosong", "integer" => "Input :attribute harus angka"];
         
         $validator = Validator::make($request->all(), $rules, $messages);
@@ -54,7 +54,7 @@ class ProductController extends Controller
     }
 
     function updateProduct(Request $request){
-        $rules = ['id' => 'required' ,'name' => 'required', 'description' => "required", 'category_id' => "required|integer", 'brand_id' => "required|integer", 'price' => "required", 'stock' => "required|integer"];
+        $rules = ['id' => 'required' ,'name' => 'required', 'description' => "required", 'category_id' => "required|integer", 'weight' => 'required|integer', 'brand_id' => "required|integer", 'price' => "required", 'stock' => "required|integer"];
         $messages = ["required" => "Input :attribute tidak boleh kosong", "integer" => "Input :attribute harus angka"];
         $validator = Validator::make($request->all(), $rules, $messages);
         $validated = $validator->validated();
@@ -88,6 +88,8 @@ class ProductController extends Controller
         return view("detail-product", ["product" => $product]);
 
     }
+
+    
 
     
 

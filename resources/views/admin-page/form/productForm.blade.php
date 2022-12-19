@@ -77,6 +77,11 @@
                     <input type="number" class="form-control" name="stock" value="{{$product == null ? '' : $product->stock}}" placeholder="Enter product stock"  >                                                  
                 </div>
 
+                <div class="form-group mt-3">
+                    <label for="example-input3-group1" class="font-weight-bold">Weight</label>
+                    <input type="number"class="form-control" name="weight" value="{{$product == null ? '' : $product->weight}}" placeholder="Enter product weight in gram"  >                                                  
+                </div>
+
                 <div class="form-group">
                     <label for="exampleInputPassword1">{{ "Gambar Produk" }}</label>
                     <div class="col-12 mb-3">

@@ -23,22 +23,13 @@
                           </button>
                         </div>
                         <div class="modal-body">
-<<<<<<< HEAD
-                        <input type="hidden" name="id">
-=======
                         <input type="hidden" name="id" id="deleteAdminId">
->>>>>>> origin/wansen
                           Apakah kamu yakin untuk menghapus?
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-<<<<<<< HEAD
-                          <button type="button" class="btn btn-primary" >Delete</button>
-                          
-=======
                           <button type="submit" class="btn btn-primary"  >Delete</button>
                         </form>
->>>>>>> origin/wansen
                         </div>
                       </div>
                     </div>

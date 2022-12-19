@@ -34,29 +34,31 @@
                             <div class="cart-table__col text-center">Status</div>
                             <div class="cart-table__col text-center">Details</div>
                         </div>
+                        
                          @foreach ($transactions as $index => $transaction)
                         
                          <div class="cart-table__row" wire:key="item-{{ $index }}">
                           
                             <div class="cart-table__col">
                                 <a href="product.html" class="cart-table__img">
-                                    <img data-src="{{asset('storage/img/transaction_histories') . '/' . $transaction->relation[0]->transaction_product->imageProduct}}" src="{{asset('storage/img/transaction_histories') . '/' . $transaction->relation[0]->transaction_product->imageProduct}}" class="js-img" alt="">
+                                    
+                                    <img data-src="{{asset('storage/img/transaction_histories') . '/' . $transaction->relation[0]->transaction_product->imageProduct}}" src="{{asset('storage/img/transaction_histories') . '/' . $transaction->relation[0]->transaction_product->imageProduct}}"  class="js-img" alt="">
                                 </a>
                                 <div class="cart-table__info">
                                     <a href="product.html" class="title5" wire:model="carts.{{$index}}.product.name">{{$transaction->relation[0]->transaction_product->name}}</a>
                                     <span class="cart-table__info-num">Invoice: {{$transaction->invoice}}</span>
 
-                                    <span class="cart-table__info-num">{{$transaction->relation->count() > 1 ? '+' . $transaction->relation->count() . ' products' : ''}} products</span>
+                                    <span class="cart-table__info-num">{{$transaction->relation->count() > 1 ? '+' . $transaction->relation->count() . ' products' : ''}}</span>
                                 </div>
                             </div>
                             <div class="cart-table__col">
                                 <span class="cart-table__price">Rp. {{number_format($transaction->total_price, 2, '.', ',')}}</span>
                             </div>
                             <div class="cart-table__col d-flex justify-content-center">
-                                <span class="alert alert-danger w-50 text-center">{{$transaction->status}}</span>
+                                <span class="alert {{$transaction->status == 'Terbayar' ? 'alert-success' : 'alert-danger'}} w-50 text-center">{{$transaction->status}}</span>
                             </div>
                             <div class="cart-table__col d-flex justify-content-center">
-                                <button class="btn" style="background-color: #D23377; color: white; height:40px;"><a class="text-white text-decoration-none" href="{{route('toTransactionDetailPage', $transaction->invoice)}}">Details</a> </button>
+                                <button class="btn" style="background-color: #D23377; color: white; height:40px;"><a class="text-white text-decoration-none" href="{{$hasInformation ? route('toTransactionDetailPage', $transaction->invoice) : route('toUserInformationFormPage')}}">Details</a> </button>
                             </div>
                         </div>
                          @endforeach
