@@ -8,7 +8,7 @@
                         <div class="card-body">
                             <div class="px-3">
                                 <div class="auth-logo-box d-flex justify-content-center">
-                                    <a href="../dashboard/analytics-index.html" class="logo logo-admin"><img src="{{asset('storage/img/logo.png')}}" style="width: 70px;" alt="logo" class="auth-logo"></a>
+                                    <a href="../dashboard/analytics-index.html" class="logo logo-admin"><img src="{{asset('storage/img/logo.png')}}" style="width: 80px;" alt="logo" class="auth-logo"></a>
                                 </div><!--end auth-logo-box-->
                                 
                                 <div class="text-center auth-logo-text">

@@ -1,5 +1,5 @@
 <div>
-    <footer class="footer">
+    <footer class="footer" style="height: 460px;">
         <div class="wrapper">
                 <div class="footer-top">
                     <div class="column w-100">

@@ -41,31 +41,31 @@
                             <div class="wrapper">
 
 
-                                <x-input class="" label="Full Name" wire:model="fullName" placeholder="Input your full name" />
-                                <x-native-select label="Select Gender" :options="[['name' => 'Male', 'value' => 'm'], ['name' => 'Female', 'value' => 'f']]" option-label="name"
+                                <x-input class="mt-2 mb-2" label="Full Name" wire:model="fullName" placeholder="Input your full name" />
+                                <x-native-select class="mt-2 mb-2" label="Select Gender" :options="[['name' => 'Male', 'value' => 'm'], ['name' => 'Female', 'value' => 'f']]" option-label="name"
                                     option-value="value" wire:model="gender" />
-                                <x-datetime-picker label="Birth Date" placeholder="Birth Date"
+                                <x-datetime-picker class="mt-2 mb-2" label="Birth Date" placeholder="Birth Date"
                                     display-format="DD-MM-YYYY" wire:model.defer="birthDate" without-time />
 
                                 <h6>Provinsi</h6>
-                                <input type="text" value="{{ $provincename }}" disabled>
-                                <x-select placeholder="Select Province" :options="$provinces"
+                                <input type="text" class="mt-2 mb-2" value="{{ $provincename }}" disabled>
+                                <x-select class="mt-2 mb-2" placeholder="Select Province" :options="$provinces"
                                     x-on:selected="$wire.resetCity()" option-label="province" option-value="province_id"
                                     wire:model.defer="province" />
 
 
 
                                 <h6>City</h6>
-                                <input type="text" value="{{ $cityname }}" disabled>
-                                <x-select placeholder="Select City" :options="$cities" option-label="city_name"
+                                <input type="text" class="mt-2 mb-2" value="{{ $cityname }}" disabled>
+                                <x-select class="mt-2 mb-2"  placeholder="Select City" :options="$cities" option-label="city_name"
                                     option-value="city_id" wire:model.defer="city_id" />
 
 
 
-                                <x-textarea wire:model="address" label="Full Address"
+                                <x-textarea class="mt-2 mb-2" wire:model="address" label="Full Address"
                                     placeholder="Input full address" />
 
-                                <x-button pink label="Submit" wire:click="setUserInformation" />
+                                <x-button  class="mt-2 mb-2" pink label="Submit" wire:click="setUserInformation" />
 
 
                             </div>

@@ -34,11 +34,11 @@
                         @foreach ($wishlists as $wishlist)
                             <div class="cart-table__row">
                                 <div class="cart-table__col">
-                                    <a href="#" class="cart-table__img">
+                                    <a href="{{route('getProductById', $wishlist->product->id)}}" class="cart-table__img">
                                         <img data-src="{{asset('storage/img/momo_product/') . '/' . $wishlist->product->image_product}}" src="{{asset('storage/img/momo_product/') . '/' . $wishlist->product->image_product}}" class="js-img" alt="">
                                     </a>
                                     <div class="cart-table__info">
-                                        <a href="#" class="title5">{{$wishlist->product->name}}</a>
+                                        <a href="{{route('getProductById', $wishlist->product->id)}}" class="title5">{{$wishlist->product->name}}</a>
                                         <span class="cart-table__info-num">ID PRODUCT : {{$wishlist->product->id}}</span>
                                     </div>
                                 </div>
@@ -72,4 +72,5 @@
    
 
     </main>
+    @livewire('footer')
 </div>

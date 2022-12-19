@@ -12,7 +12,7 @@
                         <h1>Cart</h1>
                         <ul class="bread-crumbs" style="padding-left: 0;">
                             <li class="bread-crumbs__item">
-                                <a href="index.html" class="bread-crumbs__link">Home</a>
+                                <a href="/" class="bread-crumbs__link">Home</a>
                             </li>
                             <li class="bread-crumbs__item">Cart</li>
                         </ul>
@@ -37,11 +37,11 @@
                             
                              <div class="cart-table__row" wire:key="item-{{ $index }}">
                                 <div class="cart-table__col">
-                                    <a href="product.html" class="cart-table__img">
+                                    <a href="{{route('getProductById', $cart->product->id)}}" class="cart-table__img">
                                         <img data-src="{{asset('storage/img/momo_product') . '/' . $cart->product->image_product}}" src="{{asset('storage/img/momo_product') . '/' . $cart->product->image_product}}" class="js-img" alt="">
                                     </a>
                                     <div class="cart-table__info">
-                                        <a href="product.html" class="title5" wire:model="carts.{{$index}}.product.name">{{$cart->product->name}}</a>
+                                        <a href="{{route('getProductById', $cart->product->id)}}" class="title5" wire:model="carts.{{$index}}.product.name">{{$cart->product->name}}</a>
                                         <span class="cart-table__info-stock">in stock</span>
                                         <span class="cart-table__info-num">SKU: IN1203</span>
                                     </div>
@@ -93,7 +93,9 @@
                
             </div>
             
-
+            @livewire('footer')
         </main>
+        
     </div>
 </div>
+

@@ -1,7 +1,7 @@
 <div class="col-12 mt-3">
     <div class="card">
         <div class="card-body">
-            <h4 class="mt-0 header-title">Buat Pengunguman Website</h4>
+            <h4 class="mt-0 header-title">Form Pengunguman Website</h4>
             @if (session()->has("message"))
                 <div class="alert alert-success">
                     {{session()->get("message")}}

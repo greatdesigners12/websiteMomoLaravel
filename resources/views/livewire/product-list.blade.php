@@ -2,7 +2,7 @@
     <div class="shop-main__items">
         @if(count($products) > 0)
         @foreach ($products as $product)
-            <a href="#" onclick="return false;" style="color: white;" class="products-item" >
+            <a href="{{route('getProductById', $product->id)}}" style="color: white;" class="products-item" >
                 <div class="products-item__img">
                     <img src="{{asset('storage/img/momo_product/').'/' . $product->image_product}}" class="js-img" alt="" >
                     <div class="products-item__hover">

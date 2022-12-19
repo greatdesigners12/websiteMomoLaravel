@@ -40,11 +40,11 @@
                                 </div>
                                 @foreach ($transactionDetail->relation as $item)
                                 <div class="checkout-order__item">
-                                    <a href="#" class="checkout-order__item-img">
+                                    <a href="{{route('getProductById', $product->id)}}" class="checkout-order__item-img">
                                         <img data-src="{{asset('storage/img/transaction_histories') . '/' . $item->transaction_product->imageProduct}}" src="{{asset('storage/img/transaction_histories') . '/' . $item->transaction_product->imageProduct}}" class="js-img" alt="">
                                     </a>
                                     <div class="checkout-order__item-info">
-                                        <a class="title6" href="#">{{$item->transaction_product->name}} <span>{{$item->transaction_product->quantity}}x</span></a>
+                                        <a class="title6" href="{{route('getProductById', $product->id)}}">{{$item->transaction_product->name}} <span>{{$item->transaction_product->quantity}}x</span></a>
                                         <span class="checkout-order__item-price">{{number_format($item->transaction_product->price, 2)}}</span>
                                         <span class="checkout-order__item-num">ID: {{$item->transaction_product->id}}</span>
                                     </div>
@@ -155,7 +155,7 @@
     
         <!-- BEGIN FOOTER -->
     
-   
+    
     
         <!-- FOOTER EOF   -->
     

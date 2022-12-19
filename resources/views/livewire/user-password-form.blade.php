@@ -23,7 +23,7 @@
                 <div class="tab-wrap">
                     <ul class="nav-tab-lists tabs">
                         <li>
-                            <a href="/Profile">Profil Saya</a>
+                            <a href="/profile">Profil Saya</a>
                         </li>
                         <li class="active">
                             <a href="#profile-tab_1">Reset Password</a>
@@ -39,7 +39,7 @@
                                         <div class="col-12 mt-3">
                                             <div class="card">
                                                 <div class="card-body">
-                                                    <h4 class="mt-0 header-title">{{ 'Reset Password' }}</h4>
+                                                    <h4 class="mt-0 header-title">{{ 'Reset Kata Sandi' }}</h4>
                                                     @if (session()->has('message'))
                                                         <div class="alert alert-success">
                                                             {{ session()->get('message') }}
@@ -88,7 +88,7 @@
 
 
                                                         <button type="submit"
-                                                            class="btn btn-gradient-primary">{{ 'Kirim' }}</button>
+                                                            class="btn btn-danger d-block mr-0" style="width:80px; height:40px;" >{{ 'Kirim' }}</button>
 
 
 
