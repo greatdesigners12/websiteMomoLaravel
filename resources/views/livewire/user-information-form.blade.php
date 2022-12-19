@@ -5,7 +5,19 @@
 
         <main class="content">
             <!-- BEGIN DETAIL MAIN BLOCK -->
-            
+            <div class="detail-block detail-block_margin">
+                <div class="wrapper">
+                    <div class="detail-block__content">
+                        <h1>User Information</h1>
+                        <ul class="bread-crumbs" style="padding-left: 0;">
+                            <li class="bread-crumbs__item">
+                                <a href="/" class="bread-crumbs__link">User Information</a>
+                            </li>
+                            <li class="bread-crumbs__item">User Information</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
             <!-- DETAIL MAIN BLOCK EOF   -->
             <!-- BEGIN CART -->
             <div style="padding-top: 50px;">
@@ -89,3 +101,4 @@
         <x-dialog />
     </main>
 </div>
+@livewire('footer')

@@ -13,29 +13,38 @@ class UserInformationController extends Controller
     
 
     public function setUserPassword(Request $request){
-        $userId = Auth::id();
-        $rules = ['old_password'=>"required",'password' => "required|min:6", "password_confirm" => "required|same:password"];
-        $messages = ["required" => "Input :attribute tidak boleh kosong", "password_confirm.required" => "Input konfirmasi password tidak boleh kosong","unique" => ":attribute sudah ada, silahkan input :attribute yang berbeda" ,"password_confirm.same" => "Input konfirmasi password tidak sama"];
-        $validator = Validator::make($request->all(),[
-            'old_password' => [
-                'required', function ($attribute, $value, $fail) {
-                    if (!Hash::check($value, Auth::user()->password)) {
-                        $fail('Old Password didn\'t match');
-                    }
-                },
-            ],
-        ], $rules, $messages);
+        Validator::extend('current_password', function ($attribute, $value, $parameters, $validator) {
+            // retrieve the user model
+            $user = Auth::user();
+        
+            // check if the provided password matches the current password
+            return Hash::check($value, $user->password);
+        });
+        $id = Auth::id();
+        $validator = Validator::make($request->all(), [
+            'old_password' => ['required', 'current_password'],
+            'new_password' => 'required|min:6|confirmed',
+            'confirm_password' => 'required',
+        ], [
+            'old_password.current_password' => 'Kata sandi lama salah',
+            'old_password.required'=>'Harap mengisi kata sandi lama',
+            'new_password.required' => 'Harap mengisi kata sandi baru',
+            'new_password.min' => 'Kata sandi baru minimum 6 angka/huruf.',
+            'new_password.confirmed' => 'Konfirmasi kata sandi baru dan kata sandi baru harus sama',
+            'confirm_password.required' => 'Harap mengisi kata sandi baru',
+        ]);
         if($validator->fails()){
             return redirect()->back()->withErrors($validator);
         }else{
-            $validated = $validator->validated();
-           
-                User::where('userId')->update([
-                    'password' => Hash::make($request->password),
-                    ]);
-                    return redirect()->back()->with("message", "password has been updated");
-                     
-
-            }
+            User::where('id',$id)->update([
+                'password' => Hash::make($request->password),
+                ]);
+                return redirect()->back()->with("message", "Password has been updated");
+                 
         }
+    
+    }
+
+       
+    
 }

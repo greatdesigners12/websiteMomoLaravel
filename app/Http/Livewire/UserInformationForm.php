@@ -30,19 +30,18 @@ class UserInformationForm extends Component
     ];
 
     public function mount(){
-       
-
         $provinces = Http::get('https://api.rajaongkir.com/starter/province', [
-            'key' => '0620d0488afc773f4036040af5ebd959',
+            'key' => '86abbd5e931a2d5d6d0cca75316477c7',
+            
         ]);
 
+       
         
         $this->provinces = $provinces->collect("rajaongkir")["results"];
         
         
         
     }
-
     public function setUserInformation(){
        
         $this->validate();
@@ -75,7 +74,7 @@ class UserInformationForm extends Component
 
     public function resetCity(){
         $cities = Http::get('https://api.rajaongkir.com/starter/city', [
-            'key' => '0620d0488afc773f4036040af5ebd959',
+            'key' => '86abbd5e931a2d5d6d0cca75316477c7',
             'province' => $this->province
         ]);
         $this->cities = $cities->collect("rajaongkir")["results"];
