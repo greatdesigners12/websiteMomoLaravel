@@ -20,7 +20,7 @@
         <link href="{{asset('css/admin/icons.min.css')}}" rel="stylesheet" type="text/css" />
         <link href="{{asset('css/admin/metisMenu.min.css')}}" rel="stylesheet" type="text/css" />
         <link href="{{asset('css/admin/app.min.css')}}" rel="stylesheet" type="text/css" />
-        
+        <link rel="stylesheet" href="{{asset('css/admin/updateUI.css')}}">
         <link href="{{asset('plugins/dropify/css/dropify.min.css')}}" rel="stylesheet">  
         @yield("cssImport") 
         @livewireStyles

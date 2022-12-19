@@ -76,9 +76,7 @@
                 
     
         </form>  
-        <a href="/promoManagement">
-            <button class="btn btn-gradient-danger">Back</button>
-        </a>                                         
+                                              
     </div><!--end card-body-->
     <!--end card-->
     <script>
