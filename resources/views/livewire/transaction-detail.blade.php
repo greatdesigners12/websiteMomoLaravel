@@ -27,18 +27,13 @@
             <div class="checkout checkout-step3" style="padding-top: 40px;">
                 <div class="wrapper">
                     <div class="checkout-content">
-                        
                         <div class="checkout-info w-100">
                             <div class="checkout-order">
                                 <h5>Your Order</h5>
                                 <div>
-
                                     @if (session()->has('error'))
-                            
                                         <div class="alert alert-danger">
-                            
                                             {{ session('error') }}, silahkan reset transaksi melalui link berikut : <button style="font-weight: bold; text-decoration:underline;" wire:click="resetSnapToken">link</button>
-                            
                                         </div>
                             
                                     @endif
@@ -58,50 +53,50 @@
                                
                                
                             </div>
-                           
-                            <x-select
+                            @if ($transactionDetail->status != "Terbayar")
+                                <x-select
 
-                                label="Select Courier"
+                                    label="Select Courier"
 
-                                placeholder="Select courier"
-                                x-on:selected="$wire.getShippingPrice()"
-                                :options="[
-                                    ['name' => 'JNE',  'value' => 'jne'],
-                                    ['name' => 'POS INDONESIA', 'value' => 'pos'],
-                                    ['name' => 'TIKI',   'value' => 'tiki'],
-                                ]"
-                                option-label="name"
-                                option-value="value"
-                                wire:model.defer="courier"
+                                    placeholder="Select courier"
+                                    x-on:selected="$wire.getShippingPrice()"
+                                    :options="[
+                                        ['name' => 'JNE',  'value' => 'jne'],
+                                        ['name' => 'POS INDONESIA', 'value' => 'pos'],
+                                        ['name' => 'TIKI',   'value' => 'tiki'],
+                                    ]"
+                                    option-label="name"
+                                    option-value="value"
+                                    wire:model.defer="courier"
 
-                            />
-                            @if ($services == null)
-                                <div style="height: 10px;"></div>
-                            @endif
-                            
-                            @if ($services != null)
-                                 
-                                <select class="form-control my-3" >
-                                    <h5>Services</h5>
-                                    <option value="">Select services</option>
-                                     @foreach ($services as $service)
-                                     
-                                        <option wire:click="selectShippingPrice('{{$service["service"]}}')">{{$service["service"]}} - {{number_format($service["cost"][0]["value"], 2)}}</option>
-                                     @endforeach
+                                />
+                                @if ($services == null)
+                                    <div style="height: 10px;"></div>
+                                @endif
+                                
+                                @if ($services != null)
                                     
-                                </select>
-                            @endif
-                            <div class="d-flex align-items-end">
-                                <div style="width: 80%;">
-                                    <x-input wire:model="promoCode" label="Promo code" placeholder="Input the promo code" />
+                                    <select class="form-control my-3" >
+                                        <h5>Services</h5>
+                                        <option value="">Select services</option>
+                                        @foreach ($services as $service)
+                                        
+                                            <option wire:click="selectShippingPrice('{{$service["service"]}}')">{{$service["service"]}} - {{number_format($service["cost"][0]["value"], 2)}}</option>
+                                        @endforeach
+                                        
+                                    </select>
+                                @endif
+                                <div class="d-flex align-items-end">
+                                    <div style="width: 80%;">
+                                        <x-input wire:model="promoCode" label="Promo code" placeholder="Input the promo code" />
+                                    </div>
+                                    <div class="d-flex justify-content-center" style="width: 20%;">
+                                        <x-button primary label="Verify promo code" wire:click="verifyPromoCode"  />
+                                    </div>
                                 </div>
-                                <div class="d-flex justify-content-center" style="width: 20%;">
-                                    <x-button primary label="Verify promo code" wire:click="verifyPromoCode"  />
-                                </div>
-                            </div>
-                            
-                            <div style="height: 50px;"></div>
-                             
+                                
+                                <div style="height: 50px;"></div>
+                             @endif
                             <div class="cart-bottom__total w-100">
                                 <div class="cart-bottom__total-goods">
                                     Goods on
@@ -127,15 +122,15 @@
                                     
                                 </div>
                                 @if ($transactionDetail->status == "Terbayar")
-                                <div class="cart-bottom__total-num">
-                                    No resi:
-                                    @if ($transactionDetail->no_resi == "")
-                                        <span>In Progress...</span>
-                                    @else
-                                        <span>{{ $transactionDetail->no_resi}}</span>
-                                    @endif
-                                    
-                                </div>
+                                    <div class="cart-bottom__total-num">
+                                        No resi:
+                                        @if ($transactionDetail->no_resi == "")
+                                            <span>In Progress...</span>
+                                        @else
+                                            <span>{{ $transactionDetail->no_resi}}</span>
+                                        @endif
+                                        
+                                    </div>
                                 @else
                                     <button class="btn" style="background-color: #D23377; color: white; height:40px;" {{$shippingPrice == null ? 'disabled' : ''}} wire:click="pay">PAY NOW</button>
 
