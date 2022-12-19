@@ -26,7 +26,7 @@
                     <li><a href="#"><i class="icon-search"></i></a></li>
                     
                     @if (Auth::check())
-                        <li><a href="#"><i class="icon-user"></i></a></li>
+                        <li><a href="{{route('toProfilePage')}}"><i class="icon-user"></i></a></li>
                         <li><a href="{{route('toWishListPage')}}"><i class="icon-heart"></i></a></li>
                         <li><a href="{{route('toCartPage')}}"><i class="icon-cart"></i><span>{{$cartCounter}}</span></a></li>
                     @endif

@@ -30,12 +30,17 @@ class UserInformationForm extends Component
     ];
 
     public function mount(){
+        $info = UserInformation::where("user_id", Auth::id())->first();
         $provinces = Http::get('https://api.rajaongkir.com/starter/province', [
             'key' => '0620d0488afc773f4036040af5ebd959',
             
         ]);
-
-       
+        $this->birthDate = $info->birth_date;
+        $this->province = $info->province_id;
+        $this->city = $info->city_id;
+        $this->fullName = $info->full_name;
+        $this->gender = $info->gender;
+        $this->address = $info->address;
         
         $this->provinces = $provinces->collect("rajaongkir")["results"];
         
@@ -43,6 +48,7 @@ class UserInformationForm extends Component
         
         
     }
+
     public function setUserInformation(){
        
         $this->validate();

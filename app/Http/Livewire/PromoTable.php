@@ -24,10 +24,6 @@ class PromoTable extends DataTableComponent
                 ->sortable(),
             Column::make("Code", "code")
                 ->sortable(),
-            Column::make("Type", "type")
-                ->sortable(),
-            Column::make("Diskon Harga Pasti", "fixed")
-                ->sortable(),
             Column::make("Diskon Persentase Harga", "percentage")
                 ->sortable(),
                 Column::make("Diskon Maksimum", "max_discount")

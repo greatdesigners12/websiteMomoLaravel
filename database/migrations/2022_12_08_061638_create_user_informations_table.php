@@ -15,15 +15,17 @@ return new class extends Migration
     {
         Schema::create('user_informations', function (Blueprint $table) {
             $table->id();
-            $table->string('full_name');
-            $table->date('birth_date');
-            $table->string('province');
-            $table->string('city');
-            $table->string('districts');
-            $table->string('kode_pos');
-            $table->string('gender');
-            $table->text('image_profile');
-            $table->string('verified');
+            $table->string('full_name')->nullable();
+            $table->string('gender')->nullable();
+            $table->date('birth_date')->nullable();
+            $table->integer('province_id')->nullable();
+            $table->integer('city_id')->nullable();
+            $table->text('address')->nullable();
+            $table->string('postal_code')->nullable();
+            $table->text('image_profile')->nullable();
+            $table->integer('is_phone_verified');
+            $table->integer('is_email_verified');
+            $table->string('token')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps('');

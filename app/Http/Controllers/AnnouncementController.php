@@ -48,6 +48,10 @@ class AnnouncementController extends Controller
             return redirect()->back()->with("message", "announcement has been updated");
             
         }}
+        function deleteAnnouncement(Request $request){
+            announcement::where('id',$request->id)->delete();
+            return redirect()->back()->with("message", "Announcement deleted");
+        }
 
     
 }

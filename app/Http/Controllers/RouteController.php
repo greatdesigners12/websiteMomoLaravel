@@ -231,6 +231,10 @@ class RouteController extends Controller
         return view('protectedPage');
     }
 
+    public function toProfilePage(){
+        
+        return view('ProfileUser.ProfileUser');
+    }
     public function toDashboardPage(){
         
         
@@ -294,5 +298,8 @@ class RouteController extends Controller
 
     public function toUserInformationFormPage(){
         return view("auth.userInformationForm");
+    }
+    public function toPassword(){
+        return view("userpassword");
     }
 }

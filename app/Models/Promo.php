@@ -16,8 +16,6 @@ class Promo extends Model
     }
     protected $fillable =[
         "code",
-        "type",
-        "fixed",
         "percentage",
         "max_discount",
         "status",
