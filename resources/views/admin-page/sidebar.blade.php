@@ -26,6 +26,7 @@
             <ul class="nav-second-level" aria-expanded="false">
                 <li class="nav-item"><a class="nav-link {{Route::currentRouteName() == 'toCreatepromoPage' ? 'active' : ''}}" href="{{route('toCreatepromoPage')}}"><i class="ti-control-record"></i>Create Promo</a></li>
                 <li class="nav-item"><a class="nav-link {{Route::currentRouteName() == 'topromoManagementPage' ? 'active' : ''}}" href="{{route('topromoManagementPage')}}"><i class="ti-control-record"></i>Promo Management</a></li>
+                <li class="nav-item"><a class="nav-link {{Route::currentRouteName() == 'toCreateannouncementPage' ? 'active' : ''}}" href="{{route('toCreateannouncementPage')}}"><i class="ti-control-record"></i>Create Announcement</a></li>
                 <li class="nav-item"><a class="nav-link {{Route::currentRouteName() == 'toannouncementManagementPage' ? 'active' : ''}}" href="{{route('toannouncementManagementPage')}}"><i class="ti-control-record"></i>Announcement Managament</a></li>
                
                 
