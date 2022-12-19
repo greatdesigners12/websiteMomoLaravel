@@ -5,7 +5,8 @@
 
 @section('content')
 
-<livewire:user-profile>
+<livewire:user-password-form>
+
 
 @endsection
 

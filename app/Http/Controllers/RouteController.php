@@ -299,4 +299,7 @@ class RouteController extends Controller
     public function toUserInformationFormPage(){
         return view("auth.userInformationForm");
     }
+    public function toPassword(){
+        return view("userpassword");
+    }
 }

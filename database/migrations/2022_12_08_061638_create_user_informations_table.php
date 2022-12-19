@@ -18,9 +18,9 @@ return new class extends Migration
             $table->string('full_name')->nullable();
             $table->string('gender')->nullable();
             $table->date('birth_date')->nullable();
-            $table->string('province')->nullable();
-            $table->string('type')->nullable();
-            $table->string('city')->nullable();
+            $table->integer('province_id')->nullable();
+            $table->integer('city_id')->nullable();
+            $table->text('address')->nullable();
             $table->string('postal_code')->nullable();
             $table->text('image_profile')->nullable();
             $table->integer('is_phone_verified');

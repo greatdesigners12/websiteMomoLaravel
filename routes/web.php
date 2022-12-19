@@ -7,6 +7,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PromoController;
+use App\Http\Controllers\UserInformationController;
 use App\Http\Controllers\AnnouncementController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Http;
@@ -25,6 +26,7 @@ use Illuminate\Support\Facades\Http;
 Route::get('/', [RouteController::class, "toHomePage"])->name("home");
 Route::get('/products', [RouteController::class, "toproductsPage"])->name("products");
 Route::get('/contact', [RouteController::class, "toContactPage"])->name("contact");
+Route::get('/password', [RouteController::class, "toPassword"])->name("password");
 
 // authentication
 Route::get('/register', [RouteController::class, "toRegisterPage"])->name("toRegisterPage");
@@ -51,6 +53,9 @@ Route::get('/about', function () {
 Route::get('/wishlist', [RouteController::class, "toWishListPage"])->name("toWishListPage");
 Route::get('/cart', [RouteController::class, "toCartPage"])->name("toCartPage");
 Route::get('/createUserInformation', [RouteController::class, "toUserInformationFormPage"])->name("toUserInformationFormPage");
+Route::get('/toProfilePage', [RouteController::class,"toProfilePage"])->name("toProfilePage");
+Route::POST('/processUpdatepassword', [UserInformationController::class, "setUserPassword"])->name("processUpdatepassword");
+
 
 // Transactions
 Route::get('/transactions', [RouteController::class, "toHistoryTransactionsPage"])->name("toHistoryTransactionsPage");
