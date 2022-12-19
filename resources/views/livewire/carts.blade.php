@@ -77,10 +77,7 @@
                                 Goods on
                                 <span>Rp. {{number_format($carts[$carts->count() - 1]->totalPrice, 2, '.', ',')}}</span>
                             </div>
-                            <div class="cart-bottom__total-promo">
-                                Discount on promo code
-                                <span>No</span>
-                            </div>
+                            
                             <div class="cart-bottom__total-num">
                                 total:
                                 <span>Rp. {{number_format($carts[$carts->count() - 1]->totalPrice, 2, '.', ',')}}</span>
