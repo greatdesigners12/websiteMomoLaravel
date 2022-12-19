@@ -1,5 +1,5 @@
 <div class="col-12 mt-3">
-    <div class="card">
+    <div class="card mt-5">
         <div class="card-body">
             <h4 class="mt-0 header-title">Create product</h4>
             @if (session()->has("message"))

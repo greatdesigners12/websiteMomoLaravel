@@ -26,7 +26,7 @@ class AnnouncementTable extends DataTableComponent
         return [
             Column::make("Id", "id")
             ->sortable(),
-        Column::make("Content", "content")
+        Column::make("Content", "content")->searchable()
             ->sortable(),
         BooleanColumn::make('Status'),
         Column::make("Created at", "created_at")

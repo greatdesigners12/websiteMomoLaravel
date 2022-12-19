@@ -97,8 +97,13 @@ class RouteController extends Controller
     public function toVerificationPage(Request $request){
         $user = UserInformation::where("user_id", $request->query("id"))->where("token", $request->query("token"))->first();
         $status = "verified";
-        if($user->is_email_verified == 1){
+        if($user == null){
             $status = "Not Found";
+        }else{
+            if($user->is_email_verified == 1){
+                $status = "Not Found";
+            }
+            
         }
 
         return view('auth.verificationPage', ["status" => $status]);

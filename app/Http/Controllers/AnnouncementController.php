@@ -25,7 +25,7 @@ class AnnouncementController extends Controller
             }
                 announcement::create(['content' => $request->content,
                 'status' => $request->status]);
-                return redirect()->back()->with("message", "announcement has been created");
+                return redirect()->route("toannouncementManagementPage")->with("message", "announcement has been created");
             
            
             

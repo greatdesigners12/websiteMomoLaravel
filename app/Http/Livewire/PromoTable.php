@@ -23,9 +23,9 @@ class PromoTable extends DataTableComponent
             Column::make("Id", "id")
                 ->sortable(),
             Column::make("Code", "code")
-                ->sortable(),
+                ->sortable()->searchable(),
             Column::make("Diskon Persentase Harga", "percentage")
-                ->sortable(),
+                ->sortable()->searchable(),
                 Column::make("Diskon Maksimum", "max_discount")
                 ->sortable(),
             BooleanColumn::make('Status'),
