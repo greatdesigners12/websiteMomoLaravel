@@ -62,9 +62,7 @@
                 </div>
               
             </div>
-            <img class="promo-video__decor js-img" data-src="https://via.placeholder.com/1197x1371/FFFFFF"
-                src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="">
-        </div>
+           
         <x-dialog />
        
    

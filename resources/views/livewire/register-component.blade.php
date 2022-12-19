@@ -7,8 +7,8 @@
                     <div class="card auth-card shadow-lg">
                         <div class="card-body">
                             <div class="px-3">
-                                <div class="auth-logo-box">
-                                    <a href="/" class="logo logo-admin"><img src="img/logo.png" height="60" width="60" alt="logo" class="auth-logo"></a>
+                                <div class="auth-logo-box d-flex justify-content-center">
+                                    <a href="/" class="logo logo-admin"><img src="{{asset('storage/img/logo.png')}}" height="80" width="80" alt="logo" class="auth-logo"></a>
                                 </div><!--end auth-logo-box-->
                                 
                                 <div class="text-center auth-logo-text">
@@ -77,7 +77,6 @@
                                             </div>                               
                                         </div><!--end form-group-->  --}}
                                     </div><!--end form-group--> 
-        
                                     <div class="form-group row mt-4">
                                         <div class="col-sm-12">
                                             <div class="custom-control custom-switch switch-success">
@@ -96,7 +95,7 @@
                             </div><!--end /div-->
                             
                             <div class="m-3 text-center text-muted">
-                                <p class="">Already have an account ? <a href="{{route('toLoginPage')}}" class="text-primary ml-2">Log in</a></p>
+                                <p class="">Sudah punya akun ? <a href="{{route('toLoginPage')}}" class="text-primary ml-2">Log in</a></p>
                             </div>
                         </div><!--end card-body-->
                     </div><!--end card-->
