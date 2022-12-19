@@ -20,8 +20,12 @@ class HeaderComponent extends Component
 
         $data = Announcement::where("status", 1)->first();
         
-
-        $this->announcement = $data->content;
+        if($data != null){
+            $this->announcement = $data->content;
+        }else{
+            $this->announcement = "Salah satu toko accessoris terbaik di banyuwangi";
+        }
+        
         
     }
 

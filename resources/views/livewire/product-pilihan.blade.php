@@ -26,7 +26,7 @@
                         <div class="products-items js-products-items" >
                         @foreach ($curProducts as $product)
                             
-                                <a href="#" class="products-item" style="color:white;">
+                                <a href="{{route('getProductById', $product->id)}}" class="products-item" style="color:white;">
                                 
                                     <div class="products-item__img">
                                         <img 
