@@ -22,15 +22,6 @@
                    
                 </ul>
                 <ul class="header-options">
-                    
-                    <li><a href="#"><i class="icon-search"></i></a></li>
-                    
-                    @if (Auth::check())
-                        <li><a href="{{route('toProfilePage')}}"><i class="icon-user"></i></a></li>
-                        <li><a href="{{route('toWishListPage')}}"><i class="icon-heart"></i></a></li>
-                        <li><a href="{{route('toCartPage')}}"><i class="icon-cart"></i><span>{{$cartCounter}}</span></a></li>
-                    @endif
-                    
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" style="background-color: #d05278;" data-bs-toggle="dropdown" aria-expanded="false">
                             <span class="fi fi-{{Config::get('languages')[App::getLocale()]['flag-icon']}}"></span> {{ Config::get('languages')[App::getLocale()]['display'] }}
@@ -42,7 +33,15 @@
                                 @endif
                             @endforeach
                         </div>
-                    </div>
+                    </div>    
+                    @if (Auth::check())
+                        <li><a href="{{route('toProfilePage')}}"><i class="icon-user"></i></a></li>
+                        <li><a href="{{route('toWishListPage')}}"><i class="icon-heart"></i></a></li>
+                        <li><a href="{{route('toCartPage')}}"><i class="icon-cart"></i><span>{{$cartCounter}}</span></a></li>
+                        <li><a href="{{route('toCartPage')}}"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+                    @endif
+                    
+                    
                 </ul>
                 
             </div>

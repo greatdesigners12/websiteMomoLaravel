@@ -58,7 +58,7 @@
                                 <h6>City</h6>
                                 <input type="text" value="{{ $cityname }}" disabled>
                                 <x-select placeholder="Select City" :options="$cities" option-label="city_name"
-                                    option-value="city_id" wire:model.defer="city" />
+                                    option-value="city_id" wire:model.defer="city_id" />
 
 
 

@@ -53,7 +53,7 @@ Route::get('/about', function () {
 Route::get('/wishlist', [RouteController::class, "toWishListPage"])->name("toWishListPage");
 Route::get('/cart', [RouteController::class, "toCartPage"])->name("toCartPage");
 Route::get('/createUserInformation', [RouteController::class, "toUserInformationFormPage"])->name("toUserInformationFormPage");
-Route::get('/Profile', [RouteController::class,"toProfilePage"])->name("toProfilePage");
+Route::get('/profile', [RouteController::class,"toProfilePage"])->name("toProfilePage");
 Route::POST('/processUpdatepassword', [UserInformationController::class, "setUserPassword"])->name("processUpdatepassword");
 
 

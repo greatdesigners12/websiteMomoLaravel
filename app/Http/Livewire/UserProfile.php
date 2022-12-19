@@ -13,6 +13,7 @@ class UserProfile extends Component
     use Actions;
     public $provinces = null;
     public $province_id;
+    public $province;
     public $city_id;
     public $address;
     public $fullName;
@@ -22,13 +23,7 @@ class UserProfile extends Component
     public $provincename;
     public $gender = "m";
 
-    protected $rules = [
-        'fullName' => 'required',
-        'city' => 'required|integer',
-        'birthDate' => 'required',      
-        'province' => 'required',
-        'address' => 'required'
-    ];
+    
 
     public function mount(){
         $info = UserInformation::where("user_id", Auth::id())->first();
@@ -81,9 +76,9 @@ class UserProfile extends Component
 
     public function setUserInformation(){
        
-        $this->validate();
+       
         UserInformation::where("user_id", Auth::id())->update(["full_name" => $this->fullName, "birth_date" => $this->birthDate, "gender" => $this->gender, "address" => $this->address,
-         "city_id" => $this->city, "province_id" => $this->province]);
+         "city_id" => $this->city_id, "province_id" => $this->province]);
         
         $this->dialog([
 
@@ -115,7 +110,7 @@ class UserProfile extends Component
             'province' => $this->province
         ]);
         $this->cities = $cities->collect("rajaongkir")["results"];
-        dd("tes");
+        
     }
     public function render()
     {
