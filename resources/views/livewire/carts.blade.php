@@ -96,7 +96,9 @@
                
             </div>
             
-
+            @livewire('footer')
         </main>
+        
     </div>
 </div>
+

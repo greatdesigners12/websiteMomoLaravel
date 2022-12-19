@@ -77,7 +77,7 @@
     
     </main>
 </div>
-
+@livewire('footer')
 <script>
     
     

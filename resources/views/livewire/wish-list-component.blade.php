@@ -68,4 +68,5 @@
    
 
     </main>
+    @livewire('footer')
 </div>

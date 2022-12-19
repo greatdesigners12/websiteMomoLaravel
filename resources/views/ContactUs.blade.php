@@ -52,4 +52,5 @@
         </main>
         <livewire:form-contact />
     </div>
+    @livewire('footer')
 @endsection

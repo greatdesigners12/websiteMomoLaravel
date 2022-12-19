@@ -17,5 +17,5 @@
     @livewire("testimonies")
     <livewire:brands :brands="$brands"  />
     <livewire:lokasi />
-    @livewire("footer")         
+    @livewire('footer')
 @endsection
