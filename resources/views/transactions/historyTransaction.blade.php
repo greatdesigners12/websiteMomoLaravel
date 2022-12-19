@@ -108,56 +108,9 @@
                     </div>
                 </div>
             </div>
-            <img class="promo-video__decor js-img" data-src="https://via.placeholder.com/1197x1371/FFFFFF"
-                src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="">
+           
         </div>
-        <!-- CART EOF   -->
-        <!-- BEGIN INSTA PHOTOS -->
-        <div class="insta-photos">
-            <a href="#" class="insta-photo">
-                <img data-src="https://via.placeholder.com/320" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" class="js-img"
-                    alt="">
-                <div class="insta-photo__hover">
-                    <i class="icon-insta"></i>
-                </div>
-            </a>
-            <a href="#" class="insta-photo">
-                <img data-src="https://via.placeholder.com/320" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" class="js-img"
-                    alt="">
-                <div class="insta-photo__hover">
-                    <i class="icon-insta"></i>
-                </div>
-            </a>
-            <a href="#" class="insta-photo">
-                <img data-src="https://via.placeholder.com/320" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" class="js-img"
-                    alt="">
-                <div class="insta-photo__hover">
-                    <i class="icon-insta"></i>
-                </div>
-            </a>
-            <a href="#" class="insta-photo">
-                <img data-src="https://via.placeholder.com/320" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" class="js-img"
-                    alt="">
-                <div class="insta-photo__hover">
-                    <i class="icon-insta"></i>
-                </div>
-            </a>
-            <a href="#" class="insta-photo">
-                <img data-src="https://via.placeholder.com/320" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" class="js-img"
-                    alt="">
-                <div class="insta-photo__hover">
-                    <i class="icon-insta"></i>
-                </div>
-            </a>
-            <a href="#" class="insta-photo">
-                <img data-src="https://via.placeholder.com/320" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" class="js-img"
-                    alt="">
-                <div class="insta-photo__hover">
-                    <i class="icon-insta"></i>
-                </div>
-            </a>
-        </div>
-        <!-- INSTA PHOTOS EOF   -->
+        
 
     </main>
 </div>

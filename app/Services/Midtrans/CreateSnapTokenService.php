@@ -11,8 +11,9 @@ class CreateSnapTokenService extends Midtrans
     protected $products;
     protected $user;
     protected $shippingPrice;
+    protected $discount;
     
-    public function __construct($invoice, $shippingPrice, $totalPrice, $products, $userInformation)
+    public function __construct($invoice, $shippingPrice, $discount, $totalPrice, $products, $userInformation)
     {
         parent::__construct();
         $this->shippingPrice = $shippingPrice;
@@ -20,7 +21,7 @@ class CreateSnapTokenService extends Midtrans
         $this->invoice = $invoice;
         $this->products = $products;
         $this->user = $userInformation;
-        
+        $this->discount = $discount;
     }
  
     public function getSnapToken()
@@ -28,7 +29,7 @@ class CreateSnapTokenService extends Midtrans
         $items = [];
         foreach($this->products as $product){
             
-            array_push($items, ["id" => $product->id, "price" => $product->transaction_product->price, "quantity" => $product->transaction_product->quantity, "name" => $product->transaction_product->name]);
+            array_push($items, ["id" => $product->id, "price" => $this->discount != 0 ? ($product->transaction_product->price - ($product->transaction_product->price * ($this->discount/100))) : $product->transaction_product->price, "quantity" => $product->transaction_product->quantity, "name" => $product->transaction_product->name]);
         }
         array_push($items, ["id" => $product->count + 1, "price" =>  $this->shippingPrice, "quantity" => 1, "name" => "shipping"]);
         $params = [

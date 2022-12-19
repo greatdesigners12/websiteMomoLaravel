@@ -1,7 +1,7 @@
 @extends('template')
 @section('content')
 
-    <div class="main-block load-bg" style="background-image: {{asset('storage/img/shopping.png')}};">
+    <div class="main-block load-bg" style="background-image: {{asset('storage/img/shopping.png')}}; padding-top: 326px;">
         <div class="wrapper">
             <div class="main-block__content">
                 <span class="saint-text">{{__('MOMO Accessories')}}</span>

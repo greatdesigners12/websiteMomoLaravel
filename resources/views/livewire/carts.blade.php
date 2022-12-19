@@ -70,32 +70,9 @@
                            
                         </div>
                     </div>
-                    <div class="cart-bottom">
-                        <div class="cart-bottom__promo">
-                            <form class="cart-bottom__promo-form">
-                                <div class="box-field__row">
-                                    <div class="box-field">
-                                        <input type="text" class="form-control" placeholder="Enter promo code">
-                                    </div>
-                                    <button type="submit" class="btn btn-grey">apply code</button>
-                                </div>
-                            </form>
-                            <h6>How to get a promo code?</h6>
-                            <p>
-                                Follow our news on the website, as well as subscribe to our social networks. So you will not only be able to receive up-to-date codes,
-                                but also learn about new products and promotional items.
-                            </p>
-                            <div class="contacts-info__social">
-                                <span>Find us here:</span>
-                                <ul>
-                                    <li><a href="#"><i class="icon-facebook"></i></a></li>
-                                    <li><a href="#"><i class="icon-twitter"></i></a></li>
-                                    <li><a href="#"><i class="icon-insta"></i></a></li>
-                                    <li><a href="#"><i class="icon-in"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="cart-bottom__total">
+                    <div class="cart-bottom w-100">
+                        
+                        <div class="cart-bottom__total w-100">
                             <div class="cart-bottom__total-goods">
                                 Goods on
                                 <span>Rp. {{number_format($carts[$carts->count() - 1]->totalPrice, 2, '.', ',')}}</span>

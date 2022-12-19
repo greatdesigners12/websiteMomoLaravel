@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Promo;
 use App\Models\TransactionGroup;
 use Livewire\Component;
 use App\Services\Midtrans\CreateSnapTokenService;
@@ -9,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\UserInformation;
 use Illuminate\Support\Facades\Http;
+use WireUi\Traits\Actions;
 
 class TransactionDetail extends Component
 {
@@ -17,6 +19,10 @@ class TransactionDetail extends Component
     public $courier;
     public $services = null;
     public $curService;
+    public $promoCode;
+    public $discount = 0;
+    
+    use Actions;
 
     protected $listeners = ["errorSession", "paymentSuccess"];
 
@@ -24,7 +30,7 @@ class TransactionDetail extends Component
         
         if($this->transactionDetail->snap_token == "" ){
             $curUser = User::find(Auth::id());
-            $midtrans = new CreateSnapTokenService($this->transactionDetail->invoice, $this->shippingPrice,$this->transactionDetail->total_price, $this->transactionDetail->relation,  $curUser);
+            $midtrans = new CreateSnapTokenService($this->transactionDetail->invoice, $this->shippingPrice, $this->discount,$this->transactionDetail->total_price, $this->transactionDetail->relation,  $curUser);
             $snapToken = $midtrans->getSnapToken();
             TransactionGroup::where("invoice", $this->transactionDetail->invoice)->update(["snap_token" => $snapToken]);
             $this->dispatchBrowserEvent('openMidTransPopUp', ['snapToken' => $snapToken]);        
@@ -77,6 +83,28 @@ class TransactionDetail extends Component
     public function paymentSuccess(){
         UserInformation::where("user_id", Auth::id())->update(["status" => "Terbayar", "snap_token" => ""]);
         return redirect()->route("toHistoryTransactionsPage");
+    }
+
+    public function verifyPromoCode(){
+        $check = Promo::where("code", $this->promoCode)->first();
+        if($check != null){
+            $this->dialog()->success(
+
+                $title = 'Promo code used',
+    
+                $description = 'You can use the promo code'
+    
+            );
+            $this->discount = $check->percentage;
+        }else{
+            $this->dialog()->error(
+
+                $title = 'NOT FOUND',
+    
+                $description = 'Promo code is not found'
+    
+            );
+        }
     }
 
     public function render()
