@@ -21,8 +21,6 @@
 
                     <x-card title="Update Resi">
                 
-                        
-                
                         <x-input label="Nomor resi" placeholder="Input no resi" wire:model="noResi" />
                 
                 

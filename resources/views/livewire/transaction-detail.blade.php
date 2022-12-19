@@ -126,7 +126,20 @@
                                     @endif
                                     
                                 </div>
-                                <button class="btn" style="background-color: #D23377; color: white; height:40px;" {{$shippingPrice == null ? 'disabled' : ''}} wire:click="pay">PAY NOW</button>
+                                @if ($transactionDetail->status == "Terbayar")
+                                <div class="cart-bottom__total-num">
+                                    No resi:
+                                    @if ($transactionDetail->no_resi == "")
+                                        <span>In Progress...</span>
+                                    @else
+                                        <span>{{ $transactionDetail->no_resi}}</span>
+                                    @endif
+                                    
+                                </div>
+                                @else
+                                    <button class="btn" style="background-color: #D23377; color: white; height:40px;" {{$shippingPrice == null ? 'disabled' : ''}} wire:click="pay">PAY NOW</button>
+
+                                @endif
                             </div>
                         </div>
                     </div>
