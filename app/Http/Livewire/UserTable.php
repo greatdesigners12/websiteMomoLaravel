@@ -146,7 +146,7 @@ class UserTable extends DataTableComponent
             )->sortable(),
             Column::make("Role", "role.role")
                 ->sortable(),
-            Column::make('Age', "user_information.tanggal_lahir")->format(
+            Column::make('Age', "user_information.birth_date")->format(
                 fn($value, $row, Column $column) => Carbon::parse($value)->age
             ),
             Column::make("Last login", "last_login")

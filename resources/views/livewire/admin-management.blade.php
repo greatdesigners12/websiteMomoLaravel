@@ -1,13 +1,11 @@
 <div>
 
     <div class="col-12">
-        <div class="card">
+        <div class="card mt-3">
             <div class="card-body">
 
-                <h4 class="mt-0 header-title">Tabel Pengguna</h4>
-                <p class="text-muted mb-3">DataTables has most features enabled by
-                    default, so all you need to do to use it with your own tables is to call
-                    the construction function: <code>$().DataTable();</code>.
+                <h4 class="mt-0 header-title">Admin Table</h4>
+                <p class="text-muted mb-3">All about admin management</code>.
                 </p>
 
                 <livewire:admin-table />

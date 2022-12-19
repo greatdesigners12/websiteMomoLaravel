@@ -42,7 +42,7 @@ class AdminTable extends DataTableComponent
   
     public function builder(): Builder
     {
-        return User::query()->where("name", "admin")->select("*"); 
+        return User::query()->where("role_id", "2")->select("*"); 
     }
 
     public function columns(): array
@@ -50,17 +50,13 @@ class AdminTable extends DataTableComponent
         return [
             Column::make("Id", "id")
                 ->sortable(),
-            Column::make("Email", "email")
+            Column::make("Email", "email")->searchable()
                 ->sortable(),
-            Column::make("Role", "Role.name")
+            Column::make("Role", "role.role")
                 ->sortable(),
-            Column::make("Phone", "phoneNumber")
+            Column::make("Phone", "phoneNumber")->searchable()
                 ->sortable(),
             Column::make("Last login", "last_login")
-                ->sortable(),
-            Column::make("Created at", "created_at")
-                ->sortable(),
-            Column::make("Updated at", "updated_at")
                 ->sortable(),
                 Column::make("Action", "id")->format(
                     fn($value, $row, Column $column) => view("admin-page.admin-management.buttons")->withValue($value)

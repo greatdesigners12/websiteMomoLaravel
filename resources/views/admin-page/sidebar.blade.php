@@ -32,7 +32,16 @@
                 
             </ul>
         </li>    
-        
+        @php($admin_arr = ["tocreateadminPage", "toadminManagementPage"])
+        @if (App\Models\User::where("id", Auth::id())->where("role_id", 3)->first() != null)
+            <li class="{{in_array( Route::currentRouteName(), $admin_arr) ? 'mm-active' : ''}}">
+                <a href="javascript: void(0);"><i class="ti-server"></i><span>Manage Admin</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                <ul class="nav-second-level" aria-expanded="false">
+                    <li class="nav-item"><a class="nav-link {{Route::currentRouteName() == 'tocreateadminPage' ? 'active' : ''}}" href="{{route('tocreateadminPage')}}"><i class="ti-control-record"></i>Create Admin</a></li>
+                    <li class="nav-item"><a class="nav-link {{Route::currentRouteName() == 'toadminManagementPage' ? 'active' : ''}}" href="{{route('toadminManagementPage')}}"><i class="ti-control-record"></i>Admin Management   </a></li>
+                </ul>
+            </li>   
+        @endif
         @php($arr_others = ["toBrandsManagementPage", "toCategoriesManagementPage", "toUsersManagementPage", "totransactionsManagementPage"])
         <li class="{{in_array( Route::currentRouteName(), $arr_others) ? 'mm-active' : ''}}">
             <a href="javascript: void(0);"><i class="ti-server"></i><span>Others</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
