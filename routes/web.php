@@ -11,6 +11,7 @@ use App\Http\Controllers\AnnouncementController;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Http;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,12 +49,10 @@ Route::get('/about', function () {
     return view('AboutUs');
 })->name("about");
 
-
-
-
 // User 
 Route::get('/wishlist', [RouteController::class, "toWishListPage"])->name("toWishListPage");
 Route::get('/cart', [RouteController::class, "toCartPage"])->name("toCartPage");
+Route::get('/createUserInformation', [RouteController::class, "toUserInformationFormPage"])->name("toUserInformationFormPage");
 
 // Transactions
 Route::get('/transactions', [RouteController::class, "toHistoryTransactionsPage"])->name("toHistoryTransactionsPage");
@@ -66,9 +65,10 @@ Route::get('/createProduct', [RouteController::class, "toCreateProductPage"])->n
 Route::get('/editProduct/{id}', [RouteController::class, "toEditProductPage"])->name("toEditProductPage");
 Route::get('/productsManagement', [RouteController::class, "toProductsManagementPage"])->name("toProductsManagementPage");
 Route::get('/brandsManagement', [RouteController::class, "toBrandsManagementPage"])->name("toBrandsManagementPage");
-Route::get('/categoriesManagement', [RouteController::class, "toCategoriesManagementPage"])->name("toategoriesManagementPage");
+Route::get('/categoriesManagement', [RouteController::class, "toCategoriesManagementPage"])->name("toCategoriesManagementPage");
 Route::get('/usersManagement', [RouteController::class, "toUsersManagementPage"])->name("toUsersManagementPage");
 Route::get('/transactionsManagement', [RouteController::class, "totransactionsManagementPage"])->name("totransactionsManagementPage");
+
 
 
 // Product
@@ -95,7 +95,6 @@ Route::POST('/processCreateadmin', [AdminController::class, "createadmin"])->nam
 Route::POST('/processUpdatepassadmin', [AdminController::class, "updatepassword"])->name("processUpdatepassadmin");
 Route::POST('/processUpdateadmin', [AdminController::class, "updateadmin"])->name("processUpdateadmin");
 Route::POST('/deleteAdmin', [AdminController::class, "deleteAdmin"])->name("deleteAdmin");
-
 
 //promo
 
