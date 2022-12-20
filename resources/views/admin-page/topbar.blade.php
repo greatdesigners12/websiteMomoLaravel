@@ -3,7 +3,7 @@
 
     <!-- LOGO -->
     <div class="topbar-left d-flex justify-content-center align-items-center">
-        <a href="../dashboard/crm-index.html" class="logo">
+        <a href="{{route('home')}}" class="logo">
             <span>
                 <img src="{{asset('storage/img/logo.png')}}" alt="logo-small" style="width: 57px;">
             </span>

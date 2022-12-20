@@ -10,8 +10,8 @@
                     <div class="card auth-card shadow-lg">
                         <div class="card-body">
                             <div class="px-3">
-                                <div class="auth-logo-box">
-                                    <a href="../dashboard/analytics-index.html" class="logo logo-admin"><img src="../assets/images/logo-sm.png" height="55" alt="logo" class="auth-logo"></a>
+                                <div class="auth-logo-box d-flex justify-content-center">
+                                    <a href="{{route('toLoginPage')}}" class="logo logo-admin"><img src="{{asset('storage/img/logo.png')}}" style="width: 50px;" alt="logo" class="auth-logo"></a>
                                 </div><!--end auth-logo-box-->
                                 
                                 <div class="text-center auth-logo-text">

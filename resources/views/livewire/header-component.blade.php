@@ -12,14 +12,18 @@
                 <ul class="header-nav">
                     
 
-                    <li><a href="/" class="{{Route::current()->getName() == 'home' ? 'active' : ''}}">{{__('Beranda')}}</a>  </li>
-                    <li><a href="/products" class="{{Route::current()->getName() == 'products' ? 'active' : ''}}">{{__('Product')}}</a></li>
-                    <li><a href="/contact" class="{{Route::current()->getName() == 'contact' ? 'active' : ''}} ">{{__('Kontak Kami')}}</a></li>
+                    <li><a style="text-decoration:none;" href="/" class="{{Route::current()->getName() == 'home' ? 'active' : ''}}">{{__('Beranda')}}</a>  </li>
+                    <li><a style="text-decoration:none;" href="/products" class="{{Route::current()->getName() == 'products' ? 'active' : ''}}">{{__('Product')}}</a></li>
+                    <li><a style="text-decoration:none;" href="/contact" class="{{Route::current()->getName() == 'contact' ? 'active' : ''}} ">{{__('Kontak Kami')}}</a></li>
                     @if (!Auth::check())
-                        <li><a href="/login" class="{{Route::current()->getName() == 'toLoginPage' ? 'active' : ''}} ">Login</a></li>
-                        <li><a href="/register" class="{{Route::current()->getName() == 'toRegisterPage' ? 'active' : ''}} ">Register</a></li>
+                        <li><a style="text-decoration:none;" href="/login" class="{{Route::current()->getName() == 'toLoginPage' ? 'active' : ''}} ">Login</a></li>
+                    @else
+                        @if (App\Models\User::find(Auth::id())->role_id == 2 || App\Models\User::find(Auth::id())->role_id == 3)
+                            <li><a style="text-decoration:none;" href="/dashboard" class="{{Route::current()->getName() == 'toDashboardPage' ? 'active' : ''}} ">Dashboard Admin</a></li>
+                        @endif
                     @endif
-                   
+                    
+
                 </ul>
                 <ul class="header-options">
                     <div class="dropdown">
@@ -35,10 +39,10 @@
                         </div>
                     </div>    
                     @if (Auth::check())
-                        <li><a href="{{route('toProfilePage')}}"><i class="icon-user"></i></a></li>
-                        <li><a href="{{route('toWishListPage')}}"><i class="icon-heart"></i></a></li>
-                        <li><a href="{{route('toCartPage')}}"><i class="icon-cart"></i><span>{{$cartCounter}}</span></a></li>
-                        <li><a href="{{route('toCartPage')}}"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+                        <li><a style="text-decoration:none;" href="{{route('toProfilePage')}}"><i class="icon-user"></i></a></li>
+                        <li><a style="text-decoration:none;" href="{{route('toWishListPage')}}"><i class="icon-heart"></i></a></li>
+                        <li><a style="text-decoration:none;" href="{{route('toCartPage')}}"><i class="icon-cart"></i><span>{{$cartCounter}}</span></a></li>
+                        <li><a style="text-decoration:none;" href="{{route('logout')}}"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
                     @endif
                     
                     

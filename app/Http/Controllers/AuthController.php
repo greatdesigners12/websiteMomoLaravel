@@ -43,12 +43,18 @@ class AuthController extends Controller
             })){
                 $request->session()->regenerate();
                 
-                $user = UserInformation::where("user_id", Auth::id())->first();
-                if($user->is_phone_verified == 0){
-                    return redirect()->route("toValidatePhoneNumber");
+                $user = User::find(Auth::id());
+                $userInfo = UserInformation::where("user_id", Auth::id())->first();
+                if($user->role_id == 1){
+                    if($userInfo->is_phone_verified == 0){
+                        return redirect()->route("toValidatePhoneNumber");
+                    }else{
+                        return redirect()->route("home");
+                    }
                 }else{
-                    return redirect()->route("home");
+                    return redirect()->route("toDashboardPage");
                 }
+                
                 
             }
     
@@ -97,7 +103,7 @@ class AuthController extends Controller
                 "date"=> date("Y-m-d"),
                 "time"=> date("H:i:s")
             ]);
-
+            User::where("id", Auth::id())->update(["phoneNumber" => $request->phoneNumber]);
             UserOtp::create(["user_id" => Auth::id(), "kode_otp" => $kodeOtp, "token" => $token, "date_otp_created" => $time]);
 
           
@@ -160,6 +166,16 @@ class AuthController extends Controller
         }
 
        
+    }
+
+    public function logout(Request $request){
+        Auth::logout();
+
+        $request->session()->invalidate();
+    
+        $request->session()->regenerateToken();
+    
+        return redirect('/');
     }
 
     
