@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>Crovex - Admin & Dashboard Template</title>
+        <title>Momo Accessories Authentication</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
         <meta content="" name="author" />
@@ -12,7 +12,7 @@
         
         @vite('resources/css/app.css')
         <!-- App favicon -->
-        <link rel="shortcut icon" href="../assets/images/favicon.ico">
+        <link rel="icon" href="{{ url('img/logo.png') }}">
 
         <!-- App css -->
         <link href="{{asset('css/admin/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
