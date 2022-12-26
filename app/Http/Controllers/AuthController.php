@@ -156,7 +156,7 @@ class AuthController extends Controller
             'password' => Hash::make($request->password),
             'role_id' => 1,
             ]);
-            $url = $_ENV['SERVER'] . "/emailVerification?" . "id=" . $user->id . "&" . "token=" .$token ;
+            $url =  "http://127.0.0.1:8000/emailVerification?" . "id=" . $user->id . "&" . "token=" .$token ;
             UserInformation::create(["user_id" => $user->id, "token" => $token, "is_email_verified" => 0]);
            
            

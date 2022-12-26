@@ -3,7 +3,19 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>Crovex - Admin & Dashboard Template</title>
+        @php($titleName = "")
+        @if (Route::currentRouteName() == "toLoginPage")
+            @php($titleName = "Login")
+        @elseif(Route::currentRouteName() == "toRegisterPage")
+            @php($titleName = "Register")
+        @elseif(Route::currentRouteName() == "toValidatePhoneNumber" || Route::currentRouteName() == "toOtpVerificationPage")
+            @php($titleName = "Validate Phone Number")
+        @elseif(Route::currentRouteName() == "toSendEmailPage")
+            @php($titleName = "Email Verification")
+        @else
+            @php($titleName = "Reset Password")
+        @endif
+        <title>{{$titleName}}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
         <meta content="" name="author" />

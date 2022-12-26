@@ -25,9 +25,9 @@ class StoreEmailSender extends Mailable
     {
         $this->subject = $subject;
         if($this->subject == "Reset Password"){
-            $this->url = $_ENV['SERVER'] . "/resetPassword?" . "id=" . $id . "&" . "token=" .$token ;
+            $this->url = "http://127.0.0.1:8000/resetPassword?" . "id=" . $id . "&" . "token=" .$token ;
         }else{
-            $this->url = $_ENV['SERVER'] . "/emailVerification?" . "id=" . $id . "&" . "token=" .$token ;
+            $this->url = "http://127.0.0.1:8000/emailVerification?" . "id=" . $id . "&" . "token=" .$token ;
         }
         
     }

@@ -29,10 +29,10 @@ Route::get('/contact', [RouteController::class, "toContactPage"])->name("contact
 Route::get('/password', [RouteController::class, "toPassword"])->name("password");
 
 // authentication
-Route::get('/register', [RouteController::class, "toRegisterPage"])->name("toRegisterPage");
+Route::get('/register', [RouteController::class, "toRegisterPage"])->name("toRegisterPage")->middleware('IfUserNotLoggedIn');
 Route::post('/processRegister', [AuthController::class, "processRegister"])->name("processRegister");
 Route::get('/sendEmail', [RouteController::class, "toSendEmailPage"])->name("sendEmail");
-Route::get('/login', [RouteController::class, "toLoginPage"])->name("toLoginPage");
+Route::get('/login', [RouteController::class, "toLoginPage"])->name("toLoginPage")->middleware('IfUserNotLoggedIn');
 Route::post('/processLogin', [AuthController::class, "login"])->name("processLogin");
 Route::get('/emailVerification', [RouteController::class, "toVerificationPage"])->name("toVerificationPage");
 Route::get('/sendResetPassword', [RouteController::class, "toSendResetPasswordPage"])->name("toSendResetPasswordPage");
@@ -43,7 +43,7 @@ Route::post('/verifyUser', [AuthController::class, "verifyUser"])->name("verifyU
 Route::post('/processPhoneNumber', [AuthController::class, "processPhoneNumber"])->name("processPhoneNumber");
 Route::get('/validatePhoneNumber', [RouteController::class, "toValidatePhoneNumber"])->middleware('hasPhoneNumber')->name("toValidatePhoneNumber");
 Route::get('/otpVerification/{token}', [RouteController::class, "toOtpVerificationPage"])->name("toOtpVerificationPage");
-Route::get('/logout', [AuthController::class, "logout"])->name("logout");
+Route::get('/logout', [AuthController::class, "logout"])->name("logout")->middleware('auth');
 
 
 Route::get('/about', function () {
