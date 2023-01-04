@@ -21,7 +21,10 @@ class WishListComponent extends Component
     }
 
     public function addToCart($id){
-        Cart::insert(["user_id" => Auth::id(), "product_id" => $id, "quantity" => 1]);
+        $check = Cart::firstOrCreate(["user_id" => Auth::id(), "product_id" => $id, "quantity" => 1]);
+        if($check != null){
+            Cart::where("id", $check->id)->increment("quantity");
+        }
         FavouriteProduct::where("user_id", Auth::id())->where("product_id", $id)->delete();
         $this->dialog([
 

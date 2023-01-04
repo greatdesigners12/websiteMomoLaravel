@@ -35,7 +35,7 @@
                             </div><!--end card-body--> 
                         </div><!--end card--> 
                     </div> <!--end col--> 
-                    <div class="col-md-6 col-lg-3">
+                    <div class="col-12 col-md-6 col-lg-3">
                         <div class="card report-card">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between">                                                
@@ -50,7 +50,7 @@
                             </div><!--end card-body--> 
                         </div><!--end card--> 
                     </div> <!--end col--> 
-                    <div class="col-md-6 col-lg-3">
+                    <div class="col-12 col-md-6 ">
                         <div class="card report-card">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between">
@@ -66,9 +66,9 @@
                         </div><!--end card--> 
                     </div> <!--end col-->                               
                 </div><!--end row--> 
-                <div class="col-12 d-flex">
+                <div class="row col-12">
                     @foreach ($chart as $chrt)
-                    <div class="col-6">
+                    <div class="col-12 col-md-6 col-lg-6">
                         {!! $chrt->renderHtml() !!}
                     </div>
                         

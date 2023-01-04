@@ -36,7 +36,7 @@ class AuthController extends Controller
             return redirect()->back()->withErrors($credentials);
         }else{
             $credentials = $credentials->validated();
-         
+            $errorMessage = "";
             
             if(Auth::attemptWhen($credentials, function ($user) {
                 return $user->user_information->is_email_verified == 1;
@@ -56,10 +56,19 @@ class AuthController extends Controller
                 }
                 
                 
+            }else{
+                $user = User::where("email", $request->email)->first();
+                if($user == null){
+                    $errorMessage = 'The provided credentials do not match our records.';
+                }elseif($user->user_information->is_email_verified == 0){
+                    $errorMessage = 'Please verify your account and check your email';
+                }else{
+                    $errorMessage = 'There is some problem with authentication';
+                }
             }
     
             return redirect()->back()->withErrors([
-                'error' => 'The provided credentials do not match our records.',
+                'error' => $errorMessage,
                 
             ]);
         }  
